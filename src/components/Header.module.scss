@@ -8,6 +8,7 @@
   position: sticky;
   top: 0;
   z-index: 50;
+  color: $secondary-color;
 }
 
 .navContainer {
@@ -17,9 +18,13 @@
 }
 
 .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #007bff; // Użyj $primary-color, jeśli zaimportowałeś zmienne
+  display: flex;
+  align-items: center;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
 }
 
 .navList {
@@ -37,11 +42,7 @@
 
 .navLink {
   text-decoration: none;
-  color: #555;
+  color: $secondary-color;
   font-weight: 500;
   transition: color 0.3s ease-in-out;
-
-  &:hover {
-    color: #007bff; // Użyj $primary-color, jeśli zaimportowałeś zmienne
-  }
 }

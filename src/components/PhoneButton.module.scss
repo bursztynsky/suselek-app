@@ -1,13 +1,10 @@
-// src/components/PhoneButton.module.scss
-
-// Importujemy zmienne z globalnego pliku SCSS, aby zachować spójność
 @use '../index.scss' as *;
 @use 'sass:color';
 
 .phoneButton {
   display: inline-flex;
   align-items: center;
-  color: $white-color;
+  color: $secondary-color;
   padding: 0.8rem 1.5rem;
   border-radius: 9999px;
   border: 1px solid $white-color;

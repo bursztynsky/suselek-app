@@ -1,13 +1,14 @@
 import React from 'react';
 import styles from './Header.module.scss';
 import PhoneButton from './PhoneButton';
+import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
 
 const Header: React.FC = () => {
     return (
         <header className={styles.header}>
             <nav className={`${styles.navContainer} container`}>
                 <div className={styles.logo}>
-                    TwojeLogo
+                    <img src={SuselekLogo} alt="SUSELEK"/>
                 </div>
                 <ul className={styles.navList}>
                     <li><a href="#hotel" className={styles.navLink}>Hotel dla zwierząt</a></li>
