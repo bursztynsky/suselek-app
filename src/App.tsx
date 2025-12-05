@@ -2,8 +2,8 @@ import React from 'react';
 import './index.scss';
 import Header from './components/Header';
 import HomeSection from './components/HomeSection';
-import ServicesSection from './components/ServicesSection';
-import AboutSection from './components/AboutSection';
+// import ServicesSection from './components/ServicesSection';
+// import AboutSection from './components/AboutSection';
 import GallerySection from './components/GallerySection';
 import PricingSection from './components/PricingSection';
 import ContactSection from './components/ContactSection';
@@ -19,8 +19,8 @@ const App: React.FC = () => {
                 <HomeSection/>
                 <CheckOfferSection/>
                 <ProfessionalSection/>
-                <ServicesSection/>
-                <AboutSection/>
+                {/*<ServicesSection/>*/}
+                {/*<AboutSection/>*/}
                 <GallerySection/>
                 <PricingSection/>
                 <ContactSection/>

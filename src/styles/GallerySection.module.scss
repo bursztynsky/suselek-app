@@ -3,8 +3,12 @@
 @use 'sass:color';
 
 .gallerySection {
-  padding: 5rem 1rem;
-  background-color: $bg-color;
+  padding: 2rem 1rem;
+  background-color: $white-color;
+
+  @media (min-width: 768px) {
+    padding: 3rem 1rem;
+  }
 }
 
 .galleryContainer {
@@ -12,63 +16,106 @@
   margin: 0 auto;
 }
 
-.sectionTitle {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  color: $primary-color;
-  margin-bottom: 1rem;
-}
-
-.sectionSubtitle {
-  text-align: center;
-  font-size: 1.2rem;
-  color: $text-color;
-  margin-bottom: 3rem;
-}
-
-.galleryGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.galleryItem {
-  overflow: hidden;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-  }
-}
-
-.imagePlaceholder {
-  background: linear-gradient(135deg, $primary-color, color.scale($primary-color, $lightness: 20%));
-  aspect-ratio: 4 / 3;
+.galleryContent {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
   align-items: center;
-  justify-content: center;
-  color: $white-color;
 
-  span {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+  @media (min-width: 968px) {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+  }
+}
+
+.galleryImage {
+  flex: 0 0 auto;
+  max-width: 100%;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
   }
 
-  p {
-    font-size: 0.9rem;
-    text-align: center;
-    padding: 0 1rem;
+  @media (min-width: 968px) {
+    max-width: 500px;
+  }
+}
+
+.galleryText {
+  flex: 1;
+  text-align: left;
+}
+
+.categoryBadge {
+  width: 165px;
+  height: 43px;
+  border-radius: 62px;
+  padding: 4px 8px;
+  display: inline-flex;
+  gap: 10px;
+  background: #F8F6F2;
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #292929;
+  opacity: 1;
+}
+
+.galleryTitle {
+  font-family: $primary-font-family;
+  font-weight: 275;
+  font-style: italic;
+  font-size: 64px;
+  line-height: 64px;
+  letter-spacing: 0;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  color: $text-color;
+  max-width: 400px;
+  leading-trim: NONE;
+
+  span {
+    font-family: $primary-font-family;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+    line-height: 40px;
+
+    span {
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+.galleryDescription {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-align: left;
+  color: $text-color-2;
+  max-width: 490px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 }
