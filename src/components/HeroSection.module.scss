@@ -3,7 +3,11 @@
 // @import '../index.scss'; // Importuj zmienne globalne jeśli używasz
 
 .heroSection {
-  background: linear-gradient(to right, #007bff, #6f42c5); // Użyj zmiennych $primary-color, $secondary-color jeśli zaimportowałeś
+  background: linear-gradient(
+    to right,
+    #007bff,
+    #6f42c5
+  ); // Użyj zmiennych $primary-color, $secondary-color jeśli zaimportowałeś
   color: white;
   padding: 5rem 1rem;
   text-align: center;
