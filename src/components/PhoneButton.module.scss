@@ -7,23 +7,19 @@
 .phoneButton {
   display: inline-flex;
   align-items: center;
-  background-color: #3f7de0; // Specyficzny kolor dla przycisku tel
   color: $white-color;
   padding: 0.8rem 1.5rem;
   border-radius: 9999px;
-  border: 1px solid rgba($white-color, 0.4);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid $white-color;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 600;
   transition: all 0.3s ease-in-out;
-  cursor: pointer; // Dodajemy kursor wskaźnika
+  cursor: pointer;
 
   &:hover {
-    background-color: color.scale(#3f7de0, $lightness: -17.77%); // Przyciemnij kolor tła
-    border-color: rgba($white-color, 0.6);
-    //transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    background-color: $white-color;
+    color: $primary-color;
   }
 
   &:active {
@@ -33,17 +29,18 @@
 }
 
 .icon {
-  margin-right: 0.7rem;
+  margin-right: 0.5rem;
   display: flex;
   align-items: center;
+  line-height: 0;
 
   svg {
-    width: 1.2em;
-    height: 1.2em;
-    fill: currentColor;
+    width: 1.1em;
+    height: 1.1em;
+    display: block;
   }
 }
 
 .number {
-  // Można dodać specyficzne style dla numeru, jeśli jest taka potrzeba
+  line-height: 1;
 }

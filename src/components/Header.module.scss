@@ -1,10 +1,8 @@
-// src/components/Header.module.scss
-
-// Możesz importować zmienne z głównego pliku, jeśli chcesz je współdzielić
-// @import '../index.scss'; // Jeśli masz tam zmienne globalne
+@use '../index.scss' as *;
+@use 'sass:color';
 
 .header {
-  background-color: #ffffff;
+  background-color: $primary-color;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem 0;
   position: sticky;
