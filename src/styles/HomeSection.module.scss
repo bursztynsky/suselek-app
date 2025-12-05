@@ -3,45 +3,95 @@
 @use 'sass:color';
 
 .home {
-  background: linear-gradient(
-    135deg,
-    $primary-color 0%,
-    color.scale($primary-color, $lightness: 20%) 100%
-  );
+  background-color: $primary-color;
   color: $white-color;
-  padding: 6rem 1rem;
+  padding: 3rem 1rem 6rem;
   text-align: center;
 
   @media (min-width: 768px) {
-    padding: 10rem 1rem;
+    padding: 4rem 1rem 8rem;
+  }
+}
+
+.homeContainer {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+
+  @media (min-width: 968px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 
 .homeContent {
-  max-width: 900px;
-  margin: 0 auto;
+  flex: 1;
+  max-width: 700px;
+
+  @media (min-width: 968px) {
+    text-align: left;
+  }
+}
+
+.homeImage {
+  flex: 0 0 auto;
+  max-width: 500px;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (min-width: 968px) {
+    max-width: 450px;
+  }
 }
 
 .homeTitle {
-  font-size: 2.5rem;
-  font-weight: 800;
-  line-height: 1.2;
+  font-family: $primary-font-family;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 100%;
+  letter-spacing: 0;
   margin-bottom: 1.5rem;
 
+  span {
+    font-family: $primary-font-family;
+    font-weight: 275;
+    font-style: italic;
+    font-size: 64px;
+    line-height: 100%;
+    letter-spacing: 0;
+  }
+
   @media (min-width: 768px) {
-    font-size: 4rem;
+    font-size: 64px;
   }
 }
 
 .homeSubtitle {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  font-family: Lato;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0;
+
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
+  }
+
+  @media (min-width: 968px) {
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -50,6 +100,10 @@
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+
+  @media (min-width: 968px) {
+    justify-content: flex-start;
+  }
 }
 
 .callToActionButton,
@@ -72,7 +126,6 @@
 
   &:hover {
     background-color: color.scale($white-color, $lightness: -5%);
-    transform: translateY(-3px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
   }
 }
