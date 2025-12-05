@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './Header.module.scss';
+import styles from '../styles/Header.module.scss';
 import PhoneButton from './PhoneButton';
 import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
 
