@@ -1,0 +1,74 @@
+// src/components/GallerySection.module.scss
+@use '../index.scss' as *;
+@use 'sass:color';
+
+.gallerySection {
+  padding: 5rem 1rem;
+  background-color: $bg-color;
+}
+
+.galleryContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: $primary-color;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: $text-color;
+  margin-bottom: 3rem;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.galleryItem {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.imagePlaceholder {
+  background: linear-gradient(135deg, $primary-color, color.scale($primary-color, $lightness: 20%));
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $white-color;
+
+  span {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+}

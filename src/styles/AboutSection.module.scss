@@ -1,0 +1,51 @@
+// src/components/AboutSection.module.scss
+@use '../index.scss' as *;
+
+.aboutSection {
+  padding: 5rem 1rem;
+  background-color: $white-color;
+}
+
+.aboutContainer {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.aboutContent {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 2rem;
+}
+
+.aboutText {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: $text-color;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  li {
+    font-size: 1.1rem;
+    color: $primary-color;
+    font-weight: 500;
+  }
+}

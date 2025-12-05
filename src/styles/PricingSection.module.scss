@@ -1,0 +1,156 @@
+// src/components/PricingSection.module.scss
+@use '../index.scss' as *;
+@use 'sass:color';
+
+.pricingSection {
+  padding: 5rem 1rem;
+  background-color: $white-color;
+}
+
+.pricingContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  color: $primary-color;
+  margin-bottom: 1rem;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: $text-color;
+  margin-bottom: 3rem;
+}
+
+.pricingGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pricingCard {
+  background-color: $bg-color;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  &.featured {
+    background-color: $primary-color;
+    color: $white-color;
+    transform: scale(1.05);
+
+    .planName,
+    .price {
+      color: $white-color;
+    }
+
+    .featuresList li {
+      color: $white-color;
+    }
+
+    .ctaButton {
+      background-color: $white-color;
+      color: $primary-color;
+
+      &:hover {
+        background-color: color.scale($white-color, $lightness: -10%);
+      }
+    }
+  }
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: $secondary-color;
+  color: $primary-color;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.planName {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.priceContainer {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+}
+
+.unit {
+  font-size: 1rem;
+  color: $text-color;
+  margin-left: 0.5rem;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+
+  li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba($text-color, 0.1);
+    color: $text-color;
+
+    &:before {
+      content: '✓ ';
+      color: $primary-color;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.ctaButton {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: color.scale($primary-color, $lightness: -10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
