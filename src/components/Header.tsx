@@ -79,35 +79,29 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
-  const handleSectionClick = (sectionId: string) => (e: React.MouseEvent) => {
+  const scrollToElement = (elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleSectionClick = (sectionId: string, targetPath: string = '/') => (e: React.MouseEvent) => {
     e.preventDefault();
     closeMenu();
 
     // Gallery section exists on both pages, so just scroll on current page
     if (sectionId === 'galeria') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      scrollToElement(sectionId);
       return;
     }
 
-    // For other sections, navigate to home page if needed
-    if (location.pathname !== '/') {
-      navigate('/');
-      // Wait for navigation to complete, then scroll
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, 100);
+    // Navigate to target page if not already there, then scroll
+    if (location.pathname !== targetPath) {
+      navigate(targetPath);
+      setTimeout(() => scrollToElement(sectionId), 100);
     } else {
-      // Already on home page, just scroll
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
+      scrollToElement(sectionId);
     }
   };
 
@@ -161,28 +155,7 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <a
-              href="#o-mnie"
-              className={styles.navLink}
-              onClick={(e) => {
-                e.preventDefault();
-                closeMenu();
-                if (location.pathname !== '/about') {
-                  navigate('/about');
-                  setTimeout(() => {
-                    const element = document.getElementById('o-mnie');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                  }, 100);
-                } else {
-                  const element = document.getElementById('o-mnie');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                  }
-                }
-              }}
-            >
+            <a href="#o-mnie" className={styles.navLink} onClick={handleSectionClick('o-mnie', '/about')}>
               O nas
             </a>
           </li>
