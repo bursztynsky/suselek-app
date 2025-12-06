@@ -119,13 +119,13 @@
 .groomingBlock {
   background-image: url('../assets/about2.jpg');
   background-size: cover;
-  background-position: center top;
+  background-position: left 30%;
   background-repeat: no-repeat;
   flex: 1;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 3rem 2rem;
+  padding: 1.5rem 2rem 3rem 2rem;
   position: relative;
 
   &::before {
@@ -135,12 +135,11 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3);
     z-index: 0;
   }
 
   @media (min-width: 968px) {
-    padding: 4rem 3rem;
+    padding: 2rem 3rem 4rem 3rem;
   }
 }
 
