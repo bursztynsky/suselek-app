@@ -1,0 +1,120 @@
+// src/styles/ProfessionalCareSection.module.scss
+@use '../index.scss' as *;
+
+.professionalCareSection {
+  padding: 4rem 1rem;
+  background-color: $white-color;
+
+  @media (min-width: 768px) {
+    padding: 5rem 1rem;
+  }
+}
+
+.professionalCareContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.professionalCareContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 0;
+
+  @media (min-width: 968px) {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+  }
+}
+
+.professionalCareImage {
+  flex: 0 0 auto;
+  max-width: 100%;
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+  }
+
+  @media (min-width: 968px) {
+    max-width: 500px;
+  }
+}
+
+.professionalCareText {
+  flex: 1;
+  text-align: left;
+}
+
+.categoryBadge {
+  width: auto;
+  height: auto;
+  border-radius: 62px;
+  padding: 10px 20px;
+  display: inline-flex;
+  gap: 10px;
+  background: $bg-color-2;
+  font-family: $primary-font-family, $font-stack;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 1.25rem;
+  align-items: center;
+  justify-content: center;
+  color: $text-color;
+}
+
+.professionalCareTitle {
+  font-family: $primary-font-family, $font-stack;
+  font-weight: 275;
+  font-style: italic;
+  font-size: 64px;
+  line-height: 64px;
+  letter-spacing: 0;
+  text-align: left;
+  margin-bottom: 1.5rem;
+  color: $text-color;
+  max-width: 400px;
+
+  span {
+    font-family: $primary-font-family, $font-stack;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 64px;
+    line-height: 64px;
+    letter-spacing: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+    line-height: 40px;
+
+    span {
+      font-size: 40px;
+      line-height: 40px;
+    }
+  }
+}
+
+.professionalCareDescription {
+  font-family: $primary-font-family, $font-stack;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-align: left;
+  color: $text-color-2;
+  max-width: 490px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+}
+

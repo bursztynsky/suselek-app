@@ -3,7 +3,9 @@ import React from 'react';
 import HotelSection from '../components/HotelSection.tsx';
 import CheckOfferSection from '../components/ChekOfferSection';
 import AdvantagesSection from '../components/ProfessionalSection';
-import GallerySection from '../components/GallerySection';
+import ProfessionalCareSection from '../components/ProfessionalCareSection';
+import GroomingSection from '../components/GroomingSection';
+import AnimalPsychologySection from '../components/AnimalPsychologySection';
 import ReviewsSection from '../components/ReviewsSection';
 import InstagramSection from '../components/InstagramSection';
 
@@ -13,7 +15,9 @@ const LandingPage: React.FC = () => {
       <HotelSection />
       <CheckOfferSection />
       <AdvantagesSection />
-      <GallerySection />
+      <ProfessionalCareSection />
+      <GroomingSection />
+      <AnimalPsychologySection />
       <ReviewsSection />
       <InstagramSection />
     </>
