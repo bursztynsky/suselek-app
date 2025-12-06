@@ -26,10 +26,10 @@
 .contentContainer {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 4rem 1rem;
+  padding: 4rem 1rem 2rem 1rem;
 
   @media (min-width: 768px) {
-    padding: 6rem 1rem;
+    padding: 6rem 1rem 3rem 1rem;
   }
 }
 
@@ -78,7 +78,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
@@ -125,11 +125,10 @@
 }
 
 .footerNote {
-  background-color: $text-color-2;
   padding: 1.5rem 2rem;
   border-radius: 12px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
 
   @media (max-width: 768px) {
@@ -140,13 +139,13 @@
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   flex-shrink: 0;
 
   @media (max-width: 768px) {
-    width: 40px;
-    height: 40px;
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -156,7 +155,7 @@
   font-size: 14px;
   line-height: 120%;
   letter-spacing: 0;
-  color: $bg-color;
+  color: $text-color-2;
   margin: 0;
 
   strong {
