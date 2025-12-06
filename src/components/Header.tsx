@@ -9,7 +9,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const homeSection = document.getElementById('home');
+      const homeSection = document.getElementById('hotel');
       if (homeSection) {
         const homeSectionHeight = homeSection.offsetHeight;
         const scrollStart = homeSectionHeight * 0.3; // Start fading at 50% of home section

@@ -1,6 +1,6 @@
 // src/pages/LandingPage.tsx
 import React from 'react';
-import HomeSection from '../components/HomeSection';
+import HotelSection from '../components/HotelSection.tsx';
 import CheckOfferSection from '../components/ChekOfferSection';
 import ProfessionalSection from '../components/ProfessionalSection';
 import GallerySection from '../components/GallerySection';
@@ -10,7 +10,7 @@ import InstagramSection from '../components/InstagramSection';
 const LandingPage: React.FC = () => {
   return (
     <>
-      <HomeSection />
+      <HotelSection />
       <CheckOfferSection />
       <ProfessionalSection />
       <GallerySection />

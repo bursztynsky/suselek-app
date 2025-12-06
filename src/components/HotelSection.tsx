@@ -4,9 +4,9 @@ import styles from '../styles/HomeSection.module.scss';
 import krolik1 from '../assets/krolik1.png';
 import shape4 from '../assets/shape4.svg';
 
-const HomeSection: React.FC = () => {
+const HotelSection: React.FC = () => {
   return (
-    <section id="home" className={styles.home}>
+    <section id="hotel" className={styles.home}>
       <img src={shape4} alt="" className={styles.heartShape} />
       <div className={`${styles.homeContainer} container`}>
         <div className={styles.homeContent}>
@@ -32,4 +32,4 @@ const HomeSection: React.FC = () => {
   );
 };
 
-export default HomeSection;
+export default HotelSection;
