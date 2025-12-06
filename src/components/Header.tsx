@@ -34,9 +34,6 @@ const Header: React.FC = () => {
         if (section) {
           const bgColor = window.getComputedStyle(section).backgroundColor;
 
-          console.log('Section:', section.tagName, section.id || section.className);
-          console.log('Background Color:', bgColor);
-
           // Parse RGB values
           const rgbMatch = bgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
           if (rgbMatch) {
@@ -47,8 +44,6 @@ const Header: React.FC = () => {
             // Calculate relative luminance (perceived brightness)
             // Using the formula: 0.299*R + 0.587*G + 0.114*B
             const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-            console.log('Luminance:', luminance, 'Inverted:', luminance > 0.5);
 
             // If background is light (luminance > 0.5), use dark text (inverted)
             setInvertColors(luminance > 0.5);

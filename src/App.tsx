@@ -10,7 +10,7 @@ import ContactPage from './pages/ContactPage';
 
 const App: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/suselek-app">
       <div className="app-container">
         <Header />
         <main>
