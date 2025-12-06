@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.scss';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import LandingPage from './pages/LandingPage';
 import AboutPage from './pages/AboutPage';
 import ContactPage from './pages/ContactPage';
@@ -20,6 +21,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
         <Footer />
+        <ScrollToTopButton />
       </div>
     </Router>
   );

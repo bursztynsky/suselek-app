@@ -150,7 +150,7 @@
     color: $white-color;
 
     .inverted & {
-      color: darken($primary-color, 10%);
+      color: color.adjust($primary-color, $lightness: -10%);
 
       @media (max-width: 1024px) {
         color: $white-color; // Keep white hover on mobile
