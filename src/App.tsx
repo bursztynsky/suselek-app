@@ -10,6 +10,7 @@ import ContactSection from './components/ContactSection';
 import CheckOfferSection from './components/ChekOfferSection';
 import ProfessionalSection from './components/ProfessionalSection';
 import ReviewsSection from './components/ReviewsSection';
+import InstagramSection from './components/InstagramSection';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
@@ -24,6 +25,7 @@ const App: React.FC = () => {
         {/*<AboutSection/>*/}
         <GallerySection />
         <ReviewsSection />
+        <InstagramSection />
         {/*<PricingSection />*/}
         <ContactSection />
       </main>

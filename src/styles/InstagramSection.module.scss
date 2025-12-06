@@ -1,0 +1,153 @@
+// src/styles/InstagramSection.module.scss
+@use '../index.scss' as *;
+
+.instagramSection {
+  padding: 4rem 1rem;
+  background-color: $white-color;
+
+  @media (min-width: 768px) {
+    padding: 5rem 1rem;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.heading {
+  font-family: 'Lato', sans-serif;
+  font-weight: 275;
+  font-style: italic;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: $text-color;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+}
+
+.instagramLink {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: $primary-color;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.carouselWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 100%;
+}
+
+.carouselContainer {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.carousel {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding: 1rem 0;
+
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+  }
+
+  @media (min-width: 768px) {
+    overflow-x: hidden;
+  }
+}
+
+.carouselItem {
+  flex: 0 0 auto;
+  width: 243px;
+  height: 220px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (max-width: 768px) {
+    width: 200px;
+    height: 180px;
+  }
+}
+
+.carouselImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 1;
+}
+
+.carouselButton {
+  background-color: $primary-color;
+  color: $white-color;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 32px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 10;
+
+  &:hover:not(:disabled) {
+    background-color: darken($primary-color, 10%);
+    transform: scale(1.1);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.prevButton {
+  margin-right: 0.5rem;
+}
+
+.nextButton {
+  margin-left: 0.5rem;
+}
+
