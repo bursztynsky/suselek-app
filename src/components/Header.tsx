@@ -5,32 +5,70 @@ import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const [invertColors, setInvertColors] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const homeSection = document.getElementById('hotel');
-      if (homeSection) {
-        const homeSectionHeight = homeSection.offsetHeight;
-        const scrollStart = homeSectionHeight * 0.3; // Start fading at 50% of home section
-        const scrollEnd = homeSectionHeight * 0.7; // Fully opaque at 95% of home section
-        const currentScroll = window.scrollY;
+    const checkBackgroundColor = () => {
+      const header = document.querySelector('header');
+      if (!header) return;
 
-        if (currentScroll <= scrollStart) {
-          setScrollProgress(0);
-        } else if (currentScroll >= scrollEnd) {
-          setScrollProgress(1);
-        } else {
-          // Calculate progress between 0 and 1
-          const progress = (currentScroll - scrollStart) / (scrollEnd - scrollStart);
-          setScrollProgress(progress);
+      // Temporarily hide header to get element behind it
+      const originalPointerEvents = header.style.pointerEvents;
+      header.style.pointerEvents = 'none';
+
+      const headerRect = header.getBoundingClientRect();
+      const headerCenter = headerRect.top + headerRect.height / 2;
+
+      // Get element at header center position (with header pointer-events disabled)
+      const elementAtCenter = document.elementFromPoint(
+        window.innerWidth / 2,
+        headerCenter
+      );
+
+      // Restore header pointer events
+      header.style.pointerEvents = originalPointerEvents;
+
+      if (elementAtCenter) {
+        // Find the closest section or main container
+        const section = elementAtCenter.closest('section, main, body');
+        if (section) {
+          const bgColor = window.getComputedStyle(section).backgroundColor;
+
+          console.log('Section:', section.tagName, section.id || section.className);
+          console.log('Background Color:', bgColor);
+
+          // Parse RGB values
+          const rgbMatch = bgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+          if (rgbMatch) {
+            const r = parseInt(rgbMatch[1]);
+            const g = parseInt(rgbMatch[2]);
+            const b = parseInt(rgbMatch[3]);
+
+            // Calculate relative luminance (perceived brightness)
+            // Using the formula: 0.299*R + 0.587*G + 0.114*B
+            const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+            console.log('Luminance:', luminance, 'Inverted:', luminance > 0.5);
+
+            // If background is light (luminance > 0.5), use dark text (inverted)
+            setInvertColors(luminance > 0.5);
+          }
         }
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial state
-    return () => window.removeEventListener('scroll', handleScroll);
+    // Check on scroll and resize
+    window.addEventListener('scroll', checkBackgroundColor);
+    window.addEventListener('resize', checkBackgroundColor);
+
+    // Initial check after a short delay to ensure DOM is ready
+    const timer = setTimeout(checkBackgroundColor, 100);
+
+    return () => {
+      window.removeEventListener('scroll', checkBackgroundColor);
+      window.removeEventListener('resize', checkBackgroundColor);
+      clearTimeout(timer);
+    };
   }, []);
 
   const toggleMenu = () => {
@@ -41,12 +79,10 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+
   return (
     <header
-      className={styles.header}
-      style={{
-        backgroundColor: `rgba(62, 121, 121, ${scrollProgress})`
-      }}
+      className={`${styles.header} ${invertColors ? styles.inverted : ''}`}
     >
       <nav className={`${styles.navContainer} container`}>
         <div className={styles.logo}>
@@ -101,11 +137,11 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li className={styles.mobilePhoneButton}>
-            <PhoneButton phoneNumber="+48601155887" displayNumber="+48 601 155 887" />
+            <PhoneButton phoneNumber="+48601155887" displayNumber="+48 601 155 887" inverted={invertColors} />
           </li>
         </ul>
         <div className={styles.desktopPhoneButton}>
-          <PhoneButton phoneNumber="+48601155887" displayNumber="+48 601 155 887" />
+          <PhoneButton phoneNumber="+48601155887" displayNumber="+48 601 155 887" inverted={invertColors} />
         </div>
       </nav>
     </header>

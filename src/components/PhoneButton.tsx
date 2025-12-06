@@ -5,9 +5,10 @@ import styles from '../styles/PhoneButton.module.scss';
 interface PhoneButtonProps {
   phoneNumber: string;
   displayNumber?: string;
+  inverted?: boolean;
 }
 
-const PhoneButton: React.FC<PhoneButtonProps> = ({ phoneNumber, displayNumber }) => {
+const PhoneButton: React.FC<PhoneButtonProps> = ({ phoneNumber, displayNumber, inverted = false }) => {
   const formatPhoneNumber = (num: string) => {
     const cleaned = num.replace(/\D/g, '');
     const match = cleaned.match(/^(\+48)(\d{3})(\d{3})(\d{3})$/);
@@ -23,7 +24,7 @@ const PhoneButton: React.FC<PhoneButtonProps> = ({ phoneNumber, displayNumber })
   return (
     <a
       href={telLink}
-      className={styles.phoneButton}
+      className={`${styles.phoneButton} ${inverted ? styles.inverted : ''}`}
       aria-label={`Zadzwoń pod numer ${numberToDisplay}`}
     >
       <span className={styles.icon}>

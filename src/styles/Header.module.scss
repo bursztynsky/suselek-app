@@ -11,7 +11,10 @@
   width: 100%;
   z-index: 50;
   color: $secondary-color;
-  transition: background-color 0.5s ease-out;
+
+  &.inverted {
+    color: $primary-color;
+  }
 }
 
 .navContainer {
@@ -62,6 +65,10 @@
     background-color: $secondary-color;
     transition: all 0.3s ease;
     border-radius: 2px;
+
+    .inverted & {
+      background-color: $primary-color;
+    }
   }
 
   &.hamburgerOpen {
@@ -124,14 +131,31 @@
   transition: color 0.3s ease-in-out;
   white-space: nowrap;
 
+  .inverted & {
+    color: $primary-color;
+  }
+
   @media (max-width: 1024px) {
     font-size: 1.2rem;
     display: block;
     padding: 0.5rem 0;
+    color: $secondary-color; // Always white on mobile menu
+
+    .inverted & {
+      color: $secondary-color; // Keep white on mobile menu even when inverted
+    }
   }
 
   &:hover {
     color: $white-color;
+
+    .inverted & {
+      color: darken($primary-color, 10%);
+
+      @media (max-width: 1024px) {
+        color: $white-color; // Keep white hover on mobile
+      }
+    }
   }
 }
 
