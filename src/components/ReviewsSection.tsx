@@ -31,13 +31,28 @@ const mockReviews = [
 
 const ReviewsSection: React.FC = () => {
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const handlePrevReview = () => {
-    setCurrentReviewIndex(prevIndex => (prevIndex === 0 ? mockReviews.length - 1 : prevIndex - 1));
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentReviewIndex(prevIndex =>
+        prevIndex === 0 ? mockReviews.length - 1 : prevIndex - 1
+      );
+      setIsAnimating(false);
+    }, 300);
   };
 
   const handleNextReview = () => {
-    setCurrentReviewIndex(prevIndex => (prevIndex === mockReviews.length - 1 ? 0 : prevIndex + 1));
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentReviewIndex(prevIndex =>
+        prevIndex === mockReviews.length - 1 ? 0 : prevIndex + 1
+      );
+      setIsAnimating(false);
+    }, 300);
   };
 
   const currentReview = mockReviews[currentReviewIndex];
@@ -53,13 +68,15 @@ const ReviewsSection: React.FC = () => {
     <section id="reviews" className={styles.reviewsSection}>
       <div className={`${styles.reviewsContainer} container`}>
         <div className={styles.reviewCard}>
-          <div className={styles.reviewStars}>{renderStars(currentReview.rating)}</div>
+          <div key={currentReview.id} className={styles.reviewContent}>
+            <div className={styles.reviewStars}>{renderStars(currentReview.rating)}</div>
 
-          <h3 className={styles.reviewTitle}>{currentReview.title}</h3>
+            <h3 className={styles.reviewTitle}>{currentReview.title}</h3>
 
-          <p className={styles.reviewText}>{currentReview.text}</p>
+            <p className={styles.reviewText}>{currentReview.text}</p>
 
-          <p className={styles.reviewAuthor}>{currentReview.author}</p>
+            <p className={styles.reviewAuthor}>{currentReview.author}</p>
+          </div>
 
           <button
             className={`${styles.navigationButton} ${styles.buttonLeft}`}
