@@ -1,13 +1,21 @@
 import React from 'react';
-import styles from '../styles/AboutPage.module.scss';
+import AboutMeSection from '../components/AboutMeSection';
+import AboutHotelSection from '../components/AboutHotelSection';
+import AdditionalServicesSection from '../components/AdditionalServicesSection';
+import CheckAvailabilitySection from '../components/CheckAvailabilitySection';
+import LetsMeetBeforeSection from '../components/LetsMeetBeforeSection';
+import GallerySection from '../components/GallerySection';
+
 const AboutPage: React.FC = () => {
   return (
-    <div className={styles.aboutPage}>
-      <div className="container">
-        <h1>About Us</h1>
-        <p>About page content coming soon...</p>
-      </div>
-    </div>
+    <>
+      <AboutMeSection />
+      <AboutHotelSection />
+      <AdditionalServicesSection />
+      <CheckAvailabilitySection />
+      <LetsMeetBeforeSection />
+      <GallerySection />
+    </>
   );
 };
 export default AboutPage;

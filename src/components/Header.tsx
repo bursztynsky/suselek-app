@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import styles from '../styles/Header.module.scss';
 import PhoneButton from './PhoneButton';
 import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
@@ -86,7 +87,9 @@ const Header: React.FC = () => {
     >
       <nav className={`${styles.navContainer} container`}>
         <div className={styles.logo}>
-          <img src={SuselekLogo} alt="SUSELEK" />
+          <Link to="/">
+            <img src={SuselekLogo} alt="SUSELEK" />
+          </Link>
         </div>
 
         {/* Hamburger Menu Button */}
@@ -122,9 +125,9 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#o-nas" className={styles.navLink} onClick={closeMenu}>
+            <Link to="/about" className={styles.navLink} onClick={closeMenu}>
               O nas
-            </a>
+            </Link>
           </li>
           <li>
             <a href="#cennik" className={styles.navLink} onClick={closeMenu}>

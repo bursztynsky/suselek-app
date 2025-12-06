@@ -1,0 +1,80 @@
+@use '../index.scss' as *;
+
+.aboutMe {
+  background-color: $bg-color;
+  padding: 6rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 8rem 1rem;
+  }
+}
+
+.aboutMeContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+
+  @media (min-width: 968px) {
+    flex-direction: row;
+    gap: 4rem;
+    align-items: center;
+  }
+}
+
+.content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 2rem;
+  text-align: center;
+
+  @media (min-width: 968px) {
+    text-align: left;
+    font-size: 3rem;
+  }
+}
+
+.text {
+  color: $text-color;
+  font-size: 1.1rem;
+  line-height: 1.8;
+
+  p {
+    margin-bottom: 1.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.imageWrapper {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: $white-color;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+  p {
+    color: $text-color-2;
+    font-size: 1.2rem;
+  }
+}
+

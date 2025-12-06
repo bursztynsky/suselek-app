@@ -1,0 +1,184 @@
+@use '../index.scss' as *;
+@use 'sass:color';
+
+.checkAvailability {
+  background-color: $white-color;
+  padding: 6rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 8rem 1rem;
+  }
+}
+
+.availabilityContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  color: $text-color;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.formWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+
+  @media (min-width: 968px) {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.form {
+  background-color: $bg-color;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.input,
+.select,
+.textarea {
+  padding: 0.875rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-family: $primary-font-family;
+  transition: all 0.3s ease;
+  background-color: $white-color;
+
+  &:focus {
+    outline: none;
+    border-color: $primary-color;
+    box-shadow: 0 0 0 3px rgba(62, 121, 121, 0.1);
+  }
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem 2rem;
+  background-color: $primary-color;
+  color: $white-color;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: color.adjust($primary-color, $lightness: -10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.infoBox {
+  background-color: $bg-color-2;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 1.5rem;
+}
+
+.infoList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem 0;
+
+  li {
+    color: $text-color;
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.contactInfo {
+  background-color: $white-color;
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  border-left: 4px solid $primary-color;
+}
+
+.contactText {
+  color: $text-color;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+

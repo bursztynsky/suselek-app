@@ -1,0 +1,149 @@
+@use '../index.scss' as *;
+
+.letsMeetBefore {
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 6rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 8rem 1rem;
+  }
+}
+
+.meetContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+
+  @media (min-width: 968px) {
+    flex-direction: row;
+    gap: 4rem;
+  }
+}
+
+.content {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $white-color;
+  margin-bottom: 1.5rem;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+.text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: $white-color;
+}
+
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 3rem 0;
+}
+
+.benefit {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: flex-start;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.benefitIcon {
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.benefitContent {
+  flex: 1;
+}
+
+.benefitTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: $white-color;
+  margin-bottom: 0.5rem;
+}
+
+.benefitText {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.ctaBox {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.ctaText {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  color: $white-color;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: $white-color;
+  color: $primary-color;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.imageWrapper {
+  flex: 1;
+  max-width: 500px;
+  width: 100%;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+
+  p {
+    color: $white-color;
+    font-size: 1.2rem;
+  }
+}
+

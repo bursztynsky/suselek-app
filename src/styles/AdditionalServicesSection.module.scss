@@ -1,0 +1,119 @@
+@use '../index.scss' as *;
+
+.additionalServices {
+  background-color: $bg-color-2;
+  padding: 6rem 1rem;
+
+  @media (min-width: 768px) {
+    padding: 8rem 1rem;
+  }
+}
+
+.servicesContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: $primary-color;
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 3rem;
+  }
+}
+
+.subtitle {
+  max-width: 700px;
+  margin: 0 auto 4rem;
+  text-align: center;
+  color: $text-color;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.serviceCard {
+  background-color: $white-color;
+  padding: 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.serviceIcon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.serviceName {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: $primary-color;
+  margin-bottom: 1rem;
+}
+
+.serviceDescription {
+  color: $text-color;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.ctaSection {
+  text-align: center;
+  padding: 3rem 1rem;
+  background-color: $primary-color;
+  border-radius: 1rem;
+  color: $white-color;
+}
+
+.ctaText {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: $white-color;
+  color: $primary-color;
+  text-decoration: none;
+  border-radius: 2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
