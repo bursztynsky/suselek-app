@@ -15,8 +15,14 @@ const AboutMeSection: React.FC = () => {
             <p>Witam! Nazywam się Aleksandra Bursztyńska-Kostrzewa.</p>
             <p>
               Jestem technikiem weterynarii z ponad 6-letnim doświadczeniem w warszawskich
-              przychodniach: Oaza Anima Medicavet Pulsvet
+              przychodniach:
             </p>
+            <ul>
+              <li>Oaza</li>
+              <li>Anima</li>
+              <li>Medicavet</li>
+              <li>Pulsvet</li>
+            </ul>
             <p>Swoją wiedzę poszerzałam na wielu kursach i w szkołach.</p>
             <p>
               Od 19 lat specjalizuję się w tym, co kocham najbardziej – opiece nad królikami i
