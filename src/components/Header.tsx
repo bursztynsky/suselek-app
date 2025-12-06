@@ -64,7 +64,7 @@ const Header: React.FC = () => {
       window.removeEventListener('resize', checkBackgroundColor);
       clearTimeout(timer);
     };
-  }, []);
+  }, [location.pathname]); // Re-run when route changes
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
