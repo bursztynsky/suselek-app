@@ -70,7 +70,6 @@
 }
 
 .homeTitle {
-  font-family: $primary-font-family;
   font-weight: 700;
   font-size: 64px;
   line-height: 100%;
@@ -78,7 +77,6 @@
   margin-bottom: 1.5rem;
 
   span {
-    font-family: $primary-font-family;
     font-weight: 300;
     font-style: italic;
     font-size: 64px;
@@ -92,7 +90,6 @@
 }
 
 .homeSubtitle {
-  font-family: $primary-font-family, $font-stack;
   font-weight: 400;
   font-size: 18px;
   line-height: 100%;

@@ -67,7 +67,6 @@
 }
 
 .titleBold {
-  font-family: $primary-font-family;
   font-weight: 700;
   font-style: italic;
   font-size: 40px;
@@ -80,7 +79,6 @@
 }
 
 .titleLight {
-  font-family: $primary-font-family;
   font-weight: 300;
   font-style: italic;
   font-size: 40px;
@@ -151,7 +149,6 @@
 }
 
 .blockTitle {
-  font-family: $primary-font-family;
   font-weight: 700;
   font-style: normal;
   font-size: 24px;
@@ -166,7 +163,6 @@
 }
 
 .blockText {
-  font-family: $primary-font-family;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -182,7 +178,6 @@
 }
 
 .blockList {
-  font-family: $primary-font-family;
   font-weight: 400;
   font-style: normal;
   font-size: 16px;
@@ -223,4 +218,3 @@
   object-fit: cover;
   display: block;
 }
-

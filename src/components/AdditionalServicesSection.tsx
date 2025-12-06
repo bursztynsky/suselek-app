@@ -23,9 +23,7 @@ const AdditionalServicesSection: React.FC = () => {
           {/* Row 1: Psychology section */}
           <div className={styles.psychologyBlock}>
             <h3 className={styles.blockTitle}>Psychologia zwierząt</h3>
-            <p className={styles.blockText}>
-              Pomagam przy łączeniu zwierząt w stado:
-            </p>
+            <p className={styles.blockText}>Pomagam przy łączeniu zwierząt w stado:</p>
             <ul className={styles.blockList}>
               <li>online (konsultacje)</li>
               <li>osobiście (prowadzenie procesu łączenia)</li>
@@ -37,7 +35,8 @@ const AdditionalServicesSection: React.FC = () => {
             <div className={styles.groomingContent}>
               <h3 className={styles.blockTitle}>Grooming</h3>
               <p className={styles.blockText}>
-                strzyżenie królików<br />i świnek morskich
+                strzyżenie królików
+                <br />i świnek morskich
               </p>
             </div>
           </div>

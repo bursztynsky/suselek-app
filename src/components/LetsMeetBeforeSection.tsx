@@ -1,78 +1,55 @@
 import React from 'react';
 import styles from '../styles/LetsMeetBeforeSection.module.scss';
+import about4Image from '../assets/about4.jpg';
+import aboutIcon2 from '../assets/aboutIcon2.svg';
 
 const LetsMeetBeforeSection: React.FC = () => {
   return (
     <section id="poznajmy-sie" className={styles.letsMeetBefore}>
-      <div className={`${styles.meetContainer} container`}>
-        <div className={styles.content}>
-          <h2 className={styles.title}>Poznajmy się przed pobytem</h2>
-          <p className={styles.text}>
-            Przed pierwszym pobytem w hotelu "Susełek" bardzo zachęcamy do spotkania poznawczego. To
-            świetna okazja, aby:
-          </p>
+      {/* Hero Image */}
+      <div className={styles.heroImage}>
+        <img src={about4Image} alt="Poznajmy się" className={styles.image} />
+      </div>
 
-          <ul className={styles.benefitsList}>
-            <li className={styles.benefit}>
-              <span className={styles.benefitIcon}>🏠</span>
-              <div className={styles.benefitContent}>
-                <h3 className={styles.benefitTitle}>Poznać nasze miejsce</h3>
-                <p className={styles.benefitText}>
-                  Zwiedzisz hotel, zobaczysz gdzie będzie mieszkać Twój pupil i poznasz wszystkie
-                  przestrzenie.
-                </p>
-              </div>
-            </li>
+      {/* Content Section */}
+      <div className={`${styles.contentContainer} container`}>
+        <h2 className={styles.title}>
+          <span>Poznajmy się</span> przed pobytem
+        </h2>
 
-            <li className={styles.benefit}>
-              <span className={styles.benefitIcon}>🤝</span>
-              <div className={styles.benefitContent}>
-                <h3 className={styles.benefitTitle}>Poznać się osobiście</h3>
-                <p className={styles.benefitText}>
-                  Opowiesz mi o swoim zwierzęciu, jego przyzwyczajeniach, ulubionych przekąskach i
-                  specjalnych potrzebach.
-                </p>
-              </div>
-            </li>
+        <p className={styles.subtitle}>
+          Rozumiemy, że Wasi podopieczni to Wasz największy skarb. Dlatego:
+        </p>
 
-            <li className={styles.benefit}>
-              <span className={styles.benefitIcon}>🐰</span>
-              <div className={styles.benefitContent}>
-                <h3 className={styles.benefitTitle}>Twój pupil pozna otoczenie</h3>
-                <p className={styles.benefitText}>
-                  Zwierzę będzie mogło poznać nowe miejsce w obecności właściciela, co zmniejszy
-                  stres podczas właściwego pobytu.
-                </p>
-              </div>
-            </li>
-
-            <li className={styles.benefit}>
-              <span className={styles.benefitIcon}>❓</span>
-              <div className={styles.benefitContent}>
-                <h3 className={styles.benefitTitle}>Zadać pytania</h3>
-                <p className={styles.benefitText}>
-                  Będziesz mógł zapytać o wszystko, co Cię interesuje i rozwiać wszelkie wątpliwości
-                  dotyczące pobytu.
-                </p>
-              </div>
-            </li>
-          </ul>
-
-          <div className={styles.ctaBox}>
-            <p className={styles.ctaText}>
-              Spotkanie poznawcze jest <strong>całkowicie bezpłatne</strong>i nie zobowiązuje do
-              rezerwacji pobytu.
+        {/* Three Columns */}
+        <div className={styles.columnsGrid}>
+          <div className={styles.column}>
+            <div className={styles.number}>1</div>
+            <p className={styles.columnText}>
+              Możesz umówić się na wizytę zapoznawczą przed pobytem zwierzęcia
             </p>
-            <a href="#kontakt" className={styles.ctaButton}>
-              Umów spotkanie
-            </a>
+          </div>
+
+          <div className={styles.column}>
+            <div className={styles.number}>2</div>
+            <p className={styles.columnText}>Pokażę Ci hotelik i odpowiem na wszystkie pytania</p>
+          </div>
+
+          <div className={styles.column}>
+            <div className={styles.number}>3</div>
+            <p className={styles.columnText}>
+              Jeśli warunki będą odpowiadać – od razu podpiszemy umowę
+            </p>
           </div>
         </div>
 
-        <div className={styles.imageWrapper}>
-          <div className={styles.imagePlaceholder}>
-            <p>Zdjęcie wnętrza hotelu</p>
-          </div>
+        {/* Footer Note */}
+        <div className={styles.footerNote}>
+          <img src={aboutIcon2} alt="" className={styles.icon} />
+          <p className={styles.noteText}>
+            <strong>Prośba:</strong> hotelik mieści się w naszym domu rodzinnym, dlatego proszę nie
+            odwiedzajcie nas bez zapowiedzi. Pracujemy i żyjemy tu całą pięcioosobową rodziną.
+          </p>
         </div>
       </div>
     </section>

@@ -1,148 +1,165 @@
 @use '../index.scss' as *;
 
 .letsMeetBefore {
-  background-color: $primary-color;
-  color: $bg-color;
-  padding: 6rem 1rem;
+  background-color: $bg-color;
+  padding: 0;
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
 
   @media (min-width: 768px) {
-    padding: 8rem 1rem;
+    height: 500px;
   }
 }
 
-.meetContainer {
+.contentContainer {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-  align-items: center;
+  padding: 4rem 1rem;
 
-  @media (min-width: 968px) {
-    flex-direction: row;
-    gap: 4rem;
+  @media (min-width: 768px) {
+    padding: 6rem 1rem;
   }
-}
-
-.content {
-  flex: 1;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: $bg-color;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 56px;
+  line-height: 100%;
+  letter-spacing: 0;
+  text-align: center;
   margin-bottom: 1.5rem;
+  color: $text-color;
+
+  span {
+    font-weight: 700;
+    font-style: normal;
+    font-size: 56px;
+    line-height: 100%;
+    letter-spacing: 0;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 40px;
+
+    span {
+      font-size: 40px;
+    }
+  }
+}
+
+.subtitle {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0;
+  text-align: center;
+  color: $text-color;
+  margin-bottom: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.columnsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
 
   @media (min-width: 768px) {
-    font-size: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
   }
 }
 
-.text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-  color: $bg-color;
-}
-
-.benefitsList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 3rem 0;
-}
-
-.benefit {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-  align-items: flex-start;
-
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.benefitIcon {
-  font-size: 2.5rem;
-  flex-shrink: 0;
-}
-
-.benefitContent {
-  flex: 1;
-}
-
-.benefitTitle {
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: $bg-color;
-  margin-bottom: 0.5rem;
-}
-
-.benefitText {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.ctaBox {
-  background-color: rgba(255, 255, 255, 0.1);
+.column {
+  background-color: $bg-color-2;
+  border-radius: 24px;
   padding: 2rem;
-  border-radius: 1rem;
-  text-align: center;
-  backdrop-filter: blur(10px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 240px;
+  opacity: 1;
+
+  @media (min-width: 968px) {
+    max-width: 320px;
+  }
 }
 
-.ctaText {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
+.number {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 64px;
+  line-height: 64px;
+  letter-spacing: 0;
+  text-align: left;
+  color: $text-color;
+  margin-bottom: 1rem;
+}
+
+.columnText {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0;
+  color: $text-color-2;
+  margin: auto 0 0;
+}
+
+.footerNote {
+  background-color: $text-color-2;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.noteText {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0;
   color: $bg-color;
+  margin: 0;
 
   strong {
     font-weight: 700;
-  }
-}
-
-.ctaButton {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background-color: $bg-color;
-  color: $primary-color;
-  text-decoration: none;
-  border-radius: 2rem;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-}
-
-.imageWrapper {
-  flex: 1;
-  max-width: 500px;
-  width: 100%;
-}
-
-.imagePlaceholder {
-  width: 100%;
-  aspect-ratio: 4/3;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  backdrop-filter: blur(10px);
-
-  p {
-    color: $bg-color;
-    font-size: 1.2rem;
   }
 }
