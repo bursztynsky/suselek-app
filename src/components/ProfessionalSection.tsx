@@ -1,6 +1,6 @@
 // src/components/ProfessionalSection.tsx
 import React from 'react';
-import styles from '../styles/ProfessionalSection.module.scss';
+import styles from '../styles/AdvantagesSection.module.scss';
 import houseIcon from '../assets/house.svg';
 import leafesIcon from '../assets/leafes.svg';
 import heartIcon from '../assets/heart.svg';

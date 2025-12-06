@@ -1,6 +1,6 @@
 // src/components/HomeSection.tsx
 import React from 'react';
-import styles from '../styles/HomeSection.module.scss';
+import styles from '../styles/HotelSection.module.scss';
 import krolik1 from '../assets/krolik1.png';
 import shape4 from '../assets/shape4.svg';
 
