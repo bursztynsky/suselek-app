@@ -147,13 +147,13 @@
   }
 
   &:hover {
-    color: $white-color;
+    color: $bg-color;
 
     .inverted & {
       color: color.adjust($primary-color, $lightness: -10%);
 
       @media (max-width: 1024px) {
-        color: $white-color; // Keep white hover on mobile
+        color: $bg-color; // Keep white hover on mobile
       }
     }
   }

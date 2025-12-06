@@ -2,8 +2,8 @@
 @use '../index.scss' as *;
 
 .instagramSection {
-  padding: 3rem 1rem 6rem;
-  background-color: $white-color;
+  padding: 5rem 1rem;
+  background-color: $bg-color;
 
   @media (min-width: 768px) {
     padding: 4rem 1rem 8rem;

@@ -5,30 +5,32 @@ const AboutMeSection: React.FC = () => {
   return (
     <section id="o-mnie" className={styles.aboutMe}>
       <div className={`${styles.aboutMeContainer} container`}>
+        <div className={styles.imageWrapper}>
+          <img
+            src="/src/assets/aboutMe.png"
+            alt="Aleksandra Bursztyńska-Kostrzewa"
+            className={styles.image}
+          />
+        </div>
         <div className={styles.content}>
-          <h2 className={styles.title}>O mnie</h2>
+          <h2 className={styles.title}>Poznajmy się</h2>
           <div className={styles.text}>
             <p>
-              Nazywam się [Imię] i jestem właścicielką hotelu "Susełek".
-              Moja przygoda ze zwierzętami rozpoczęła się wiele lat temu,
-              a pasja do opieki nad królikami i gryzoniami towarzyszy mi od zawsze.
+              Witam! Nazywam się Aleksandra Bursztyńska-Kostrzewa.
             </p>
             <p>
-              Jako weterynarz z wieloletnim doświadczeniem, postanowiłam połączyć
-              swoją wiedzę medyczną z miłością do zwierząt, tworząc miejsce,
-              gdzie każdy podopieczny czuje się jak w domu.
+              Jestem technikiem weterynarii z ponad 6-letnim doświadczeniem w warszawskich przychodniach: Oaza Anima Medicavet Pulsvet
             </p>
             <p>
-              W hotelu "Susełek" każde zwierzę traktowane jest indywidualnie,
-              z pełnym szacunkiem dla jego potrzeb i charakteru. Zapewniam
-              profesjonalną opiekę, bezpieczeństwo i komfort podczas Twojej nieobecności.
+              Swoją wiedzę poszerzałam na wielu kursach i w szkołach.
+            </p>
+            <p>
+              Od 19 lat specjalizuję się w tym, co kocham najbardziej – opiece nad królikami i gryzoniami.
             </p>
           </div>
-        </div>
-        <div className={styles.imageWrapper}>
-          <div className={styles.imagePlaceholder}>
-            <p>Zdjęcie właścicielki</p>
-          </div>
+          <a href="#sprawdz-dostepnosc" className={styles.ctaButton}>
+            Sprawdź dostępność miejsc
+          </a>
         </div>
       </div>
     </section>

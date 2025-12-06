@@ -3,7 +3,7 @@
 
 .footer {
   background-color: $primary-color;
-  color: $white-color;
+  color: $bg-color;
   padding: 4rem 2rem 2rem;
 
   @media (max-width: 768px) {
@@ -96,7 +96,7 @@
   line-height: 100%;
   letter-spacing: 0;
   text-transform: uppercase;
-  color: $white-color;
+  color: $bg-color;
   margin: 0 0 0.5rem 0;
 }
 
@@ -107,7 +107,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
-  color: $white-color;
+  color: $bg-color;
   margin: 0;
 }
 
@@ -118,7 +118,7 @@
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
-  color: $white-color;
+  color: $bg-color;
   text-decoration: none;
   transition: opacity 0.3s ease;
   display: block;
@@ -151,21 +151,21 @@
   font-family: $primary-font-family, $font-stack;
   font-weight: 400;
   font-size: 14px;
-  color: rgba($white-color, 0.8);
+  color: rgba($bg-color, 0.8);
   margin: 0;
   align-items: center;
 
   a {
-    color: rgba($white-color, 0.8);
+    color: rgba($bg-color, 0.8);
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $white-color;
+      color: $bg-color;
     }
   }
 
   span {
-    color: rgba($white-color, 0.5);
+    color: rgba($bg-color, 0.5);
   }
 }

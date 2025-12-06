@@ -7,7 +7,7 @@
   color: $secondary-color;
   padding: 0.8rem 1.5rem;
   border-radius: 9999px;
-  border: 1px solid $white-color;
+  border: 1px solid $bg-color;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 600;
@@ -15,7 +15,7 @@
   cursor: pointer;
 
   &:hover {
-    background-color: $white-color;
+    background-color: $bg-color;
     color: $primary-color;
   }
 
