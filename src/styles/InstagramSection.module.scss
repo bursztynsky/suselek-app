@@ -2,16 +2,16 @@
 @use '../index.scss' as *;
 
 .instagramSection {
-  padding: 4rem 1rem;
+  padding: 3rem 1rem 2rem;
   background-color: $white-color;
 
   @media (min-width: 768px) {
-    padding: 5rem 1rem;
+    padding: 4rem 1rem 2rem;
   }
 }
 
 .container {
-  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -24,6 +24,9 @@
   letter-spacing: 0;
   text-align: center;
   margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
   color: $text-color;
 
   @media (max-width: 768px) {
@@ -38,7 +41,7 @@
   font-size: 40px;
   line-height: 100%;
   letter-spacing: 0;
-  color: $primary-color;
+  color: $text-color;
   text-decoration: none;
   transition: opacity 0.3s ease;
 
@@ -53,34 +56,29 @@
 
 .carouselWrapper {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  max-width: 100%;
+  width: 100%;
 }
 
 .carouselContainer {
   overflow: hidden;
   width: 100%;
-  max-width: 1000px;
 }
 
 .carousel {
   display: flex;
   gap: 16px;
   overflow-x: auto;
-  scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   padding: 1rem 0;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
 
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera */
-  }
-
-  @media (min-width: 768px) {
-    overflow-x: hidden;
   }
 }
 
@@ -91,7 +89,9 @@
   border-radius: 8px;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
     transform: scale(1.05);
@@ -111,43 +111,3 @@
   display: block;
   opacity: 1;
 }
-
-.carouselButton {
-  background-color: $primary-color;
-  color: $white-color;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 32px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  z-index: 10;
-
-  &:hover:not(:disabled) {
-    background-color: darken($primary-color, 10%);
-    transform: scale(1.1);
-  }
-
-  &:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-}
-
-.prevButton {
-  margin-right: 0.5rem;
-}
-
-.nextButton {
-  margin-left: 0.5rem;
-}
-
