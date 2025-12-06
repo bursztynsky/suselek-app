@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styles from '../styles/ReviewsSection.module.scss';
 import starIcon from '../assets/star.svg';
 import buttonLeft from '../assets/button-left.svg';
+import grassBackground from '../assets/grass.png';
 
 // Mock reviews data - this will be replaced with Google Maps API data later
 const mockReviews = [
@@ -66,7 +67,10 @@ const ReviewsSection: React.FC = () => {
 
   return (
     <section id="reviews" className={styles.reviewsSection}>
-      <div className={`${styles.reviewsContainer} container`}>
+      <div
+        className={`${styles.reviewsContainer} container`}
+        style={{ backgroundImage: `url(${grassBackground})` }}
+      >
         <div className={styles.reviewCard}>
           <div key={currentReview.id} className={styles.reviewContent}>
             <div className={styles.reviewStars}>{renderStars(currentReview.rating)}</div>
