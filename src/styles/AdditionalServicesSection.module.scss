@@ -1,118 +1,227 @@
 @use '../index.scss' as *;
 
 .additionalServices {
-  background-color: $bg-color-2;
-  padding: 6rem 1rem;
+  background-color: $bg-color;
+  padding: 0;
+}
 
-  @media (min-width: 768px) {
-    padding: 8rem 1rem;
+.servicesGrid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+
+  @media (min-width: 968px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    min-height: 600px;
   }
 }
 
-.servicesContainer {
-  max-width: 1200px;
-  margin: 0 auto;
+/* Column 1: Title with background image */
+.column1 {
+  background-image: url('../assets/about1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 4rem 2rem;
+  min-height: 400px;
+
+  @media (min-width: 968px) {
+    min-height: 600px;
+  }
+}
+
+.titleWrapper {
+  position: relative;
+  text-align: left;
+  margin-top: 2rem;
+}
+
+.icon {
+  position: absolute;
+  top: -50px;
+  right: -90px;
+  width: 60px;
+  height: 60px;
+  z-index: 1;
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 40px;
+    top: -40px;
+    right: -20px;
+  }
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: $primary-color;
-  margin-bottom: 1.5rem;
-  text-align: center;
-
-  @media (min-width: 768px) {
-    font-size: 3rem;
-  }
-}
-
-.subtitle {
-  max-width: 700px;
-  margin: 0 auto 4rem;
-  text-align: center;
-  color: $text-color;
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-.servicesList {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  margin-bottom: 4rem;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.serviceCard {
-  background-color: $bg-color;
-  padding: 2.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
-  }
-}
-
-.serviceIcon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.serviceName {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: $primary-color;
-  margin-bottom: 1rem;
-}
-
-.serviceDescription {
-  color: $text-color;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-.ctaSection {
-  text-align: center;
-  padding: 3rem 1rem;
-  background-color: $primary-color;
-  border-radius: 1rem;
+  gap: 0;
   color: $bg-color;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
-.ctaText {
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-}
+.titleBold {
+  font-family: $primary-font-family;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: 0;
 
-.ctaButton {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background-color: $bg-color;
-  color: $primary-color;
-  text-decoration: none;
-  border-radius: 2rem;
-  font-weight: 600;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  @media (max-width: 768px) {
+    font-size: 32px;
   }
 }
+
+.titleLight {
+  font-family: $primary-font-family;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: 0;
+
+  @media (max-width: 768px) {
+    font-size: 32px;
+  }
+}
+
+/* Column 2: Two rows */
+.column2 {
+  display: flex;
+  flex-direction: column;
+  min-height: 400px;
+
+  @media (min-width: 968px) {
+    min-height: 600px;
+  }
+}
+
+.psychologyBlock {
+  background-color: $bg-color-2;
+  padding: 3rem 2rem 2rem 2rem;
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  @media (min-width: 968px) {
+    padding: 4rem 3rem 2rem 3rem;
+  }
+}
+
+.groomingBlock {
+  background-image: url('../assets/about2.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3rem 2rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+  }
+
+  @media (min-width: 968px) {
+    padding: 4rem 3rem;
+  }
+}
+
+.groomingContent {
+  position: relative;
+  z-index: 1;
+  color: $bg-color;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.blockTitle {
+  font-family: $primary-font-family;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0;
+  margin: 0 0 1rem 0;
+  color: $text-color;
+
+  .groomingContent & {
+    color: $bg-color;
+  }
+}
+
+.blockText {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0;
+  margin: 0 0 1rem 0;
+  color: $text-color;
+
+  .groomingContent & {
+    color: $bg-color;
+    margin: 0;
+  }
+}
+
+.blockList {
+  font-family: $primary-font-family;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0;
+  color: $text-color;
+  margin: 0;
+  padding-left: 1.5rem;
+
+  li {
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/* Column 3: Photo */
+.column3 {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+
+  @media (min-width: 968px) {
+    min-height: 600px;
+  }
+}
+
+.photoWrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
