@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/AboutMeSection.module.scss';
+import aboutMeImage from '../assets/aboutMe.png';
 
 const AboutMeSection: React.FC = () => {
   return (
@@ -7,7 +8,7 @@ const AboutMeSection: React.FC = () => {
       <div className={`${styles.aboutMeContainer} container`}>
         <div className={styles.imageWrapper}>
           <img
-            src="/src/assets/aboutMe.png"
+            src={aboutMeImage}
             alt="Aleksandra Bursztyńska-Kostrzewa"
             className={styles.image}
           />

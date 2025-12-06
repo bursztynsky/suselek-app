@@ -1,6 +1,10 @@
 // src/components/InstagramSection.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '../styles/GallerySection.module.scss';
+import krolik1 from '../assets/krolik1.png';
+import krolik2 from '../assets/krolik2.png';
+import krolik3 from '../assets/krolik3.png';
+import swinka1 from '../assets/swinka1.png';
 
 interface InstagramPost {
   id: string;
@@ -14,37 +18,37 @@ interface InstagramPost {
 const placeholderPosts = [
   {
     id: '1',
-    media_url: '/src/assets/krolik1.png',
+    media_url: krolik1,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '2',
-    media_url: '/src/assets/krolik2.png',
+    media_url: krolik2,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '3',
-    media_url: '/src/assets/krolik3.png',
+    media_url: krolik3,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '4',
-    media_url: '/src/assets/swinka1.png',
+    media_url: swinka1,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '5',
-    media_url: '/src/assets/krolik1.png',
+    media_url: krolik1,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '6',
-    media_url: '/src/assets/krolik2.png',
+    media_url: krolik2,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
