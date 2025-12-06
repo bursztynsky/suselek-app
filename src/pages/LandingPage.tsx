@@ -7,7 +7,7 @@ import ProfessionalCareSection from '../components/ProfessionalCareSection';
 import GroomingSection from '../components/GroomingSection';
 import AnimalPsychologySection from '../components/AnimalPsychologySection';
 import ReviewsSection from '../components/ReviewsSection';
-import InstagramSection from '../components/InstagramSection';
+import GallerySection from '../components/GallerySection.tsx';
 
 const LandingPage: React.FC = () => {
   return (
@@ -19,7 +19,7 @@ const LandingPage: React.FC = () => {
       <GroomingSection />
       <AnimalPsychologySection />
       <ReviewsSection />
-      <InstagramSection />
+      <GallerySection />
     </>
   );
 };
