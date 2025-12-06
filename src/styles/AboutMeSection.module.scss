@@ -54,13 +54,13 @@
 }
 
 .title {
-  font-family: $primary-font-family;
-  font-weight: 275;
+  font-family: $primary-font-family, $font-stack;
+  font-weight: 300;
   font-style: italic;
   font-size: 64px;
   line-height: 64px;
   letter-spacing: 0;
-  color: $primary-color;
+  color: $text-color;
   margin-bottom: 0;
   text-align: center;
 
@@ -99,8 +99,8 @@
   width: 307px;
   height: 48px;
   padding: 0 32px;
-  background-color: transparent;
-  color: $primary-color;
+  background-color: $primary-color;
+  color: $bg-color;
   border: 1px solid $primary-color;
   border-radius: 50px;
   text-decoration: none;
@@ -112,8 +112,8 @@
   text-align: center;
 
   &:hover {
-    background-color: $primary-color;
-    color: $bg-color;
+    background-color: transparent;
+    color: $primary-color;
   }
 
   @media (max-width: 968px) {
