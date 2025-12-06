@@ -33,4 +33,3 @@ const ProfessionalCareSection: React.FC = () => {
 };
 
 export default ProfessionalCareSection;
-

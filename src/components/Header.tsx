@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import styles from '../styles/Header.module.scss';
 import PhoneButton from './PhoneButton';
 import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
@@ -7,6 +7,8 @@ import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [invertColors, setInvertColors] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const checkBackgroundColor = () => {
@@ -21,10 +23,7 @@ const Header: React.FC = () => {
       const headerCenter = headerRect.top + headerRect.height / 2;
 
       // Get element at header center position (with header pointer-events disabled)
-      const elementAtCenter = document.elementFromPoint(
-        window.innerWidth / 2,
-        headerCenter
-      );
+      const elementAtCenter = document.elementFromPoint(window.innerWidth / 2, headerCenter);
 
       // Restore header pointer events
       header.style.pointerEvents = originalPointerEvents;
@@ -80,11 +79,40 @@ const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  const handleSectionClick = (sectionId: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    closeMenu();
+
+    // Gallery section exists on both pages, so just scroll on current page
+    if (sectionId === 'galeria') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      return;
+    }
+
+    // For other sections, navigate to home page if needed
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Wait for navigation to complete, then scroll
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    } else {
+      // Already on home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
 
   return (
-    <header
-      className={`${styles.header} ${invertColors ? styles.inverted : ''}`}
-    >
+    <header className={`${styles.header} ${invertColors ? styles.inverted : ''}`}>
       <nav className={`${styles.navContainer} container`}>
         <div className={styles.logo}>
           <Link to="/">
@@ -105,22 +133,30 @@ const Header: React.FC = () => {
 
         <ul className={`${styles.navList} ${isMenuOpen ? styles.navListOpen : ''}`}>
           <li>
-            <a href="#hotel" className={styles.navLink} onClick={closeMenu}>
+            <a href="#hotel" className={styles.navLink} onClick={handleSectionClick('hotel')}>
               Hotel dla zwierząt
             </a>
           </li>
           <li>
-            <a href="#strzyzenie" className={styles.navLink} onClick={closeMenu}>
+            <a
+              href="#strzyzenie"
+              className={styles.navLink}
+              onClick={handleSectionClick('strzyzenie')}
+            >
               Strzyżenie
             </a>
           </li>
           <li>
-            <a href="#psychologia" className={styles.navLink} onClick={closeMenu}>
+            <a
+              href="#psychologia"
+              className={styles.navLink}
+              onClick={handleSectionClick('psychologia')}
+            >
               Psychologia zwierząt
             </a>
           </li>
           <li>
-            <a href="#galeria" className={styles.navLink} onClick={closeMenu}>
+            <a href="#galeria" className={styles.navLink} onClick={handleSectionClick('galeria')}>
               Galeria
             </a>
           </li>
@@ -130,21 +166,33 @@ const Header: React.FC = () => {
             </Link>
           </li>
           <li>
-            <a href="#cennik" className={styles.navLink} onClick={closeMenu}>
+            <a href="#cennik" className={styles.navLink} onClick={handleSectionClick('cennik')}>
               Cennik
             </a>
           </li>
           <li>
-            <a href="#regulamin" className={styles.navLink} onClick={closeMenu}>
+            <a
+              href="#regulamin"
+              className={styles.navLink}
+              onClick={handleSectionClick('regulamin')}
+            >
               Regulamin
             </a>
           </li>
           <li className={styles.mobilePhoneButton}>
-            <PhoneButton phoneNumber="+48601155887" displayNumber="+48 601 155 887" inverted={invertColors} />
+            <PhoneButton
+              phoneNumber="+48601155887"
+              displayNumber="+48 601 155 887"
+              inverted={invertColors}
+            />
           </li>
         </ul>
         <div className={styles.desktopPhoneButton}>
-          <PhoneButton phoneNumber="+48601155887" displayNumber="+48 601 155 887" inverted={invertColors} />
+          <PhoneButton
+            phoneNumber="+48601155887"
+            displayNumber="+48 601 155 887"
+            inverted={invertColors}
+          />
         </div>
       </nav>
     </header>

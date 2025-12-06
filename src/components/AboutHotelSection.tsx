@@ -8,10 +8,9 @@ const AboutHotelSection: React.FC = () => {
         <h2 className={styles.title}>O hotelu</h2>
         <div className={styles.description}>
           <p>
-            Hotel "Susełek" to wyjątkowe miejsce stworzone z myślą o komforcie
-            i bezpieczeństwie królików oraz gryzoni. Znajduje się w spokojnej
-            okolicy pod Warszawą, w domowym środowisku, które sprzyja relaksowi
-            i dobremu samopoczuciu zwierząt.
+            Hotel "Susełek" to wyjątkowe miejsce stworzone z myślą o komforcie i bezpieczeństwie
+            królików oraz gryzoni. Znajduje się w spokojnej okolicy pod Warszawą, w domowym
+            środowisku, które sprzyja relaksowi i dobremu samopoczuciu zwierząt.
           </p>
         </div>
 
@@ -20,8 +19,8 @@ const AboutHotelSection: React.FC = () => {
             <div className={styles.featureIcon}>🏠</div>
             <h3 className={styles.featureTitle}>Domowa atmosfera</h3>
             <p className={styles.featureText}>
-              Podopieczni mieszkają na parterze naszego domu, w przestrzeni
-              specjalnie przygotowanej dla ich potrzeb.
+              Podopieczni mieszkają na parterze naszego domu, w przestrzeni specjalnie przygotowanej
+              dla ich potrzeb.
             </p>
           </div>
 
@@ -29,8 +28,8 @@ const AboutHotelSection: React.FC = () => {
             <div className={styles.featureIcon}>👩‍⚕️</div>
             <h3 className={styles.featureTitle}>Opieka weterynaryjna</h3>
             <p className={styles.featureText}>
-              Jako weterynarz zapewniam profesjonalną opiekę zdrowotną
-              i natychmiastową reakcję w razie potrzeby.
+              Jako weterynarz zapewniam profesjonalną opiekę zdrowotną i natychmiastową reakcję w
+              razie potrzeby.
             </p>
           </div>
 
@@ -38,8 +37,8 @@ const AboutHotelSection: React.FC = () => {
             <div className={styles.featureIcon}>🌿</div>
             <h3 className={styles.featureTitle}>Zdrowa dieta</h3>
             <p className={styles.featureText}>
-              Świeże warzywa, wysokiej jakości siano i dostosowane do
-              indywidualnych potrzeb posiłki.
+              Świeże warzywa, wysokiej jakości siano i dostosowane do indywidualnych potrzeb
+              posiłki.
             </p>
           </div>
 
@@ -47,8 +46,7 @@ const AboutHotelSection: React.FC = () => {
             <div className={styles.featureIcon}>🎯</div>
             <h3 className={styles.featureTitle}>Indywidualne podejście</h3>
             <p className={styles.featureText}>
-              Każde zwierzę ma swój własny harmonogram i plan opieki
-              dostosowany do jego charakteru.
+              Każde zwierzę ma swój własny harmonogram i plan opieki dostosowany do jego charakteru.
             </p>
           </div>
 
@@ -56,8 +54,7 @@ const AboutHotelSection: React.FC = () => {
             <div className={styles.featureIcon}>📸</div>
             <h3 className={styles.featureTitle}>Relacje dla właścicieli</h3>
             <p className={styles.featureText}>
-              Regularnie wysyłamy zdjęcia i wiadomości o samopoczuciu
-              Twojego pupila.
+              Regularnie wysyłamy zdjęcia i wiadomości o samopoczuciu Twojego pupila.
             </p>
           </div>
 
@@ -65,8 +62,7 @@ const AboutHotelSection: React.FC = () => {
             <div className={styles.featureIcon}>🔒</div>
             <h3 className={styles.featureTitle}>Bezpieczeństwo</h3>
             <p className={styles.featureText}>
-              Monitorowane przestrzenie, bezpieczne wybiegi i stała obecność
-              opiekuna w domu.
+              Monitorowane przestrzenie, bezpieczne wybiegi i stała obecność opiekuna w domu.
             </p>
           </div>
         </div>
@@ -76,4 +72,3 @@ const AboutHotelSection: React.FC = () => {
 };
 
 export default AboutHotelSection;
-

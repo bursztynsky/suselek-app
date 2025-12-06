@@ -7,8 +7,8 @@ const CheckAvailabilitySection: React.FC = () => {
       <div className={`${styles.availabilityContainer} container`}>
         <h2 className={styles.title}>Sprawdź dostępność</h2>
         <p className={styles.subtitle}>
-          Zaplanuj pobyt swojego pupila w hotelu "Susełek". Sprawdź dostępne
-          terminy i zarezerwuj miejsce już dziś!
+          Zaplanuj pobyt swojego pupila w hotelu "Susełek". Sprawdź dostępne terminy i zarezerwuj
+          miejsce już dziś!
         </p>
 
         <div className={styles.formWrapper}>
@@ -18,24 +18,14 @@ const CheckAvailabilitySection: React.FC = () => {
                 <label htmlFor="checkIn" className={styles.label}>
                   Data przyjazdu
                 </label>
-                <input
-                  type="date"
-                  id="checkIn"
-                  className={styles.input}
-                  required
-                />
+                <input type="date" id="checkIn" className={styles.input} required />
               </div>
 
               <div className={styles.formGroup}>
                 <label htmlFor="checkOut" className={styles.label}>
                   Data wyjazdu
                 </label>
-                <input
-                  type="date"
-                  id="checkOut"
-                  className={styles.input}
-                  required
-                />
+                <input type="date" id="checkOut" className={styles.input} required />
               </div>
             </div>
 
@@ -115,4 +105,3 @@ const CheckAvailabilitySection: React.FC = () => {
 };
 
 export default CheckAvailabilitySection;
-

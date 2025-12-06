@@ -8,8 +8,8 @@ const LetsMeetBeforeSection: React.FC = () => {
         <div className={styles.content}>
           <h2 className={styles.title}>Poznajmy się przed pobytem</h2>
           <p className={styles.text}>
-            Przed pierwszym pobytem w hotelu "Susełek" bardzo zachęcamy do spotkania
-            poznawczego. To świetna okazja, aby:
+            Przed pierwszym pobytem w hotelu "Susełek" bardzo zachęcamy do spotkania poznawczego. To
+            świetna okazja, aby:
           </p>
 
           <ul className={styles.benefitsList}>
@@ -18,8 +18,8 @@ const LetsMeetBeforeSection: React.FC = () => {
               <div className={styles.benefitContent}>
                 <h3 className={styles.benefitTitle}>Poznać nasze miejsce</h3>
                 <p className={styles.benefitText}>
-                  Zwiedzisz hotel, zobaczysz gdzie będzie mieszkać Twój pupil
-                  i poznasz wszystkie przestrzenie.
+                  Zwiedzisz hotel, zobaczysz gdzie będzie mieszkać Twój pupil i poznasz wszystkie
+                  przestrzenie.
                 </p>
               </div>
             </li>
@@ -29,8 +29,8 @@ const LetsMeetBeforeSection: React.FC = () => {
               <div className={styles.benefitContent}>
                 <h3 className={styles.benefitTitle}>Poznać się osobiście</h3>
                 <p className={styles.benefitText}>
-                  Opowiesz mi o swoim zwierzęciu, jego przyzwyczajeniach,
-                  ulubionych przekąskach i specjalnych potrzebach.
+                  Opowiesz mi o swoim zwierzęciu, jego przyzwyczajeniach, ulubionych przekąskach i
+                  specjalnych potrzebach.
                 </p>
               </div>
             </li>
@@ -40,8 +40,8 @@ const LetsMeetBeforeSection: React.FC = () => {
               <div className={styles.benefitContent}>
                 <h3 className={styles.benefitTitle}>Twój pupil pozna otoczenie</h3>
                 <p className={styles.benefitText}>
-                  Zwierzę będzie mogło poznać nowe miejsce w obecności właściciela,
-                  co zmniejszy stres podczas właściwego pobytu.
+                  Zwierzę będzie mogło poznać nowe miejsce w obecności właściciela, co zmniejszy
+                  stres podczas właściwego pobytu.
                 </p>
               </div>
             </li>
@@ -51,8 +51,8 @@ const LetsMeetBeforeSection: React.FC = () => {
               <div className={styles.benefitContent}>
                 <h3 className={styles.benefitTitle}>Zadać pytania</h3>
                 <p className={styles.benefitText}>
-                  Będziesz mógł zapytać o wszystko, co Cię interesuje i rozwiać
-                  wszelkie wątpliwości dotyczące pobytu.
+                  Będziesz mógł zapytać o wszystko, co Cię interesuje i rozwiać wszelkie wątpliwości
+                  dotyczące pobytu.
                 </p>
               </div>
             </li>
@@ -60,8 +60,8 @@ const LetsMeetBeforeSection: React.FC = () => {
 
           <div className={styles.ctaBox}>
             <p className={styles.ctaText}>
-              Spotkanie poznawcze jest <strong>całkowicie bezpłatne</strong>
-              i nie zobowiązuje do rezerwacji pobytu.
+              Spotkanie poznawcze jest <strong>całkowicie bezpłatne</strong>i nie zobowiązuje do
+              rezerwacji pobytu.
             </p>
             <a href="#kontakt" className={styles.ctaButton}>
               Umów spotkanie
@@ -80,4 +80,3 @@ const LetsMeetBeforeSection: React.FC = () => {
 };
 
 export default LetsMeetBeforeSection;
-

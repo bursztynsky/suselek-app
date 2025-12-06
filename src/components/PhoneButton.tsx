@@ -8,7 +8,11 @@ interface PhoneButtonProps {
   inverted?: boolean;
 }
 
-const PhoneButton: React.FC<PhoneButtonProps> = ({ phoneNumber, displayNumber, inverted = false }) => {
+const PhoneButton: React.FC<PhoneButtonProps> = ({
+  phoneNumber,
+  displayNumber,
+  inverted = false,
+}) => {
   const formatPhoneNumber = (num: string) => {
     const cleaned = num.replace(/\D/g, '');
     const match = cleaned.match(/^(\+48)(\d{3})(\d{3})(\d{3})$/);

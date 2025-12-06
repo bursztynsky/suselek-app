@@ -34,4 +34,3 @@ const GroomingSection: React.FC = () => {
 };
 
 export default GroomingSection;
-

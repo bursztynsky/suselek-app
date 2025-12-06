@@ -15,17 +15,15 @@ const AboutMeSection: React.FC = () => {
         <div className={styles.content}>
           <h2 className={styles.title}>Poznajmy się</h2>
           <div className={styles.text}>
+            <p>Witam! Nazywam się Aleksandra Bursztyńska-Kostrzewa.</p>
             <p>
-              Witam! Nazywam się Aleksandra Bursztyńska-Kostrzewa.
+              Jestem technikiem weterynarii z ponad 6-letnim doświadczeniem w warszawskich
+              przychodniach: Oaza Anima Medicavet Pulsvet
             </p>
+            <p>Swoją wiedzę poszerzałam na wielu kursach i w szkołach.</p>
             <p>
-              Jestem technikiem weterynarii z ponad 6-letnim doświadczeniem w warszawskich przychodniach: Oaza Anima Medicavet Pulsvet
-            </p>
-            <p>
-              Swoją wiedzę poszerzałam na wielu kursach i w szkołach.
-            </p>
-            <p>
-              Od 19 lat specjalizuję się w tym, co kocham najbardziej – opiece nad królikami i gryzoniami.
+              Od 19 lat specjalizuję się w tym, co kocham najbardziej – opiece nad królikami i
+              gryzoniami.
             </p>
           </div>
           <a href="#sprawdz-dostepnosc" className={styles.ctaButton}>
@@ -38,4 +36,3 @@ const AboutMeSection: React.FC = () => {
 };
 
 export default AboutMeSection;
-

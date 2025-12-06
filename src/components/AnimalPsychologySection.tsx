@@ -34,4 +34,3 @@ const AnimalPsychologySection: React.FC = () => {
 };
 
 export default AnimalPsychologySection;
-
