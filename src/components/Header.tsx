@@ -161,9 +161,30 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <Link to="/about" className={styles.navLink} onClick={closeMenu}>
+            <a
+              href="#o-mnie"
+              className={styles.navLink}
+              onClick={(e) => {
+                e.preventDefault();
+                closeMenu();
+                if (location.pathname !== '/about') {
+                  navigate('/about');
+                  setTimeout(() => {
+                    const element = document.getElementById('o-mnie');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }, 100);
+                } else {
+                  const element = document.getElementById('o-mnie');
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  }
+                }
+              }}
+            >
               O nas
-            </Link>
+            </a>
           </li>
           <li>
             <a href="#cennik" className={styles.navLink} onClick={handleSectionClick('cennik')}>
