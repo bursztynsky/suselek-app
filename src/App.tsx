@@ -3,7 +3,6 @@ import './index.scss';
 import Header from './components/Header';
 import HomeSection from './components/HomeSection';
 import GallerySection from './components/GallerySection';
-import ContactSection from './components/ContactSection';
 import CheckOfferSection from './components/ChekOfferSection';
 import ProfessionalSection from './components/ProfessionalSection';
 import ReviewsSection from './components/ReviewsSection';
@@ -21,7 +20,6 @@ const App: React.FC = () => {
         <GallerySection />
         <ReviewsSection />
         <InstagramSection />
-        <ContactSection />
       </main>
       <Footer />
     </div>
