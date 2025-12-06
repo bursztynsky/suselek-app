@@ -81,24 +81,26 @@ const Header: React.FC = () => {
     }
   };
 
-  const handleSectionClick = (sectionId: string, targetPath: string = '/') => (e: React.MouseEvent) => {
-    e.preventDefault();
-    closeMenu();
+  const handleSectionClick =
+    (sectionId: string, targetPath: string = '/') =>
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      closeMenu();
 
-    // Gallery section exists on both pages, so just scroll on current page
-    if (sectionId === 'galeria') {
-      scrollToElement(sectionId);
-      return;
-    }
+      // Gallery section exists on both pages, so just scroll on current page
+      if (sectionId === 'galeria') {
+        scrollToElement(sectionId);
+        return;
+      }
 
-    // Navigate to target page if not already there, then scroll
-    if (location.pathname !== targetPath) {
-      navigate(targetPath);
-      setTimeout(() => scrollToElement(sectionId), 100);
-    } else {
-      scrollToElement(sectionId);
-    }
-  };
+      // Navigate to target page if not already there, then scroll
+      if (location.pathname !== targetPath) {
+        navigate(targetPath);
+        setTimeout(() => scrollToElement(sectionId), 100);
+      } else {
+        scrollToElement(sectionId);
+      }
+    };
 
   return (
     <header className={`${styles.header} ${invertColors ? styles.inverted : ''}`}>
@@ -150,7 +152,11 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li>
-            <a href="#o-mnie" className={styles.navLink} onClick={handleSectionClick('o-mnie', '/about')}>
+            <a
+              href="#o-mnie"
+              className={styles.navLink}
+              onClick={handleSectionClick('o-mnie', '/about')}
+            >
               O nas
             </a>
           </li>
