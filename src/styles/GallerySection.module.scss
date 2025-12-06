@@ -95,7 +95,6 @@
   margin-bottom: 1.5rem;
   color: $text-color;
   max-width: 400px;
-  leading-trim: NONE;
 
   span {
     font-family: $primary-font-family;
@@ -118,7 +117,7 @@
 }
 
 .galleryDescription {
-  font-family: $primary-font-family;
+  font-family: $primary-font-family, $font-stack;
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;

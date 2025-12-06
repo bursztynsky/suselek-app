@@ -2,10 +2,12 @@
 import React from 'react';
 import styles from '../styles/HomeSection.module.scss';
 import krolik1 from '../assets/krolik1.png';
+import shape4 from '../assets/shape4.svg';
 
 const HomeSection: React.FC = () => {
   return (
     <section id="home" className={styles.home}>
+      <img src={shape4} alt="" className={styles.heartShape} />
       <div className={`${styles.homeContainer} container`}>
         <div className={styles.homeContent}>
           <h1 className={styles.homeTitle}>

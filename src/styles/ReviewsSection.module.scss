@@ -138,13 +138,13 @@
 }
 
 .reviewText {
-  font-family: $primary-font-family;
+  font-family: $primary-font-family, $font-stack;
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
   letter-spacing: 0;
   text-align: center;
-  color: #767676;
+  color: $text-color-2;
   max-width: 400px;
   margin: 0;
 
@@ -154,13 +154,13 @@
 }
 
 .reviewAuthor {
-  font-family: $primary-font-family;
+  font-family: $primary-font-family, $font-stack;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   letter-spacing: 0;
   text-align: center;
-  color: #292929;
+  color: $text-color;
   margin: 0.5rem 0 0;
 }
 

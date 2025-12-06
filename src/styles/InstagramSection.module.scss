@@ -16,7 +16,7 @@
 }
 
 .heading {
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font-family, $font-stack;
   font-weight: 275;
   font-style: italic;
   font-size: 40px;
@@ -35,9 +35,8 @@
 }
 
 .instagramLink {
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font-family, $font-stack;
   font-weight: 400;
-  font-style: normal;
   font-size: 40px;
   line-height: 100%;
   letter-spacing: 0;

@@ -1,10 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from '../styles/Header.module.scss';
 import PhoneButton from './PhoneButton';
 import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const homeSection = document.getElementById('home');
+      if (homeSection) {
+        const homeSectionHeight = homeSection.offsetHeight;
+        const scrollStart = homeSectionHeight * 0.3; // Start fading at 50% of home section
+        const scrollEnd = homeSectionHeight * 0.7; // Fully opaque at 95% of home section
+        const currentScroll = window.scrollY;
+
+        if (currentScroll <= scrollStart) {
+          setScrollProgress(0);
+        } else if (currentScroll >= scrollEnd) {
+          setScrollProgress(1);
+        } else {
+          // Calculate progress between 0 and 1
+          const progress = (currentScroll - scrollStart) / (scrollEnd - scrollStart);
+          setScrollProgress(progress);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initial state
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,7 +42,12 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className={styles.header}>
+    <header
+      className={styles.header}
+      style={{
+        backgroundColor: `rgba(62, 121, 121, ${scrollProgress})`
+      }}
+    >
       <nav className={`${styles.navContainer} container`}>
         <div className={styles.logo}>
           <img src={SuselekLogo} alt="SUSELEK" />

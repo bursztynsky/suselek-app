@@ -148,7 +148,7 @@
 }
 
 .copyright {
-  font-family: 'Lato', sans-serif;
+  font-family: $primary-font-family, $font-stack;
   font-weight: 400;
   font-size: 14px;
   color: rgba($white-color, 0.8);

@@ -6,6 +6,7 @@ $secondary-color: #ffffff;
 $text-color: #292929;
 $text-color-2: #767676;
 $bg-color: #f0f2f5;
+$bg-color-2: #f8f6f2;
 $white-color: #ffffff;
 $shadow-color: rgba(0, 0, 0, 0.1);
 
@@ -73,3 +74,15 @@ a {
   margin: 0 auto;
   padding: 0 1rem; // Padding po bokach dla responsywności
 }
+
+// Ensure no gaps at the top of the page
+.app-container {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
