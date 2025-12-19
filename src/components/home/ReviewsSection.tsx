@@ -85,15 +85,17 @@ const ReviewsSection: React.FC = () => {
       className="bg-white md:bg-white py-8 md:py-20 px-4 bg-no-repeat bg-cover bg-center"
       style={{
         backgroundImage: `url(${grassBackground.src})`,
-        backgroundSize: 'cover'
+        backgroundSize: 'cover',
       }}
     >
       <div className="container mx-auto max-w-[var(--width-container)]">
         {/* Grass background container - only on desktop */}
-        <div
-          className="relative rounded-3xl md:p-16 md:bg-no-repeat md:bg-cover md:bg-center"
-          style={{ backgroundImage: window.innerWidth >= 768 ? `url(${grassBackground.src})` : 'none' }}
-        >
+        <div className="relative rounded-3xl md:p-16">
+          {/* Desktop grass background - applied via Tailwind */}
+          <div
+            className="hidden md:block absolute inset-0 rounded-3xl bg-no-repeat bg-cover bg-center -z-10"
+            style={{ backgroundImage: `url(${grassBackground.src})` }}
+          ></div>
           {/* White rounded card with content */}
           <div className="relative bg-secondary rounded-3xl px-4 py-6 md:p-12 shadow-xl max-w-[280px] md:max-w-5xl mx-auto">
             <div
@@ -125,7 +127,9 @@ const ReviewsSection: React.FC = () => {
                 )}
               </div>
 
-              <p className="text-black text-[12px] md:text-[14px] font-normal h-[20px] flex items-center justify-center">{currentReview.author}</p>
+              <p className="text-black text-[12px] md:text-[14px] font-normal h-[20px] flex items-center justify-center">
+                {currentReview.author}
+              </p>
             </div>
 
             {/* Desktop navigation buttons inside white card */}

@@ -65,7 +65,6 @@ const GallerySection: React.FC = () => {
     }, 500);
   }, []);
 
-
   if (loading) {
     return (
       <section className="bg-white py-20">

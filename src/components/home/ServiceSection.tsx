@@ -58,7 +58,9 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
               )}
             </h2>
 
-            <p className="text-[#767676] text-base leading-relaxed [orphans:3] [widows:3]">{description}</p>
+            <p className="text-[#767676] text-base leading-relaxed [orphans:3] [widows:3]">
+              {description}
+            </p>
           </div>
         </div>
 
@@ -87,7 +89,9 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
               )}
             </h2>
 
-            <p className="text-black text-base md:text-lg leading-relaxed [orphans:3] [widows:3]">{description}</p>
+            <p className="text-black text-base md:text-lg leading-relaxed [orphans:3] [widows:3]">
+              {description}
+            </p>
           </div>
         </div>
       </div>
