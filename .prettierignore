@@ -1,9 +1,10 @@
 # Dependencies
 node_modules
 
-# Production
-dist
-build
+# Next.js
+.next
+out
+*.tsbuildinfo
 
 # Misc
 .DS_Store
@@ -13,4 +14,9 @@ coverage
 # IDE
 .vscode
 .idea
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
 

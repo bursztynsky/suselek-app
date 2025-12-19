@@ -37,7 +37,9 @@ Run the development server:
 npm run dev
 ```
 
-Open [http://localhost:3000/suselek-app](http://localhost:3000/suselek-app) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+> **Note:** During development, the basePath is not applied. It's only used in production when `GITHUB_PAGES=true`.
 
 ### Build
 
