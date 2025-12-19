@@ -44,31 +44,37 @@ const Header: React.FC = () => {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Detect background color to switch header colors
+  // Detect if header is over HotelSection or ReviewsSection (dark backgrounds)
   useEffect(() => {
     const checkBackground = () => {
       const header = document.querySelector('header');
       if (!header) return;
 
       const headerRect = header.getBoundingClientRect();
-      const centerY = headerRect.top + headerRect.height / 2;
+      const headerCenter = headerRect.top + headerRect.height / 2;
 
-      header.style.pointerEvents = 'none';
-      const elementBelow = document.elementFromPoint(window.innerWidth / 2, centerY);
-      header.style.pointerEvents = '';
+      // Check if header is over hotel or reviews sections
+      const hotelSection = document.getElementById('hotel');
+      const reviewsSection = document.getElementById('reviews');
 
-      if (elementBelow) {
-        const section = elementBelow.closest('section, main, body');
-        if (section) {
-          const bg = window.getComputedStyle(section).backgroundColor;
-          const rgb = bg.match(/\d+/g);
+      let isOverDarkSection = false;
 
-          if (rgb) {
-            const luminance = (0.299 * parseInt(rgb[0]) + 0.587 * parseInt(rgb[1]) + 0.114 * parseInt(rgb[2])) / 255;
-            setIsLightBg(luminance > 0.5);
-          }
+      if (hotelSection) {
+        const rect = hotelSection.getBoundingClientRect();
+        if (rect.top <= headerCenter && rect.bottom >= headerCenter) {
+          isOverDarkSection = true;
         }
       }
+
+      if (reviewsSection) {
+        const rect = reviewsSection.getBoundingClientRect();
+        if (rect.top <= headerCenter && rect.bottom >= headerCenter) {
+          isOverDarkSection = true;
+        }
+      }
+
+      // isLightBg should be false when over dark sections (hotel/reviews)
+      setIsLightBg(!isOverDarkSection);
     };
 
     checkBackground();
