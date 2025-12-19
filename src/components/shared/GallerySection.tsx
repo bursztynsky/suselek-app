@@ -77,9 +77,9 @@ const GallerySection: React.FC = () => {
   }
 
   return (
-    <section id="galeria" className="bg-white py-20">
+    <section id="galeria" className="bg-white py-8 md:py-20">
       <div className="container mx-auto max-w-full px-0">
-        <h2 className="text-[40px] text-center text-black mb-12 px-4">
+        <h2 className="text-[16px] md:text-[40px] text-center text-black mb-8 md:mb-12 px-4">
           <span className="italic font-light">Obserwuj nas</span>{' '}
           <a
             href="https://www.instagram.com/hotelik.suselek/"
