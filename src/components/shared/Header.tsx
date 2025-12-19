@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import PhoneButton from './PhoneButton';
-import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
+import SuselekLogo from '../../assets/SUSELEK_logo_small.svg';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -98,7 +98,7 @@ const Header: React.FC = () => {
     >
       <nav className="container flex justify-between items-center relative px-4 lg:px-8">
         <div className="flex items-center z-[52]">
-          <Link href="/">
+          <Link href="/public">
             <img src={SuselekLogo} alt="SUSELEK" className="h-10 w-auto md:h-8" />
           </Link>
         </div>

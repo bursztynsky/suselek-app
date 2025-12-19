@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutHotelImage from '../assets/aboutHotel.jpg';
+import aboutHotelImage from '../../assets/aboutHotel.jpg';
 
 const AboutHotelSection: React.FC = () => {
   return (

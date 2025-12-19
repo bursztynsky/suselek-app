@@ -1,6 +1,6 @@
 import React from 'react';
-import about4Image from '../assets/about4.jpg';
-import aboutIcon2 from '../assets/aboutIcon2.svg';
+import about4Image from '../../assets/about4.jpg';
+import aboutIcon2 from '../../assets/aboutIcon2.svg';
 
 const LetsMeetBeforeSection: React.FC = () => {
   return (

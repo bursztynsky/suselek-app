@@ -1,8 +1,8 @@
 // src/components/ProfessionalSection.tsx
 import React from 'react';
-import houseIcon from '../assets/house.svg';
-import leafesIcon from '../assets/leafes.svg';
-import heartIcon from '../assets/heart.svg';
+import houseIcon from '../../assets/house.svg';
+import leafesIcon from '../../assets/leafes.svg';
+import heartIcon from '../../assets/heart.svg';
 
 const ProfessionalSection: React.FC = () => {
   return (

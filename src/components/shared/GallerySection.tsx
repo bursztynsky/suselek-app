@@ -2,10 +2,10 @@
 
 // src/components/InstagramSection.tsx
 import React, { useState, useEffect, useRef } from 'react';
-import krolik1 from '../assets/krolik1.png';
-import krolik2 from '../assets/krolik2.png';
-import krolik3 from '../assets/krolik3.png';
-import swinka1 from '../assets/swinka1.png';
+import krolik1 from '../../assets/krolik1.png';
+import krolik2 from '../../assets/krolik2.png';
+import krolik3 from '../../assets/krolik3.png';
+import swinka1 from '../../assets/swinka1.png';
 
 interface InstagramPost {
   id: string;

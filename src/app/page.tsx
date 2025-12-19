@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
-import HotelSection from '../components/HotelSection';
-import CheckOfferSection from '../components/ChekOfferSection';
-import AdvantagesSection from '../components/ProfessionalSection';
-import ProfessionalCareSection from '../components/ProfessionalCareSection';
-import GroomingSection from '../components/GroomingSection';
-import AnimalPsychologySection from '../components/AnimalPsychologySection';
-import ReviewsSection from '../components/ReviewsSection';
-import GallerySection from '../components/GallerySection';
+import HotelSection from '../components/home/HotelSection';
+import CheckOfferSection from '../components/home/ChekOfferSection';
+import AdvantagesSection from '../components/home/ProfessionalSection';
+import ProfessionalCareSection from '../components/home/ProfessionalCareSection';
+import GroomingSection from '../components/home/GroomingSection';
+import AnimalPsychologySection from '../components/home/AnimalPsychologySection';
+import ReviewsSection from '../components/home/ReviewsSection';
+import GallerySection from '../components/shared/GallerySection';
 
 export const metadata: Metadata = {
   title: 'Hotelik "Susełek" - Hotel dla Zwierząt',

@@ -1,6 +1,6 @@
 import React from 'react';
-import about3Image from '../assets/about3.jpg';
-import aboutIcon from '../assets/aboutIcon.svg';
+import about3Image from '../../assets/about3.jpg';
+import aboutIcon from '../../assets/aboutIcon.svg';
 
 const AdditionalServicesSection: React.FC = () => {
   return (

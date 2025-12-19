@@ -1,9 +1,9 @@
 // src/components/Footer.tsx
 import React from 'react';
-import logo from '../assets/SUSELEK_logo_medium.svg';
-import instagramIcon from '../assets/instagram-icon.svg';
-import fbIcon from '../assets/fb-icon.svg';
-import mailIcon from '../assets/mail-icon.svg';
+import logo from '../../assets/SUSELEK_logo_medium.svg';
+import instagramIcon from '../../assets/instagram-icon.svg';
+import fbIcon from '../../assets/fb-icon.svg';
+import mailIcon from '../../assets/mail-icon.svg';
 
 const Footer: React.FC = () => {
   return (

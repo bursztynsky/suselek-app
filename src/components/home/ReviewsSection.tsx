@@ -2,9 +2,9 @@
 
 // src/components/ReviewsSection.tsx
 import React, { useState } from 'react';
-import starIcon from '../assets/star.svg';
-import buttonLeft from '../assets/button-left.svg';
-import grassBackground from '../assets/grass.png';
+import starIcon from '../../assets/star.svg';
+import buttonLeft from '../../assets/button-left.svg';
+import grassBackground from '../../assets/grass.png';
 
 const mockReviews = [
   {

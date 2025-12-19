@@ -1,6 +1,6 @@
 // src/components/GroomingSection.tsx
 import React from 'react';
-import krolik3 from '../assets/krolik3.png';
+import krolik3 from '../../assets/krolik3.png';
 
 const GroomingSection: React.FC = () => {
   return (

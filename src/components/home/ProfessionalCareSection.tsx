@@ -1,6 +1,6 @@
 // src/components/ProfessionalCareSection.tsx
 import React from 'react';
-import krolik2 from '../assets/krolik2.png';
+import krolik2 from '../../assets/krolik2.png';
 
 const ProfessionalCareSection: React.FC = () => {
   return (

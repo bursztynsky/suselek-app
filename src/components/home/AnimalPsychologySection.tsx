@@ -1,6 +1,6 @@
 // src/components/AnimalPsychologySection.tsx
 import React from 'react';
-import swinka1 from '../assets/swinka1.png';
+import swinka1 from '../../assets/swinka1.png';
 
 const AnimalPsychologySection: React.FC = () => {
   return (

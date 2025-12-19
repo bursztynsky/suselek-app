@@ -1,7 +1,7 @@
 // src/components/HomeSection.tsx
 import React from 'react';
-import krolik1 from '../assets/krolik1.png';
-import shape4 from '../assets/shape4.svg';
+import krolik1 from '../../assets/krolik1.png';
+import shape4 from '../../assets/shape4.svg';
 
 const HotelSection: React.FC = () => {
   return (
