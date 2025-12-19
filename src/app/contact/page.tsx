@@ -3,8 +3,24 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Kontakt - Hotelik "Susełek"',
   description:
-    'Skontaktuj się z nami - Hotelik dla zwierząt "Susełek". Odpowiemy na wszystkie Twoje pytania dotyczące opieki nad zwierzętami.',
-  keywords: 'kontakt, hotel dla zwierząt, telefon, email, lokalizacja',
+    'Skontaktuj się z nami - Hotelik dla zwierząt "Susełek". Odpowiemy na wszystkie Twoje pytania dotyczące opieki nad zwierzętami, groomingu i psychologii zwierząt.',
+  keywords: [
+    'kontakt',
+    'hotel dla zwierząt',
+    'telefon',
+    'email',
+    'lokalizacja',
+    'kontakt hotel dla zwierząt',
+  ],
+  openGraph: {
+    title: 'Kontakt - Hotelik "Susełek"',
+    description:
+      'Skontaktuj się z nami - Hotelik dla zwierząt "Susełek". Odpowiemy na wszystkie Twoje pytania.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/contact',
+  },
 };
 
 export default function ContactPage() {

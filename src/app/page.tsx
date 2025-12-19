@@ -12,9 +12,28 @@ import swinka1 from '../assets/swinka1.png';
 export const metadata: Metadata = {
   title: 'Hotelik "Susełek" - Hotel dla Zwierząt',
   description:
-    'Profesjonalny hotel dla zwierząt oferujący opiekę, grooming i psychologię zwierząt. Zapewniamy najwyższą jakość usług dla Twoich pupili.',
-  keywords:
-    'hotel dla zwierząt, opieka nad zwierzętami, grooming, pielęgnacja zwierząt, psychologia zwierząt',
+    'Profesjonalny hotel dla zwierząt oferujący opiekę, grooming i psychologię zwierząt. Zapewniamy najwyższą jakość usług dla Twoich pupili. Specjalizujemy się w opiece nad królikami, świnkami morskimi i gryzoniami.',
+  keywords: [
+    'hotel dla zwierząt',
+    'opieka nad zwierzętami',
+    'grooming',
+    'pielęgnacja zwierząt',
+    'psychologia zwierząt',
+    'strzyżenie królików',
+    'hotel dla królików',
+    'hotel dla świnek morskich',
+    'hotel dla gryzoni',
+    'socjalizacja zwierząt',
+  ],
+  openGraph: {
+    title: 'Hotelik "Susełek" - Hotel dla Zwierząt',
+    description:
+      'Profesjonalny hotel dla zwierząt oferujący opiekę, grooming i psychologię zwierząt. Zapewniamy najwyższą jakość usług dla Twoich pupili.',
+    type: 'website',
+  },
+  alternates: {
+    canonical: '/',
+  },
 };
 
 export default function HomePage() {

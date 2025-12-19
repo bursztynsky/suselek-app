@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
               <p className="text-sm font-light leading-relaxed">05-830 Nadarzyn, Polska</p>
               <div className="mt-4 lg:mt-6 h-48 lg:h-[175px] lg:w-[255px] rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.123!2d20.806667!3d52.098611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471935d9c8c8c8c8%3A0x1234567890abcdef!2sKasztanowa%202%2C%2005-830%20Nadarzyn!5e0!3m2!1sen!2spl!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2447.8!2d20.798094!3d52.1051315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDA2JzE4LjUiTiAyMMKwNDcnNTMuMSJF!5e0!3m2!1spl!2spl!4v1234567890"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
