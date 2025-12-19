@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col lg:flex-row gap-8 mb-8">
           {/* Left Side - Logo and Social Icons */}
           <div className="flex flex-col items-start gap-6 lg:w-[40%] lg:flex-shrink-0">
-            <img src={logo.src || logo} alt="SUSELEK Logo" className="h-24 w-auto" />
+            <img src={logo} alt="SUSELEK Logo" className="h-24 w-auto" />
             <div className="flex gap-4">
               <a
                 href="https://www.instagram.com/hotelik.suselek/"
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="transition-opacity hover:opacity-70"
               >
-                <img src={instagramIcon.src || instagramIcon} alt="Instagram" className="w-6 h-6" />
+                <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
               </a>
               <a
                 href="https://www.facebook.com/hotelik.suselek"
@@ -28,13 +28,13 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="transition-opacity hover:opacity-70"
               >
-                <img src={fbIcon.src || fbIcon} alt="Facebook" className="w-6 h-6" />
+                <img src={fbIcon} alt="Facebook" className="w-6 h-6" />
               </a>
               <a
                 href="mailto:hotelik.suselek@gmail.com"
                 className="transition-opacity hover:opacity-70"
               >
-                <img src={mailIcon.src || mailIcon} alt="Email" className="w-6 h-6" />
+                <img src={mailIcon} alt="Email" className="w-6 h-6" />
               </a>
             </div>
           </div>

@@ -156,7 +156,7 @@ const ReviewsSection: React.FC = () => {
             onClick={handlePrevReview}
             aria-label="Previous review"
           >
-            <img src={reviewsButton2.src} alt="Previous" className="w-10 h-10" />
+            <img src={reviewsButton2} alt="Previous" className="w-10 h-10" />
           </button>
 
           <button
@@ -164,7 +164,7 @@ const ReviewsSection: React.FC = () => {
             onClick={handleNextReview}
             aria-label="Next review"
           >
-            <img src={reviewsButton2.src} alt="Next" className="w-10 h-10" />
+            <img src={reviewsButton2} alt="Next" className="w-10 h-10" />
           </button>
         </div>
       </div>
