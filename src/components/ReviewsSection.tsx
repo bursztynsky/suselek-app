@@ -2,12 +2,10 @@
 
 // src/components/ReviewsSection.tsx
 import React, { useState } from 'react';
-import styles from '../styles/ReviewsSection.module.scss';
 import starIcon from '../assets/star.svg';
 import buttonLeft from '../assets/button-left.svg';
 import grassBackground from '../assets/grass.png';
 
-// Mock reviews data - this will be replaced with Google Maps API data later
 const mockReviews = [
   {
     id: 1,
@@ -60,44 +58,51 @@ const ReviewsSection: React.FC = () => {
 
   const currentReview = mockReviews[currentReviewIndex];
 
-  // Generate star icons based on rating
   const renderStars = (rating: number) => {
     return Array.from({ length: rating }, (_, index) => (
-      <img key={index} src={starIcon} alt="star" className={styles.starIcon} />
+      <img key={index} src={starIcon} alt="star" className="w-8 h-8" />
     ));
   };
 
   return (
-    <section id="reviews" className={styles.reviewsSection}>
-      <div
-        className={`${styles.reviewsContainer} container`}
-        style={{ backgroundImage: `url(${grassBackground})` }}
-      >
-        <div className={styles.reviewCard}>
-          <div key={currentReview.id} className={styles.reviewContent}>
-            <div className={styles.reviewStars}>{renderStars(currentReview.rating)}</div>
+    <section id="reviews" className="bg-primary py-20 px-4">
+      <div className="container mx-auto max-w-[1200px]">
+        <div
+          className="relative bg-white rounded-3xl p-8 md:p-16 shadow-xl bg-no-repeat bg-cover bg-center"
+          style={{ backgroundImage: `url(${grassBackground})` }}
+        >
+          <div className="relative z-10 max-w-3xl mx-auto">
+            <div key={currentReview.id} className="text-center">
+              <div className="flex justify-center gap-2 mb-6">
+                {renderStars(currentReview.rating)}
+              </div>
 
-            <h3 className={styles.reviewTitle}>{currentReview.title}</h3>
+              <h3 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+                {currentReview.title}
+              </h3>
 
-            <p className={styles.reviewText}>{currentReview.text}</p>
+              <p className="text-text text-base md:text-lg leading-relaxed mb-6">
+                {currentReview.text}
+              </p>
 
-            <p className={styles.reviewAuthor}>{currentReview.author}</p>
+              <p className="text-text-light font-semibold">{currentReview.author}</p>
+            </div>
           </div>
 
           <button
-            className={`${styles.navigationButton} ${styles.buttonLeft}`}
+            className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center transition-all hover:scale-110 hover:shadow-lg z-20"
             onClick={handlePrevReview}
             aria-label="Previous review"
           >
-            <img src={buttonLeft} alt="Previous" />
+            <img src={buttonLeft} alt="Previous" className="w-6 h-6" />
           </button>
 
           <button
-            className={`${styles.navigationButton} ${styles.buttonRight}`}
+            className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center transition-all hover:scale-110 hover:shadow-lg z-20 rotate-180"
             onClick={handleNextReview}
             aria-label="Next review"
           >
-            <img src={buttonLeft} alt="Next" />
+            <img src={buttonLeft} alt="Next" className="w-6 h-6" />
           </button>
         </div>
       </div>

@@ -1,20 +1,19 @@
 import type { Metadata } from 'next';
-import styles from '../../styles/ContactPage.module.scss';
 
 export const metadata: Metadata = {
   title: 'Kontakt - Hotelik "Susełek"',
-  description: 'Skontaktuj się z nami - Hotelik dla zwierząt "Susełek". Odpowiemy na wszystkie Twoje pytania dotyczące opieki nad zwierzętami.',
+  description:
+    'Skontaktuj się z nami - Hotelik dla zwierząt "Susełek". Odpowiemy na wszystkie Twoje pytania dotyczące opieki nad zwierzętami.',
   keywords: 'kontakt, hotel dla zwierząt, telefon, email, lokalizacja',
 };
 
 export default function ContactPage() {
   return (
-    <div className={styles.contactPage}>
-      <div className="container">
-        <h1>Contact</h1>
-        <p>Contact page content coming soon...</p>
+    <div className="min-h-screen bg-bg-secondary py-32 px-4">
+      <div className="container mx-auto max-w-[1200px]">
+        <h1 className="text-4xl md:text-6xl font-bold text-primary mb-8 text-center">Kontakt</h1>
+        <p className="text-text text-lg text-center">Treść strony kontaktowej już wkrótce...</p>
       </div>
     </div>
   );
 }
-

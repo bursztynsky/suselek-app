@@ -1,23 +1,26 @@
 import React from 'react';
-import styles from '../styles/AboutMeSection.module.scss';
 import aboutMeImage from '../assets/aboutMe.png';
 
 const AboutMeSection: React.FC = () => {
   return (
-    <section id="o-mnie" className={styles.aboutMe}>
-      <div className={`${styles.aboutMeContainer} container`}>
-        <div className={styles.imageWrapper}>
-          <img src={aboutMeImage.src} alt="Aleksandra Bursztyńska-Kostrzewa" className={styles.image} />
+    <section id="o-mnie" className="bg-bg-secondary py-32 px-4">
+      <div className="container mx-auto max-w-[1200px] flex flex-col md:flex-row gap-12 items-center">
+        <div className="flex-1 max-w-md">
+          <img
+            src={aboutMeImage.src}
+            alt="Aleksandra Bursztyńska-Kostrzewa"
+            className="w-full h-auto rounded-3xl shadow-xl"
+          />
         </div>
-        <div className={styles.content}>
-          <h2 className={styles.title}>Poznajmy się</h2>
-          <div className={styles.text}>
+        <div className="flex-1 max-w-2xl">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">Poznajmy się</h2>
+          <div className="text-text text-base md:text-lg leading-relaxed space-y-4">
             <p>Witam! Nazywam się Aleksandra Bursztyńska-Kostrzewa.</p>
             <p>
               Jestem technikiem weterynarii z ponad 6-letnim doświadczeniem w warszawskich
               przychodniach:
             </p>
-            <ul>
+            <ul className="list-disc pl-6 space-y-2">
               <li>Oaza</li>
               <li>Anima</li>
               <li>Medicavet</li>
@@ -29,7 +32,7 @@ const AboutMeSection: React.FC = () => {
               gryzoniami.
             </p>
           </div>
-          <a href="#sprawdz-dostepnosc" className={styles.ctaButton}>
+          <a href="#sprawdz-dostepnosc" className="inline-block mt-8 font-semibold text-lg py-4 px-10 rounded-full bg-primary text-white shadow-md transition-all duration-300 hover:bg-primary/90 hover:shadow-lg">
             Sprawdź dostępność miejsc
           </a>
         </div>

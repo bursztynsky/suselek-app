@@ -1,6 +1,5 @@
 // src/components/Footer.tsx
 import React from 'react';
-import styles from '../styles/Footer.module.scss';
 import logo from '../assets/SUSELEK_logo_medium.svg';
 import instagramIcon from '../assets/instagram-icon.svg';
 import fbIcon from '../assets/fb-icon.svg';
@@ -8,47 +7,48 @@ import mailIcon from '../assets/mail-icon.svg';
 
 const Footer: React.FC = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.footerContainer}>
-        <div className={styles.footerContent}>
+    <footer className="bg-primary text-secondary py-12">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-8">
           {/* Left Side - Logo and Social Icons */}
-          <div className={styles.leftSection}>
-            <img src={logo} alt="SUSELEK Logo" className={styles.logo} />
-            <div className={styles.socialIcons}>
+          <div className="flex flex-col items-center lg:items-start gap-6">
+            <img src={logo} alt="SUSELEK Logo" className="h-24 w-auto" />
+            <div className="flex gap-4">
               <a
                 href="https://www.instagram.com/hotelik.suselek/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.socialLink}
+                className="transition-opacity hover:opacity-70"
               >
-                <img src={instagramIcon} alt="Instagram" />
+                <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
               </a>
               <a
                 href="https://www.facebook.com/hotelik.suselek"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={styles.socialLink}
+                className="transition-opacity hover:opacity-70"
               >
-                <img src={fbIcon} alt="Facebook" />
+                <img src={fbIcon} alt="Facebook" className="w-6 h-6" />
               </a>
-              <a href="mailto:hotelik.suselek@gmail.com" className={styles.socialLink}>
-                <img src={mailIcon} alt="Email" />
+              <a href="mailto:hotelik.suselek@gmail.com" className="transition-opacity hover:opacity-70">
+                <img src={mailIcon} alt="Email" className="w-6 h-6" />
               </a>
             </div>
           </div>
 
           {/* Right Side - Three Columns */}
-          <div className={styles.rightSection}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 flex-1">
             {/* LOKALIZACJA Column */}
-            <div className={styles.column}>
-              <h4 className={styles.columnTitle}>LOKALIZACJA</h4>
-              <p className={styles.columnText}>Kasztanowa 2</p>
-              <p className={styles.columnText}>05-830 Nadarzyn, Poland</p>
-              <div className={styles.mapContainer}>
+            <div className="flex flex-col gap-3">
+              <h4 className="text-sm font-bold tracking-wider mb-2">LOKALIZACJA</h4>
+              <p className="text-sm leading-relaxed">Kasztanowa 2</p>
+              <p className="text-sm leading-relaxed">05-830 Nadarzyn, Poland</p>
+              <div className="mt-4 h-48 rounded-lg overflow-hidden">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2448.123!2d20.806667!3d52.098611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471935d9c8c8c8c8%3A0x1234567890abcdef!2sKasztanowa%202%2C%2005-830%20Nadarzyn!5e0!3m2!1sen!2spl!4v1234567890"
                   width="100%"
-                  style={{ border: 0, borderRadius: '8px' }}
+                  height="100%"
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -58,35 +58,35 @@ const Footer: React.FC = () => {
             </div>
 
             {/* KONTAKT Column */}
-            <div className={styles.column}>
-              <h4 className={styles.columnTitle}>KONTAKT</h4>
-              <a href="tel:+48601155887" className={styles.columnLink}>
+            <div className="flex flex-col gap-3">
+              <h4 className="text-sm font-bold tracking-wider mb-2">KONTAKT</h4>
+              <a href="tel:+48601155887" className="text-sm hover:underline transition-all">
                 + 48 601 155 887
               </a>
-              <a href="mailto:hotelik.suselek@gmail.com" className={styles.columnLink}>
+              <a href="mailto:hotelik.suselek@gmail.com" className="text-sm hover:underline transition-all">
                 hotelik.suselek@gmail.com
               </a>
             </div>
 
             {/* DOKUMENTY Column */}
-            <div className={styles.column}>
-              <h4 className={styles.columnTitle}>DOKUMENTY</h4>
-              <a href="#cennik" className={styles.columnLink}>
+            <div className="flex flex-col gap-3">
+              <h4 className="text-sm font-bold tracking-wider mb-2">DOKUMENTY</h4>
+              <a href="#cennik" className="text-sm hover:underline transition-all">
                 Cennik
               </a>
-              <a href="#regulamin" className={styles.columnLink}>
+              <a href="#regulamin" className="text-sm hover:underline transition-all">
                 Regulamin
               </a>
-              <a href="#privacy" className={styles.columnLink}>
+              <a href="#privacy" className="text-sm hover:underline transition-all">
                 Privacy Policy
               </a>
             </div>
           </div>
         </div>
 
-        {/* Copyright at bottom left */}
-        <div className={styles.footerBottom}>
-          <p className={styles.copyright}>© 2025 Aleksandra Bursztyńska-Kostrzewa</p>
+        {/* Copyright at bottom */}
+        <div className="pt-8 border-t border-secondary/20">
+          <p className="text-sm text-center lg:text-left">© 2025 Aleksandra Bursztyńska-Kostrzewa</p>
         </div>
       </div>
     </footer>

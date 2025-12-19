@@ -1,25 +1,26 @@
 // src/components/AnimalPsychologySection.tsx
 import React from 'react';
-import styles from '../styles/AnimalPsychologySection.module.scss';
 import swinka1 from '../assets/swinka1.png';
 
 const AnimalPsychologySection: React.FC = () => {
   return (
-    <section id="psychologia" className={styles.animalPsychologySection}>
-      <div className={`${styles.animalPsychologyContainer} container`}>
-        <div className={styles.animalPsychologyContent}>
-          <div className={styles.animalPsychologyImage}>
-            <img src={swinka1.src} alt="Świnka morska" />
+    <section id="psychologia" className="bg-bg-secondary py-20 px-4">
+      <div className="container mx-auto max-w-[1200px]">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
+          <div className="flex-1 max-w-md">
+            <img src={swinka1.src} alt="Świnka morska" className="w-full h-auto rounded-2xl" />
           </div>
 
-          <div className={styles.animalPsychologyText}>
-            <div className={styles.categoryBadge}>Króliki i świnki morskie</div>
+          <div className="flex-1 max-w-2xl">
+            <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-6">
+              Króliki i świnki morskie
+            </div>
 
-            <h2 className={styles.animalPsychologyTitle}>
-              Psychologia <span>zwierząt</span>
+            <h2 className="font-bold text-3xl md:text-5xl text-primary mb-6">
+              Psychologia <span className="font-light italic">zwierząt</span>
             </h2>
 
-            <p className={styles.animalPsychologyDescription}>
+            <p className="text-text text-base md:text-lg leading-relaxed">
               Boisz się połączyć swoje króliki? Przeraża Cię łączenie szczurów w stado? A może nie
               wiesz, czy dane łączenie ma przyszłość? Pomagam w socjalizacji i łączeniu w stada
               zwierząt tego samego gatunku. Jeśli łączenie wymaga korekty – wspieram online. Jeśli

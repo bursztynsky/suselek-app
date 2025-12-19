@@ -8,7 +8,8 @@ import GallerySection from '../../components/GallerySection';
 
 export const metadata: Metadata = {
   title: 'O Nas - Hotelik "Susełek"',
-  description: 'Poznaj nasz hotel dla zwierząt i dowiedz się więcej o naszych usługach oraz dodatkowych udogodnieniach dla Twoich pupili.',
+  description:
+    'Poznaj nasz hotel dla zwierząt i dowiedz się więcej o naszych usługach oraz dodatkowych udogodnieniach dla Twoich pupili.',
   keywords: 'o nas, hotel dla zwierząt, usługi dodatkowe, opieka nad zwierzętami',
 };
 
@@ -24,4 +25,3 @@ export default function AboutPage() {
     </>
   );
 }
-

@@ -1,14 +1,12 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import styles from '../styles/ScrollToTopButton.module.scss';
 
 const ScrollToTopButton: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const toggleVisibility = () => {
-      // Show button when page is scrolled down 300px
       if (window.scrollY > 300) {
         setIsVisible(true);
       } else {
@@ -32,7 +30,9 @@ const ScrollToTopButton: React.FC = () => {
 
   return (
     <button
-      className={`${styles.scrollToTop} ${isVisible ? styles.visible : ''}`}
+      className={`fixed bottom-8 right-8 bg-primary text-secondary p-4 rounded-full shadow-lg transition-all duration-300 hover:bg-primary/90 hover:scale-110 z-40 ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+      }`}
       onClick={scrollToTop}
       aria-label="Scroll to top"
     >

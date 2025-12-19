@@ -32,4 +32,3 @@ declare module '*.webp' {
   const value: StaticImageData;
   export default value;
 }
-

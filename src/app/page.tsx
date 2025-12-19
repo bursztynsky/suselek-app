@@ -10,8 +10,10 @@ import GallerySection from '../components/GallerySection';
 
 export const metadata: Metadata = {
   title: 'Hotelik "Susełek" - Hotel dla Zwierząt',
-  description: 'Profesjonalny hotel dla zwierząt oferujący opiekę, grooming i psychologię zwierząt. Zapewniamy najwyższą jakość usług dla Twoich pupili.',
-  keywords: 'hotel dla zwierząt, opieka nad zwierzętami, grooming, pielęgnacja zwierząt, psychologia zwierząt',
+  description:
+    'Profesjonalny hotel dla zwierząt oferujący opiekę, grooming i psychologię zwierząt. Zapewniamy najwyższą jakość usług dla Twoich pupili.',
+  keywords:
+    'hotel dla zwierząt, opieka nad zwierzętami, grooming, pielęgnacja zwierząt, psychologia zwierząt',
 };
 
 export default function HomePage() {
@@ -28,4 +30,3 @@ export default function HomePage() {
     </>
   );
 }
-

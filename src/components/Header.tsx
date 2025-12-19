@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
-import styles from '../styles/Header.module.scss';
 import PhoneButton from './PhoneButton';
 import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
 
@@ -18,48 +17,38 @@ const Header: React.FC = () => {
       const header = document.querySelector('header');
       if (!header) return;
 
-      // Temporarily hide header to get element behind it
       const originalPointerEvents = header.style.pointerEvents;
       header.style.pointerEvents = 'none';
 
       const headerRect = header.getBoundingClientRect();
       const headerCenter = headerRect.top + headerRect.height / 2;
 
-      // Get element at header center position (with header pointer-events disabled)
       const elementAtCenter = document.elementFromPoint(window.innerWidth / 2, headerCenter);
 
-      // Restore header pointer events
       header.style.pointerEvents = originalPointerEvents;
 
       if (elementAtCenter) {
-        // Find the closest section or main container
         const section = elementAtCenter.closest('section, main, body');
         if (section) {
           const bgColor = window.getComputedStyle(section).backgroundColor;
 
-          // Parse RGB values
           const rgbMatch = bgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
           if (rgbMatch) {
             const r = parseInt(rgbMatch[1]);
             const g = parseInt(rgbMatch[2]);
             const b = parseInt(rgbMatch[3]);
 
-            // Calculate relative luminance (perceived brightness)
-            // Using the formula: 0.299*R + 0.587*G + 0.114*B
             const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
 
-            // If background is light (luminance > 0.5), use dark text (inverted)
             setInvertColors(luminance > 0.5);
           }
         }
       }
     };
 
-    // Check on scroll and resize
     window.addEventListener('scroll', checkBackgroundColor);
     window.addEventListener('resize', checkBackgroundColor);
 
-    // Initial check after a short delay to ensure DOM is ready
     const timer = setTimeout(checkBackgroundColor, 100);
 
     return () => {
@@ -67,7 +56,7 @@ const Header: React.FC = () => {
       window.removeEventListener('resize', checkBackgroundColor);
       clearTimeout(timer);
     };
-  }, [pathname]); // Re-run when route changes
+  }, [pathname]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -90,13 +79,11 @@ const Header: React.FC = () => {
       e.preventDefault();
       closeMenu();
 
-      // Gallery section exists on both pages, so just scroll on current page
       if (sectionId === 'galeria') {
         scrollToElement(sectionId);
         return;
       }
 
-      // Navigate to target page if not already there, then scroll
       if (pathname !== targetPath) {
         router.push(targetPath);
         setTimeout(() => scrollToElement(sectionId), 100);
@@ -106,78 +93,78 @@ const Header: React.FC = () => {
     };
 
   return (
-    <header className={`${styles.header} ${invertColors ? styles.inverted : ''}`}>
-      <nav className={`${styles.navContainer} container`}>
-        <div className={styles.logo}>
+    <header className={`fixed top-0 left-0 right-0 w-full z-50 bg-transparent py-4 ${invertColors ? 'text-primary' : 'text-secondary'}`}>
+      <nav className="container flex justify-between items-center relative px-4 lg:px-8">
+        <div className="flex items-center z-[52]">
           <Link href="/">
-            <img src={SuselekLogo} alt="SUSELEK" />
+            <img src={SuselekLogo} alt="SUSELEK" className="h-10 w-auto md:h-8" />
           </Link>
         </div>
 
         {/* Hamburger Menu Button */}
         <button
-          className={`${styles.hamburger} ${isMenuOpen ? styles.hamburgerOpen : ''}`}
+          className="hidden max-lg:flex flex-col gap-1 bg-transparent border-none cursor-pointer p-2 z-[52]"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? 'rotate-45 translate-x-[7px] translate-y-[7px]' : ''}`}></span>
+          <span className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? 'opacity-0' : ''}`}></span>
+          <span className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? '-rotate-45 translate-x-[7px] -translate-y-[7px]' : ''}`}></span>
         </button>
 
-        <ul className={`${styles.navList} ${isMenuOpen ? styles.navListOpen : ''}`}>
-          <li>
-            <a href="#hotel" className={styles.navLink} onClick={handleSectionClick('hotel')}>
+        <ul className={`flex list-none m-0 p-0 gap-6 items-center max-lg:fixed max-lg:top-0 max-lg:h-screen max-lg:w-4/5 max-lg:max-w-[400px] max-lg:bg-primary max-lg:flex-col max-lg:justify-center max-lg:gap-8 max-lg:px-8 max-lg:py-8 max-lg:shadow-[-2px_0_10px_rgba(0,0,0,0.1)] max-lg:transition-all max-lg:duration-300 ${isMenuOpen ? 'max-lg:right-0' : 'max-lg:-right-full'}`}>
+          <li className="m-0 max-lg:w-full max-lg:text-center">
+            <a href="#hotel" className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`} onClick={handleSectionClick('hotel')}>
               Hotel dla zwierząt
             </a>
           </li>
-          <li>
+          <li className="m-0 max-lg:w-full max-lg:text-center">
             <a
               href="#strzyzenie"
-              className={styles.navLink}
+              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
               onClick={handleSectionClick('strzyzenie')}
             >
               Strzyżenie
             </a>
           </li>
-          <li>
+          <li className="m-0 max-lg:w-full max-lg:text-center">
             <a
               href="#psychologia"
-              className={styles.navLink}
+              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
               onClick={handleSectionClick('psychologia')}
             >
               Psychologia zwierząt
             </a>
           </li>
-          <li>
-            <a href="#galeria" className={styles.navLink} onClick={handleSectionClick('galeria')}>
+          <li className="m-0 max-lg:w-full max-lg:text-center">
+            <a href="#galeria" className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`} onClick={handleSectionClick('galeria')}>
               Galeria
             </a>
           </li>
-          <li>
+          <li className="m-0 max-lg:w-full max-lg:text-center">
             <a
               href="#o-mnie"
-              className={styles.navLink}
+              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
               onClick={handleSectionClick('o-mnie', '/about')}
             >
               O nas
             </a>
           </li>
-          <li>
-            <a href="#cennik" className={styles.navLink} onClick={handleSectionClick('cennik')}>
+          <li className="m-0 max-lg:w-full max-lg:text-center">
+            <a href="#cennik" className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`} onClick={handleSectionClick('cennik')}>
               Cennik
             </a>
           </li>
-          <li>
+          <li className="m-0 max-lg:w-full max-lg:text-center">
             <a
               href="#regulamin"
-              className={styles.navLink}
+              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
               onClick={handleSectionClick('regulamin')}
             >
               Regulamin
             </a>
           </li>
-          <li className={styles.mobilePhoneButton}>
+          <li className="hidden max-lg:block w-full text-center mt-4">
             <PhoneButton
               phoneNumber="+48601155887"
               displayNumber="+48 601 155 887"
@@ -185,7 +172,7 @@ const Header: React.FC = () => {
             />
           </li>
         </ul>
-        <div className={styles.desktopPhoneButton}>
+        <div className="block max-lg:hidden">
           <PhoneButton
             phoneNumber="+48601155887"
             displayNumber="+48 601 155 887"

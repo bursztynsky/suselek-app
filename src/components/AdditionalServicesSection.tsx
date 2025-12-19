@@ -1,51 +1,44 @@
 import React from 'react';
-import styles from '../styles/AdditionalServicesSection.module.scss';
 import about3Image from '../assets/about3.jpg';
 import aboutIcon from '../assets/aboutIcon.svg';
 
 const AdditionalServicesSection: React.FC = () => {
   return (
-    <section id="dodatkowe-uslugi" className={styles.additionalServices}>
-      <div className={styles.servicesGrid}>
-        {/* Column 1: Title with background image */}
-        <div className={styles.column1}>
-          <div className={styles.titleWrapper}>
-            <img src={aboutIcon} alt="" className={styles.icon} />
-            <h2 className={styles.title}>
-              <span className={styles.titleBold}>Dodatkowa</span>
-              <span className={styles.titleLight}>oferta</span>
+    <section id="dodatkowe-uslugi" className="bg-bg-secondary py-20 px-4">
+      <div className="container mx-auto max-w-[1200px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Column 1: Title */}
+          <div className="flex flex-col justify-center items-center md:items-start">
+            <img src={aboutIcon} alt="" className="w-16 h-16 mb-4" />
+            <h2 className="text-4xl md:text-5xl text-primary text-center md:text-left">
+              <span className="font-bold block">Dodatkowa</span>
+              <span className="font-light block">oferta</span>
             </h2>
           </div>
-        </div>
 
-        {/* Column 2: Two rows */}
-        <div className={styles.column2}>
-          {/* Row 1: Psychology section */}
-          <div className={styles.psychologyBlock}>
-            <h3 className={styles.blockTitle}>Psychologia zwierząt</h3>
-            <p className={styles.blockText}>Pomagam przy łączeniu zwierząt w stado:</p>
-            <ul className={styles.blockList}>
-              <li>online (konsultacje)</li>
-              <li>osobiście (prowadzenie procesu łączenia)</li>
-            </ul>
-          </div>
+          {/* Column 2: Services */}
+          <div className="space-y-6">
+            <div className="bg-white rounded-2xl p-6 shadow-md">
+              <h3 className="text-2xl font-bold text-primary mb-4">Psychologia zwierząt</h3>
+              <p className="text-text mb-2">Pomagam przy łączeniu zwierząt w stado:</p>
+              <ul className="list-disc pl-6 text-text space-y-1">
+                <li>online (konsultacje)</li>
+                <li>osobiście (prowadzenie procesu łączenia)</li>
+              </ul>
+            </div>
 
-          {/* Row 2: Grooming section with background */}
-          <div className={styles.groomingBlock}>
-            <div className={styles.groomingContent}>
-              <h3 className={styles.blockTitle}>Grooming</h3>
-              <p className={styles.blockText}>
+            <div className="bg-primary text-white rounded-2xl p-6 shadow-md">
+              <h3 className="text-2xl font-bold mb-4">Grooming</h3>
+              <p>
                 strzyżenie królików
                 <br />i świnek morskich
               </p>
             </div>
           </div>
-        </div>
 
-        {/* Column 3: Photo */}
-        <div className={styles.column3}>
-          <div className={styles.photoWrapper}>
-            <img src={about3Image.src} alt="Zwierzęta" className={styles.photo} />
+          {/* Column 3: Photo */}
+          <div className="flex items-center justify-center">
+            <img src={about3Image.src} alt="Zwierzęta" className="w-full h-auto rounded-2xl shadow-xl" />
           </div>
         </div>
       </div>
