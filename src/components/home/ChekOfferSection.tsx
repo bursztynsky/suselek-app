@@ -1,29 +1,33 @@
 // src/components/CheckOfferSection.tsx
 import React from 'react';
+import Button from '../shared/Button';
 
 const CheckOfferSection: React.FC = () => {
   return (
-    <section id="check-offer" className="bg-color-secondary py-20 px-4">
-      <div className="max-w-[900px] mx-auto text-center">
-        <h1 className="text-[#292929] text-3xl md:text-5xl leading-tight mb-8">
-          <span className="font-light italic">Dbamy o to,</span>{' '}
-          <span className="font-bold">by każdy gość czuł się u nas</span>{' '}
-          <span className="font-light italic">jak w</span>
-          <br />
-          <span className="font-bold">domu</span>{' '}
-          <span className="font-light italic">– bez względu na to,</span>{' '}
-          <span className="font-bold">czy przyjeżdża na</span>
-          <br />
-          <span className="font-light italic">weekend,</span>{' '}
-          <span className="font-bold">czy na dłuższy</span>{' '}
-          <span className="font-light italic">urlop</span>
+    <section id="check-offer" className="bg-secondary py-12 md:py-20 px-4">
+      <div className="max-w-[var(--width-container)] mx-auto text-center flex flex-col">
+        <h1 className="text-text-primary text-2xl md:text-5xl leading-tight my-6 md:my-8 font-light italic">
+          <span className="md:not-italic md:font-light">Dbamy o to,</span>{' '}
+          <span className="md:font-bold md:not-italic">by każdy gość czuł się u nas</span>{' '}
+          <span className="md:not-italic md:font-light">jak w</span>
+          <br className="hidden md:block" />
+          <span className="md:font-bold md:not-italic"> domu</span>{' '}
+          <span className="md:not-italic md:font-light">– bez względu na to,</span>{' '}
+          <span className="md:font-bold md:not-italic">czy przyjeżdża na</span>
+          <br className="hidden md:block" />
+          <span className="md:not-italic md:font-light"> weekend,</span>{' '}
+          <span className="md:font-bold md:not-italic">czy na dłuższy</span>{' '}
+          <span className="md:not-italic md:font-light">urlop</span>
         </h1>
-        <a
-          href="#cennik"
-          className="inline-block text-[20px] font-normal py-4 px-10 rounded-full bg-[#3e7979] text-white shadow-md hover:shadow-lg transition-shadow"
-        >
-          Poznaj ofertę
-        </a>
+        <div className="flex justify-center mt-8 md:mt-0">
+          <Button
+            href="#cennik"
+            variant="primary"
+            className="w-full md:w-auto md:max-w-[var(--width-btn-max)]"
+          >
+            Poznaj ofertę
+          </Button>
+        </div>
       </div>
     </section>
   );

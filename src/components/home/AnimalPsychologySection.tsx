@@ -5,14 +5,14 @@ import swinka1 from '../../assets/swinka1.png';
 const AnimalPsychologySection: React.FC = () => {
   return (
     <section id="psychologia" className="bg-bg-secondary py-20 px-4">
-      <div className="container mx-auto max-w-[1200px]">
+      <div className="container mx-auto max-w-[var(--width-container)]">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="flex-1 max-w-md">
             <img src={swinka1.src} alt="Świnka morska" className="w-full h-auto rounded-2xl" />
           </div>
 
           <div className="flex-1 max-w-2xl">
-            <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-[var(--radius-pill)] text-sm font-semibold mb-6">
               Króliki i świnki morskie
             </div>
 

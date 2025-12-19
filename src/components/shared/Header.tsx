@@ -9,7 +9,7 @@ const PhoneButton: React.FC<{ inverted: boolean }> = ({ inverted }) => {
   return (
     <a
       href="tel:+48601155887"
-      className={`inline-flex items-center py-3 px-6 rounded-full border text-lg transition-all duration-300 cursor-pointer no-underline ${
+      className={`inline-flex items-center py-3 px-6 rounded-[var(--radius-pill)] border text-lg transition-all duration-300 cursor-pointer no-underline ${
         inverted
           ? 'text-primary border-primary hover:bg-primary hover:text-secondary'
           : 'text-secondary border-secondary hover:bg-secondary hover:text-primary'
@@ -88,24 +88,26 @@ const Header: React.FC = () => {
     };
   }, [pathname]);
 
-  const handleNavClick = (sectionId: string, targetPath: string = '/') => (e: React.MouseEvent) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
+  const handleNavClick =
+    (sectionId: string, targetPath: string = '/') =>
+    (e: React.MouseEvent) => {
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
 
-    const scrollTo = () => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      const scrollTo = () => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      };
+
+      if (pathname !== targetPath) {
+        router.push(targetPath);
+        setTimeout(scrollTo, 100);
+      } else {
+        scrollTo();
       }
     };
-
-    if (pathname !== targetPath) {
-      router.push(targetPath);
-      setTimeout(scrollTo, 100);
-    } else {
-      scrollTo();
-    }
-  };
 
   const navItems = [
     { id: 'hotel', label: 'Hotel dla zwierząt', path: '/' },
@@ -173,9 +175,15 @@ const Header: React.FC = () => {
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
             >
-              <span className={`h-0.5 w-full transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}></span>
-              <span className={`h-0.5 w-full transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}></span>
-              <span className={`h-0.5 w-1/2 transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}></span>
+              <span
+                className={`h-0.5 w-full transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}
+              ></span>
+              <span
+                className={`h-0.5 w-full transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}
+              ></span>
+              <span
+                className={`h-0.5 w-1/2 transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}
+              ></span>
             </button>
           </div>
         </nav>
@@ -187,7 +195,11 @@ const Header: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 py-4">
             {/* Header with Logo and Close Button */}
             <div className="flex items-center justify-between mb-8">
-              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center">
+              <Link
+                href="/"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex items-center"
+              >
                 <NextImage
                   src="/SUSELEK_logo_small.svg"
                   alt="SUSELEK"

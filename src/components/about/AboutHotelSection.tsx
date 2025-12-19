@@ -3,7 +3,7 @@ import aboutHotelImage from '../../assets/aboutHotel.jpg';
 
 const AboutHotelSection: React.FC = () => {
   return (
-    <section id="o-hotelu" className="bg-white">
+    <section id="o-hotelu" className="bg-secondary">
       <div className="w-full h-64 md:h-96 overflow-hidden">
         <img
           src={aboutHotelImage.src}
@@ -12,7 +12,7 @@ const AboutHotelSection: React.FC = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-[1200px] px-4 py-20">
+      <div className="container mx-auto max-w-[var(--width-container)] px-4 py-20">
         <div className="flex flex-col md:flex-row gap-12">
           <div className="flex-1">
             <h2 className="text-4xl md:text-5xl font-light text-primary">

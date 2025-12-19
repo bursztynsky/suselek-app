@@ -5,14 +5,14 @@ import krolik2 from '../../assets/krolik2.png';
 const ProfessionalCareSection: React.FC = () => {
   return (
     <section id="hotel" className="bg-bg-secondary py-20 px-4">
-      <div className="container mx-auto max-w-[1200px]">
+      <div className="container mx-auto max-w-[var(--width-container)]">
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
           <div className="flex-1 max-w-md">
             <img src={krolik2.src} alt="Królik" className="w-full h-auto rounded-2xl" />
           </div>
 
           <div className="flex-1 max-w-2xl">
-            <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-[var(--radius-pill)] text-sm font-semibold mb-6">
               Króliki i gryzonie
             </div>
 

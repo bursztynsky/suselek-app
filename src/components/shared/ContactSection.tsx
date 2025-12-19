@@ -3,8 +3,8 @@ import React from 'react';
 
 const ContactSection: React.FC = () => {
   return (
-    <section id="kontakt" className="bg-white py-20 px-4">
-      <div className="container mx-auto max-w-[1200px]">
+    <section id="kontakt" className="bg-secondary py-20 px-4">
+      <div className="container mx-auto max-w-[var(--width-container)]">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-4">
           Skontaktuj się z nami
         </h2>
@@ -38,7 +38,7 @@ const ContactSection: React.FC = () => {
               <p className="text-text mb-4">Zadzwoń do nas:</p>
               <a
                 href="tel:+48123456789"
-                className="inline-flex items-center py-3 px-6 rounded-full border border-primary text-primary text-lg no-underline hover:bg-primary hover:text-secondary transition-all duration-300"
+                className="inline-flex items-center py-3 px-6 rounded-[var(--radius-pill)] border border-primary text-primary text-lg no-underline hover:bg-primary hover:text-secondary transition-all duration-300"
               >
                 <span className="leading-none">+48 123 456 789</span>
               </a>

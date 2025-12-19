@@ -4,11 +4,11 @@ import krolik3 from '../../assets/krolik3.png';
 
 const GroomingSection: React.FC = () => {
   return (
-    <section id="strzyzenie" className="bg-white py-20 px-4">
-      <div className="container mx-auto max-w-[1200px]">
+    <section id="strzyzenie" className="bg-secondary py-20 px-4">
+      <div className="container mx-auto max-w-[var(--width-container)]">
         <div className="flex flex-col-reverse md:flex-row items-center gap-8 md:gap-16">
           <div className="flex-1 max-w-2xl">
-            <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block bg-primary/10 text-primary px-6 py-2 rounded-[var(--radius-pill)] text-sm font-semibold mb-6">
               Króliki i świnki morskie
             </div>
 
