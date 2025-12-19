@@ -1,40 +1,43 @@
-// src/components/HomeSection.tsx
 import React from 'react';
 import krolik1 from '../../assets/krolik1.png';
 import shape4 from '../../assets/shape4.svg';
+import NextImage from 'next/image';
 
 const HotelSection: React.FC = () => {
   return (
     <section
       id="hotel"
-      className="relative bg-primary text-white text-center overflow-hidden mt-0 pt-[120px] pb-24 px-4 md:pt-[140px] md:pb-32"
+      className="relative bg-primary text-white overflow-hidden pt-32 pb-24 px-4 md:pt-36 md:pb-32"
     >
-      <img
+      {/* Background decoration */}
+      <NextImage
         src={shape4}
-        alt=""
-        className="absolute w-[800px] h-[600px] opacity-100 -top-4 left-[45rem] pointer-events-none z-0"
+        alt="Ikonka serca"
+        className="absolute w-[400px] h-[350px] md:w-[600px] md:h-[500px] top-0 -right-20 md:right-0 opacity-30 pointer-events-none"
       />
-      <div className="container max-w-[1250px] mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
-        <div className="flex-1 max-w-[700px] md:text-left">
-          <h1 className="font-bold text-4xl md:text-[64px] leading-[100%] mb-6">
+
+      <div className="max-w-[1250px] mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
+        {/* Content */}
+        <div className="flex-1 max-w-[700px] text-center md:text-left">
+          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
             Hotelik dla <span className="font-light italic">królików i gryzoni</span> pod Warszawą
           </h1>
-          <p className="font-normal text-lg md:text-2xl leading-[100%] mb-8">
+          <p className="text-lg md:text-2xl leading-snug mb-8">
             W hotelu "Susełek" łączymy doświadczenie weterynaryjne z domową atmosferą. Twoje zwierzę
             zamieszka z nami – na parterze naszego domu, w przestrzeni stworzonej specjalnie z myślą
             o jego komforcie.
           </p>
-          <div className="flex gap-4 justify-center md:justify-start flex-wrap">
-            <a
-              href="#cennik"
-              className="inline-block font-semibold text-lg py-4 px-10 rounded-full bg-white text-primary shadow-md transition-all duration-300 hover:bg-white/95 hover:shadow-lg"
-            >
-              Poznaj ofertę
-            </a>
-          </div>
+          <a
+            href="#cennik"
+            className="inline-block text-lg font-semibold py-4 px-10 rounded-full bg-white text-primary shadow-md hover:shadow-lg transition-shadow"
+          >
+            Poznaj ofertę
+          </a>
         </div>
-        <div className="flex-none max-w-[618px] md:max-w-[450px] w-full">
-          <img src={krolik1.src} alt="Królik" className="w-full h-auto block" />
+
+        {/* Image */}
+        <div className="w-full max-w-[450px]">
+          <img src={krolik1.src} alt="Królik" className="w-full" />
         </div>
       </div>
     </section>
