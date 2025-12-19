@@ -9,8 +9,6 @@ export default [
       'out/**',
       'node_modules/**',
       '*.config.{js,ts,mjs}',
-      'dist/**',
-      'build/**',
     ],
   },
   js.configs.recommended,

@@ -116,31 +116,26 @@ src/
 
 The project is configured for static export and can be deployed to:
 
-- GitHub Pages
-- Vercel
-- Netlify
+- **GitHub Pages** - Automatic deployment via GitHub Actions
+- **Vercel** - Zero-config deployment
+- **Netlify** - Static site hosting
 - Any static hosting service
 
-See [MIGRATION.md](./MIGRATION.md) for detailed migration information from Vite to Next.js.
+### GitHub Pages Deployment
+
+The project includes a GitHub Actions workflow that automatically:
+1. Builds the project with the correct basePath
+2. Deploys to GitHub Pages on push to main branch
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production (local testing)
+- `npm run build:gh-pages` - Build for GitHub Pages deployment
+- `npm start` - Serve production build locally
+- `npm run lint` - Run ESLint and TypeScript checks
+- `npm run format` - Format code with Prettier
 
 ## License
 
 Private project for Hotelik "Susełek"
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
