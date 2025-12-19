@@ -41,6 +41,7 @@ const PhoneButton: React.FC<{ inverted: boolean }> = ({ inverted }) => {
 
 const Header: React.FC = () => {
   const [isLightBg, setIsLightBg] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -89,6 +90,7 @@ const Header: React.FC = () => {
 
   const handleNavClick = (sectionId: string, targetPath: string = '/') => (e: React.MouseEvent) => {
     e.preventDefault();
+    setIsMobileMenuOpen(false);
 
     const scrollTo = () => {
       const element = document.getElementById(sectionId);
@@ -118,39 +120,132 @@ const Header: React.FC = () => {
   const textColor = isLightBg ? 'text-primary' : 'text-secondary';
 
   return (
-    <header className="fixed top-0 left-0 right-0 w-full z-50 py-4">
-      <nav className="max-w-7xl mx-auto px-4">
-        {/* Desktop */}
-        <div className="hidden lg:flex items-center justify-between gap-8">
-          <Link href="/" className="flex items-center">
-            <NextImage
-              src="/SUSELEK_logo_small.svg"
-              alt="SUSELEK"
-              width={56}
-              height={56}
-              className="h-12 w-12"
-              priority
-            />
-          </Link>
+    <>
+      <header className="fixed top-0 left-0 right-0 w-full z-50 py-4">
+        <nav className="max-w-7xl mx-auto px-4">
+          {/* Desktop */}
+          <div className="hidden lg:flex items-center justify-between gap-8">
+            <Link href="/" className="flex items-center">
+              <NextImage
+                src="/SUSELEK_logo_small.svg"
+                alt="SUSELEK"
+                width={56}
+                height={56}
+                className="h-12 w-12"
+                priority
+              />
+            </Link>
 
-          <ul className="flex items-center gap-6 m-0 p-0 list-none">
-            {navItems.map(item => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className={`${textColor} no-underline hover:opacity-70 transition-opacity duration-300`}
-                  onClick={handleNavClick(item.id, item.path)}
+            <ul className="flex items-center gap-6 m-0 p-0 list-none">
+              {navItems.map(item => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    className={`${textColor} no-underline hover:opacity-70 transition-opacity duration-300`}
+                    onClick={handleNavClick(item.id, item.path)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <PhoneButton inverted={isLightBg} />
+          </div>
+
+          {/* Mobile */}
+          <div className="flex lg:hidden items-center justify-between">
+            <Link href="/" className="flex items-center">
+              <NextImage
+                src="/SUSELEK_logo_small.svg"
+                alt="SUSELEK"
+                width={48}
+                height={48}
+                className="h-10 w-10"
+                priority
+              />
+            </Link>
+
+            {/* Hamburger Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="flex flex-col gap-1.5 w-7 h-7 justify-center items-end focus:outline-none"
+              aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
+            >
+              <span className={`h-0.5 w-full transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}></span>
+              <span className={`h-0.5 w-full transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}></span>
+              <span className={`h-0.5 w-1/2 transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}></span>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 bg-secondary z-[100] lg:hidden">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            {/* Header with Logo and Close Button */}
+            <div className="flex items-center justify-between mb-8">
+              <Link href="/" onClick={() => setIsMobileMenuOpen(false)} className="flex items-center">
+                <NextImage
+                  src="/SUSELEK_logo_small.svg"
+                  alt="SUSELEK"
+                  width={48}
+                  height={48}
+                  className="h-10 w-10"
+                  priority
+                />
+              </Link>
+
+              {/* Close Button (X) */}
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="w-8 h-8 flex items-center justify-center focus:outline-none"
+                aria-label="Close menu"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="text-primary"
                 >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+                  <path
+                    d="M18 6L6 18M6 6L18 18"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
 
-          <PhoneButton inverted={isLightBg} />
+            {/* Navigation Items */}
+            <ul className="flex flex-col gap-6 m-0 p-0 list-none mb-8">
+              {navItems.map(item => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    className="text-primary text-2xl no-underline hover:opacity-70 transition-opacity duration-300 block text-left"
+                    onClick={handleNavClick(item.id, item.path)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            {/* Phone Button at Bottom */}
+            <div className="mt-auto">
+              <PhoneButton inverted={true} />
+            </div>
+          </div>
         </div>
-      </nav>
-    </header>
+      )}
+    </>
   );
 };
 
