@@ -14,7 +14,7 @@ const HotelSection: React.FC = () => {
   return (
     <section
       id="hotel"
-      className="relative bg-primary text-white overflow-hidden pt-32 pb-24 px-4 md:pt-36 md:pb-32"
+      className="relative bg-primary text-white overflow-hidden pt-32 pb-24 px-4 md:pt-36 md:pb-32 md:min-h-screen"
     >
       {/* Background decoration */}
       <NextImage
@@ -37,9 +37,9 @@ const HotelSection: React.FC = () => {
               pod Warszawą
             </h1>
             <p className="text-lg leading-snug mb-8">
-              W hotelu "Susełek" łączymy doświadczenie weterynaryjne z domową atmosferą. <br />{' '}
-              Twoje zwierzę zamieszka z nami – na parterze naszego domu, w przestrzeni stworzonej
-              specjalnie z myślą o jego komforcie.
+              W&nbsp;hotelu "Susełek" łączymy doświadczenie weterynaryjne z&nbsp;domową atmosferą. <br />{' '}
+              Twoje zwierzę zamieszka z&nbsp;nami – na&nbsp;parterze naszego domu, w&nbsp;przestrzeni stworzonej
+              specjalnie z&nbsp;myślą o&nbsp;jego komforcie.
             </p>
             <Button href="#cennik" variant="secondary">
               Poznaj ofertę
@@ -53,7 +53,7 @@ const HotelSection: React.FC = () => {
         </div>
 
         {/* Three columns section - Desktop */}
-        <div className="hidden md:block mt-24">
+        <div className="hidden md:block mt-18">
           <div className="flex flex-row justify-center gap-1">
             <div className="flex-1 text-center relative">
               <NextImage src={aboutHotelCol1} alt="Blisko natury" className="w-full h-auto" />
@@ -68,7 +68,7 @@ const HotelSection: React.FC = () => {
         </div>
 
         {/* Three columns section - Mobile */}
-        <div className="block md:hidden mt-16">
+        <div className="block md:hidden mt-8">
           <div className="flex flex-row flex-nowrap justify-between gap-1 w-full">
             <div className="flex-1 text-center relative">
               <NextImage src={aboutHotelCol1Mobile} alt="Blisko natury" className="w-full h-auto" />
