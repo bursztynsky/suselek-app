@@ -37,9 +37,9 @@ const HotelSection: React.FC = () => {
               pod Warszawą
             </h1>
             <p className="text-lg leading-snug mb-8">
-              W&nbsp;hotelu "Susełek" łączymy doświadczenie weterynaryjne z&nbsp;domową atmosferą. <br />{' '}
-              Twoje zwierzę zamieszka z&nbsp;nami – na&nbsp;parterze naszego domu, w&nbsp;przestrzeni stworzonej
-              specjalnie z&nbsp;myślą o&nbsp;jego komforcie.
+              W&nbsp;hotelu "Susełek" łączymy doświadczenie weterynaryjne z&nbsp;domową atmosferą.{' '}
+              <br /> Twoje zwierzę zamieszka z&nbsp;nami – na&nbsp;parterze naszego domu,
+              w&nbsp;przestrzeni stworzonej specjalnie z&nbsp;myślą o&nbsp;jego komforcie.
             </p>
             <Button href="#cennik" variant="secondary">
               Poznaj ofertę
