@@ -9,7 +9,7 @@ const AnimalPsychologySection: React.FC = () => {
       <div className={`${styles.animalPsychologyContainer} container`}>
         <div className={styles.animalPsychologyContent}>
           <div className={styles.animalPsychologyImage}>
-            <img src={swinka1} alt="Świnka morska" />
+            <img src={swinka1.src} alt="Świnka morska" />
           </div>
 
           <div className={styles.animalPsychologyText}>

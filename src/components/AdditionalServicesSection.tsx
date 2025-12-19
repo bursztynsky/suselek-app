@@ -45,7 +45,7 @@ const AdditionalServicesSection: React.FC = () => {
         {/* Column 3: Photo */}
         <div className={styles.column3}>
           <div className={styles.photoWrapper}>
-            <img src={about3Image} alt="Zwierzęta" className={styles.photo} />
+            <img src={about3Image.src} alt="Zwierzęta" className={styles.photo} />
           </div>
         </div>
       </div>

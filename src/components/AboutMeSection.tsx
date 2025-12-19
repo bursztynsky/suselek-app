@@ -7,7 +7,7 @@ const AboutMeSection: React.FC = () => {
     <section id="o-mnie" className={styles.aboutMe}>
       <div className={`${styles.aboutMeContainer} container`}>
         <div className={styles.imageWrapper}>
-          <img src={aboutMeImage} alt="Aleksandra Bursztyńska-Kostrzewa" className={styles.image} />
+          <img src={aboutMeImage.src} alt="Aleksandra Bursztyńska-Kostrzewa" className={styles.image} />
         </div>
         <div className={styles.content}>
           <h2 className={styles.title}>Poznajmy się</h2>

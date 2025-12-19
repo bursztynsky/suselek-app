@@ -1,3 +1,5 @@
+'use client';
+
 // src/components/ReviewsSection.tsx
 import React, { useState } from 'react';
 import styles from '../styles/ReviewsSection.module.scss';

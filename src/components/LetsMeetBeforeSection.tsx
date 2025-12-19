@@ -8,7 +8,7 @@ const LetsMeetBeforeSection: React.FC = () => {
     <section id="poznajmy-sie" className={styles.letsMeetBefore}>
       {/* Hero Image */}
       <div className={styles.heroImage}>
-        <img src={about4Image} alt="Poznajmy się" className={styles.image} />
+        <img src={about4Image.src} alt="Poznajmy się" className={styles.image} />
       </div>
 
       {/* Content Section */}

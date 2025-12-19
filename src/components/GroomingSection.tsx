@@ -25,7 +25,7 @@ const GroomingSection: React.FC = () => {
           </div>
 
           <div className={styles.groomingImage}>
-            <img src={krolik3} alt="Królik" />
+            <img src={krolik3.src} alt="Królik" />
           </div>
         </div>
       </div>

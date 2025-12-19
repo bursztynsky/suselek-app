@@ -9,7 +9,7 @@ const ProfessionalCareSection: React.FC = () => {
       <div className={`${styles.professionalCareContainer} container`}>
         <div className={styles.professionalCareContent}>
           <div className={styles.professionalCareImage}>
-            <img src={krolik2} alt="Królik" />
+            <img src={krolik2.src} alt="Królik" />
           </div>
 
           <div className={styles.professionalCareText}>

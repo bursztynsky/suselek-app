@@ -1,3 +1,5 @@
+'use client';
+
 // src/components/InstagramSection.tsx
 import React, { useState, useEffect, useRef } from 'react';
 import styles from '../styles/GallerySection.module.scss';
@@ -18,37 +20,37 @@ interface InstagramPost {
 const placeholderPosts = [
   {
     id: '1',
-    media_url: krolik1,
+    media_url: krolik1.src,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '2',
-    media_url: krolik2,
+    media_url: krolik2.src,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '3',
-    media_url: krolik3,
+    media_url: krolik3.src,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '4',
-    media_url: swinka1,
+    media_url: swinka1.src,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '5',
-    media_url: krolik1,
+    media_url: krolik1.src,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },
   {
     id: '6',
-    media_url: krolik2,
+    media_url: krolik2.src,
     permalink: 'https://www.instagram.com/hotelik.suselek/',
     media_type: 'IMAGE',
   },

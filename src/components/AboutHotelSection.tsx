@@ -6,7 +6,7 @@ const AboutHotelSection: React.FC = () => {
   return (
     <section id="o-hotelu" className={styles.aboutHotel}>
       <div className={styles.heroImage}>
-        <img src={aboutHotelImage} alt="Hotelik Susełek" className={styles.image} />
+        <img src={aboutHotelImage.src} alt="Hotelik Susełek" className={styles.image} />
       </div>
 
       <div className={`${styles.aboutHotelContainer} container`}>

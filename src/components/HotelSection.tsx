@@ -25,7 +25,7 @@ const HotelSection: React.FC = () => {
           </div>
         </div>
         <div className={styles.homeImage}>
-          <img src={krolik1} alt="Królik" />
+          <img src={krolik1.src} alt="Królik" />
         </div>
       </div>
     </section>

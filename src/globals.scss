@@ -1,25 +1,6 @@
-// src/index.scss
+// src/globals.scss
+@use './variables' as *;
 
-// Zmienne globalne
-$primary-color: #3e7979;
-$secondary-color: #ffffff;
-$text-color: #292929;
-$text-color-2: #767676;
-$bg-color: #ffffff;
-$bg-color-2: #f8f6f2;
-$shadow-color: rgba(0, 0, 0, 0.1);
-
-$primary-font-family: Lato;
-$primary-font-weight: 500;
-$primary-font-style: Medium;
-$primary-font-size: 16px;
-$primary-leading-trim: NONE;
-$primary-line-height: 100%;
-$primary-letter-spacing: 0%;
-
-$font-stack:
-  -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-  'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 // Globalne style i resetowanie
 html {
   scroll-behavior: smooth;

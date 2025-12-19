@@ -1,5 +1,8 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter, usePathname } from 'next/navigation';
 import styles from '../styles/Header.module.scss';
 import PhoneButton from './PhoneButton';
 import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
@@ -7,8 +10,8 @@ import SuselekLogo from '../assets/SUSELEK_logo_small.svg';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [invertColors, setInvertColors] = useState(false);
-  const navigate = useNavigate();
-  const location = useLocation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const checkBackgroundColor = () => {
@@ -64,7 +67,7 @@ const Header: React.FC = () => {
       window.removeEventListener('resize', checkBackgroundColor);
       clearTimeout(timer);
     };
-  }, [location.pathname]); // Re-run when route changes
+  }, [pathname]); // Re-run when route changes
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -94,8 +97,8 @@ const Header: React.FC = () => {
       }
 
       // Navigate to target page if not already there, then scroll
-      if (location.pathname !== targetPath) {
-        navigate(targetPath);
+      if (pathname !== targetPath) {
+        router.push(targetPath);
         setTimeout(() => scrollToElement(sectionId), 100);
       } else {
         scrollToElement(sectionId);
@@ -106,7 +109,7 @@ const Header: React.FC = () => {
     <header className={`${styles.header} ${invertColors ? styles.inverted : ''}`}>
       <nav className={`${styles.navContainer} container`}>
         <div className={styles.logo}>
-          <Link to="/">
+          <Link href="/">
             <img src={SuselekLogo} alt="SUSELEK" />
           </Link>
         </div>

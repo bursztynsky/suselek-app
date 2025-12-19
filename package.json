@@ -2,32 +2,33 @@
   "name": "suselek-app",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint . && npx tsc --noEmit",
-    "preview": "vite preview",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --ext .ts,.tsx && npx tsc --noEmit",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\""
   },
   "dependencies": {
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "react-router-dom": "^7.10.1"
+    "next": "^16.1.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.3",
     "@eslint/js": "^9.29.0",
+    "@types/node": "25.0.3",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.5.2",
     "eslint": "^9.29.0",
+    "eslint-config-next": "^16.1.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.2.0",
     "prettier": "^3.7.4",
     "sass": "^1.89.2",
     "typescript": "~5.8.3",
-    "typescript-eslint": "^8.34.1",
-    "vite": "^7.0.0"
+    "typescript-eslint": "^8.34.1"
   }
 }
