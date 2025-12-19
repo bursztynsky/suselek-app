@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import NextImage from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
+import logo from '../../assets/SUSELEK_logo_small.svg';
 
 const PhoneButton: React.FC<{ inverted: boolean }> = ({ inverted }) => {
   return (
@@ -128,13 +128,10 @@ const Header: React.FC = () => {
           {/* Desktop */}
           <div className="hidden lg:flex items-center justify-between gap-8">
             <Link href="/" className="flex items-center">
-              <NextImage
-                src="/SUSELEK_logo_small.svg"
+              <img
+                src={logo.src}
                 alt="SUSELEK"
-                width={56}
-                height={56}
                 className="h-12 w-12"
-                priority
               />
             </Link>
 
@@ -158,13 +155,10 @@ const Header: React.FC = () => {
           {/* Mobile */}
           <div className="flex lg:hidden items-center justify-between">
             <Link href="/" className="flex items-center">
-              <NextImage
-                src="/SUSELEK_logo_small.svg"
+              <img
+                src={logo.src}
                 alt="SUSELEK"
-                width={48}
-                height={48}
                 className="h-10 w-10"
-                priority
               />
             </Link>
 
@@ -200,13 +194,10 @@ const Header: React.FC = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center"
               >
-                <NextImage
-                  src="/SUSELEK_logo_small.svg"
+                <img
+                  src={logo.src}
                   alt="SUSELEK"
-                  width={48}
-                  height={48}
                   className="h-10 w-10"
-                  priority
                 />
               </Link>
 

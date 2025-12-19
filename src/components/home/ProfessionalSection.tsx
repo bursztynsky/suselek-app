@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import houseIcon from '../../assets/house.svg';
 import leafesIcon from '../../assets/leafes.svg';
 import heartIcon from '../../assets/heart.svg';
@@ -13,7 +12,7 @@ interface FeatureCardProps {
 const FeatureCard: React.FC<FeatureCardProps> = ({ icon, alt, text }) => (
   <div className="flex flex-col items-center text-center">
     <div className="w-16 h-16 mb-6 relative">
-      <Image src={icon} alt={alt} width={64} height={64} className="object-contain" />
+      <img src={icon} alt={alt} className="w-full h-full object-contain" />
     </div>
     <p className="text-text-secondary text-sm font-normal leading-relaxed">{text}</p>
   </div>
@@ -22,7 +21,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({ icon, alt, text }) => (
 const ProfessionalSection: React.FC = () => {
   const features = [
     {
-      icon: houseIcon,
+      icon: houseIcon.src,
       alt: 'Dom',
       text: (
         <>
@@ -35,12 +34,12 @@ const ProfessionalSection: React.FC = () => {
       ),
     },
     {
-      icon: leafesIcon,
+      icon: leafesIcon.src,
       alt: 'Natura',
       text: 'Zwierzęta zamieszkają ze mną – mam dla nich wydzielony i odpowiednio przygotowany cały parter naszego domu w Nadarzynie pod Warszawą.',
     },
     {
-      icon: heartIcon,
+      icon: heartIcon.src,
       alt: 'Opieka',
       text: 'Opieka po zabiegach, podawanie leków, szybkie reagowanie na pierwsze objawy problemów zdrowotnych',
     },

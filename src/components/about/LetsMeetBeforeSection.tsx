@@ -46,7 +46,7 @@ const LetsMeetBeforeSection: React.FC = () => {
 
         {/* Footer Note */}
         <div className="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-md max-w-3xl mx-auto">
-          <img src={aboutIcon2} alt="" className="w-12 h-12 flex-shrink-0" />
+          <img src={aboutIcon2.src} alt="" className="w-12 h-12 flex-shrink-0" />
           <p className="text-text text-base">
             <strong>Prośba:</strong> hotelik mieści się w naszym domu rodzinnym, dlatego proszę nie
             odwiedzajcie nas bez zapowiedzi. Pracujemy i żyjemy tu całą pięcioosobową rodziną.

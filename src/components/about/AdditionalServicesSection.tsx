@@ -9,7 +9,7 @@ const AdditionalServicesSection: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Column 1: Title */}
           <div className="flex flex-col justify-center items-center md:items-start">
-            <img src={aboutIcon} alt="" className="w-16 h-16 mb-4" />
+            <img src={aboutIcon.src} alt="" className="w-16 h-16 mb-4" />
             <h2 className="text-4xl md:text-5xl text-primary text-center md:text-left">
               <span className="font-bold block">Dodatkowa</span>
               <span className="font-light block">oferta</span>

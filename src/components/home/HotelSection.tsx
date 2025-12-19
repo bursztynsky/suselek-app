@@ -1,6 +1,5 @@
 import React from 'react';
 import krolik1 from '../../assets/krolik1.png';
-import NextImage from 'next/image';
 import aboutHotelShapeHeart from '../../assets/aboutHotelShapeHeart.svg';
 import aboutHotelCol1 from '../../assets/aboutHotelCol1.svg';
 import aboutHotelCol2 from '../../assets/aboutHotelCol2.svg';
@@ -17,8 +16,8 @@ const HotelSection: React.FC = () => {
       className="relative bg-primary text-white overflow-hidden pt-32 pb-24 px-4 md:pt-36 md:pb-32 md:min-h-screen"
     >
       {/* Background decoration */}
-      <NextImage
-        src={aboutHotelShapeHeart}
+      <img
+        src={aboutHotelShapeHeart.src}
         alt="Ikonka serca"
         className="absolute w-[400px] h-[350px] md:w-[700px] md:h-[600px] -top-10 -right-20 md:right-0 pointer-events-none"
       />
@@ -56,13 +55,13 @@ const HotelSection: React.FC = () => {
         <div className="hidden md:block mt-18">
           <div className="flex flex-row justify-center gap-1">
             <div className="flex-1 text-center relative">
-              <NextImage src={aboutHotelCol1} alt="Blisko natury" className="w-full h-auto" />
+              <img src={aboutHotelCol1.src} alt="Blisko natury" className="w-full h-auto" />
             </div>
             <div className="flex-1 text-center relative">
-              <NextImage src={aboutHotelCol2} alt="Bez stresu" className="w-full h-auto" />
+              <img src={aboutHotelCol2.src} alt="Bez stresu" className="w-full h-auto" />
             </div>
             <div className="flex-1 text-center relative">
-              <NextImage src={aboutHotelCol3} alt="Bezpiecznie" className="w-full h-auto" />
+              <img src={aboutHotelCol3.src} alt="Bezpiecznie" className="w-full h-auto" />
             </div>
           </div>
         </div>
@@ -71,13 +70,13 @@ const HotelSection: React.FC = () => {
         <div className="block md:hidden mt-8">
           <div className="flex flex-row flex-nowrap justify-between gap-1 w-full">
             <div className="flex-1 text-center relative">
-              <NextImage src={aboutHotelCol1Mobile} alt="Blisko natury" className="w-full h-auto" />
+              <img src={aboutHotelCol1Mobile.src} alt="Blisko natury" className="w-full h-auto" />
             </div>
             <div className="flex-1 text-center relative">
-              <NextImage src={aboutHotelCol2Mobile} alt="Bez stresu" className="w-full h-auto" />
+              <img src={aboutHotelCol2Mobile.src} alt="Bez stresu" className="w-full h-auto" />
             </div>
             <div className="flex-1 text-center relative">
-              <NextImage src={aboutHotelCol3Mobile} alt="Bezpiecznie" className="w-full h-auto" />
+              <img src={aboutHotelCol3Mobile.src} alt="Bezpiecznie" className="w-full h-auto" />
             </div>
           </div>
         </div>
