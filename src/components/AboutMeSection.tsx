@@ -32,7 +32,10 @@ const AboutMeSection: React.FC = () => {
               gryzoniami.
             </p>
           </div>
-          <a href="#sprawdz-dostepnosc" className="inline-block mt-8 font-semibold text-lg py-4 px-10 rounded-full bg-primary text-white shadow-md transition-all duration-300 hover:bg-primary/90 hover:shadow-lg">
+          <a
+            href="#sprawdz-dostepnosc"
+            className="inline-block mt-8 font-semibold text-lg py-4 px-10 rounded-full bg-primary text-white shadow-md transition-all duration-300 hover:bg-primary/90 hover:shadow-lg"
+          >
             Sprawdź dostępność miejsc
           </a>
         </div>

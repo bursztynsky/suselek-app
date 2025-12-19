@@ -31,7 +31,9 @@ const LetsMeetBeforeSection: React.FC = () => {
 
           <div className="text-center">
             <div className="text-6xl font-bold text-primary mb-4">2</div>
-            <p className="text-text text-base md:text-lg">Pokażę Ci hotelik i odpowiem na wszystkie pytania</p>
+            <p className="text-text text-base md:text-lg">
+              Pokażę Ci hotelik i odpowiem na wszystkie pytania
+            </p>
           </div>
 
           <div className="text-center">

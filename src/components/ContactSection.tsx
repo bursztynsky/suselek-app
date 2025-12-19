@@ -6,7 +6,9 @@ const ContactSection: React.FC = () => {
   return (
     <section id="kontakt" className="bg-white py-20 px-4">
       <div className="container mx-auto max-w-[1200px]">
-        <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-4">Skontaktuj się z nami</h2>
+        <h2 className="text-4xl md:text-5xl font-bold text-center text-primary mb-4">
+          Skontaktuj się z nami
+        </h2>
         <p className="text-center text-text text-lg md:text-xl mb-12 max-w-2xl mx-auto">
           Masz pytania? Chętnie na nie odpowiemy i pomożemy w wyborze najlepszej opcji dla Twojego
           pupila

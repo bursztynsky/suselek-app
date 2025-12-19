@@ -93,7 +93,9 @@ const Header: React.FC = () => {
     };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 w-full z-50 bg-transparent py-4 ${invertColors ? 'text-primary' : 'text-secondary'}`}>
+    <header
+      className={`fixed top-0 left-0 right-0 w-full z-50 bg-transparent py-4 ${invertColors ? 'text-primary' : 'text-secondary'}`}
+    >
       <nav className="container flex justify-between items-center relative px-4 lg:px-8">
         <div className="flex items-center z-[52]">
           <Link href="/">
@@ -107,14 +109,26 @@ const Header: React.FC = () => {
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          <span className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? 'rotate-45 translate-x-[7px] translate-y-[7px]' : ''}`}></span>
-          <span className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? 'opacity-0' : ''}`}></span>
-          <span className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? '-rotate-45 translate-x-[7px] -translate-y-[7px]' : ''}`}></span>
+          <span
+            className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? 'rotate-45 translate-x-[7px] translate-y-[7px]' : ''}`}
+          ></span>
+          <span
+            className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? 'opacity-0' : ''}`}
+          ></span>
+          <span
+            className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? '-rotate-45 translate-x-[7px] -translate-y-[7px]' : ''}`}
+          ></span>
         </button>
 
-        <ul className={`flex list-none m-0 p-0 gap-6 items-center max-lg:fixed max-lg:top-0 max-lg:h-screen max-lg:w-4/5 max-lg:max-w-[400px] max-lg:bg-primary max-lg:flex-col max-lg:justify-center max-lg:gap-8 max-lg:px-8 max-lg:py-8 max-lg:shadow-[-2px_0_10px_rgba(0,0,0,0.1)] max-lg:transition-all max-lg:duration-300 ${isMenuOpen ? 'max-lg:right-0' : 'max-lg:-right-full'}`}>
+        <ul
+          className={`flex list-none m-0 p-0 gap-6 items-center max-lg:fixed max-lg:top-0 max-lg:h-screen max-lg:w-4/5 max-lg:max-w-[400px] max-lg:bg-primary max-lg:flex-col max-lg:justify-center max-lg:gap-8 max-lg:px-8 max-lg:py-8 max-lg:shadow-[-2px_0_10px_rgba(0,0,0,0.1)] max-lg:transition-all max-lg:duration-300 ${isMenuOpen ? 'max-lg:right-0' : 'max-lg:-right-full'}`}
+        >
           <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a href="#hotel" className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`} onClick={handleSectionClick('hotel')}>
+            <a
+              href="#hotel"
+              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
+              onClick={handleSectionClick('hotel')}
+            >
               Hotel dla zwierząt
             </a>
           </li>
@@ -137,7 +151,11 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a href="#galeria" className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`} onClick={handleSectionClick('galeria')}>
+            <a
+              href="#galeria"
+              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
+              onClick={handleSectionClick('galeria')}
+            >
               Galeria
             </a>
           </li>
@@ -151,7 +169,11 @@ const Header: React.FC = () => {
             </a>
           </li>
           <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a href="#cennik" className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`} onClick={handleSectionClick('cennik')}>
+            <a
+              href="#cennik"
+              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
+              onClick={handleSectionClick('cennik')}
+            >
               Cennik
             </a>
           </li>

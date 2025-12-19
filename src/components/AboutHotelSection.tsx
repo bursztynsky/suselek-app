@@ -5,7 +5,11 @@ const AboutHotelSection: React.FC = () => {
   return (
     <section id="o-hotelu" className="bg-white">
       <div className="w-full h-64 md:h-96 overflow-hidden">
-        <img src={aboutHotelImage.src} alt="Hotelik Susełek" className="w-full h-full object-cover" />
+        <img
+          src={aboutHotelImage.src}
+          alt="Hotelik Susełek"
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div className="container mx-auto max-w-[1200px] px-4 py-20">

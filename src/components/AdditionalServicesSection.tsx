@@ -38,7 +38,11 @@ const AdditionalServicesSection: React.FC = () => {
 
           {/* Column 3: Photo */}
           <div className="flex items-center justify-center">
-            <img src={about3Image.src} alt="Zwierzęta" className="w-full h-auto rounded-2xl shadow-xl" />
+            <img
+              src={about3Image.src}
+              alt="Zwierzęta"
+              className="w-full h-auto rounded-2xl shadow-xl"
+            />
           </div>
         </div>
       </div>

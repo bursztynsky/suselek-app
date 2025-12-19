@@ -30,7 +30,10 @@ const Footer: React.FC = () => {
               >
                 <img src={fbIcon} alt="Facebook" className="w-6 h-6" />
               </a>
-              <a href="mailto:hotelik.suselek@gmail.com" className="transition-opacity hover:opacity-70">
+              <a
+                href="mailto:hotelik.suselek@gmail.com"
+                className="transition-opacity hover:opacity-70"
+              >
                 <img src={mailIcon} alt="Email" className="w-6 h-6" />
               </a>
             </div>
@@ -63,7 +66,10 @@ const Footer: React.FC = () => {
               <a href="tel:+48601155887" className="text-sm hover:underline transition-all">
                 + 48 601 155 887
               </a>
-              <a href="mailto:hotelik.suselek@gmail.com" className="text-sm hover:underline transition-all">
+              <a
+                href="mailto:hotelik.suselek@gmail.com"
+                className="text-sm hover:underline transition-all"
+              >
                 hotelik.suselek@gmail.com
               </a>
             </div>
@@ -86,7 +92,9 @@ const Footer: React.FC = () => {
 
         {/* Copyright at bottom */}
         <div className="pt-8 border-t border-secondary/20">
-          <p className="text-sm text-center lg:text-left">© 2025 Aleksandra Bursztyńska-Kostrzewa</p>
+          <p className="text-sm text-center lg:text-left">
+            © 2025 Aleksandra Bursztyńska-Kostrzewa
+          </p>
         </div>
       </div>
     </footer>
