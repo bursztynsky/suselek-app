@@ -2,204 +2,146 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import NextImage from 'next/image';
 import { useRouter, usePathname } from 'next/navigation';
-import PhoneButton from './PhoneButton';
-import SuselekLogo from '../../assets/SUSELEK_logo_small.svg';
+
+const PhoneButton: React.FC<{ inverted: boolean }> = ({ inverted }) => {
+  return (
+    <a
+      href="tel:+48601155887"
+      className={`inline-flex items-center py-3 px-6 rounded-full border text-lg transition-all duration-300 cursor-pointer no-underline ${
+        inverted
+          ? 'text-primary border-primary hover:bg-primary hover:text-secondary'
+          : 'text-secondary border-secondary hover:bg-secondary hover:text-primary'
+      }`}
+      aria-label="Zadzwoń pod numer +48 601 155 887"
+    >
+      <span className="mr-2 flex items-center leading-none">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-[1.1em] h-[1.1em] block"
+        >
+          <path
+            d="M14.6667 11.2797V13.2797C14.6675 13.4654 14.6294 13.6492 14.555 13.8193C14.4807 13.9894 14.3716 14.1421 14.2348 14.2676C14.0979 14.3932 13.9364 14.4887 13.7605 14.5482C13.5847 14.6077 13.3983 14.6298 13.2134 14.6131C11.1619 14.3902 9.19137 13.6892 7.46004 12.5664C5.84926 11.5428 4.48359 10.1772 3.46004 8.56641C2.33336 6.82721 1.6322 4.84707 1.41337 2.78641C1.39671 2.60205 1.41862 2.41625 1.4777 2.24082C1.53679 2.0654 1.63175 1.9042 1.75655 1.76749C1.88134 1.63077 2.03324 1.52155 2.20256 1.44675C2.37189 1.37196 2.55493 1.33325 2.74004 1.33307H4.74004C5.06357 1.32989 5.37723 1.44446 5.62254 1.65543C5.86786 1.8664 6.02809 2.15937 6.07337 2.47974C6.15779 3.11978 6.31434 3.74822 6.54004 4.35307C6.62973 4.59169 6.64914 4.85102 6.59597 5.10033C6.5428 5.34964 6.41928 5.57848 6.24004 5.75974L5.39337 6.60641C6.34241 8.27544 7.72434 9.65737 9.39337 10.6064L10.24 9.75974C10.4213 9.5805 10.6501 9.45697 10.8994 9.4038C11.1488 9.35063 11.4081 9.37004 11.6467 9.45974C12.2516 9.68544 12.88 9.84199 13.52 9.92641C13.8439 9.97209 14.1396 10.1352 14.3511 10.3847C14.5625 10.6343 14.6748 10.9528 14.6667 11.2797Z"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </span>
+      <span className="leading-none">+48 601 155 887</span>
+    </a>
+  );
+};
 
 const Header: React.FC = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [invertColors, setInvertColors] = useState(false);
+  const [isLightBg, setIsLightBg] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
+  // Detect background color to switch header colors
   useEffect(() => {
-    const checkBackgroundColor = () => {
+    const checkBackground = () => {
       const header = document.querySelector('header');
       if (!header) return;
 
-      const originalPointerEvents = header.style.pointerEvents;
-      header.style.pointerEvents = 'none';
-
       const headerRect = header.getBoundingClientRect();
-      const headerCenter = headerRect.top + headerRect.height / 2;
+      const centerY = headerRect.top + headerRect.height / 2;
 
-      const elementAtCenter = document.elementFromPoint(window.innerWidth / 2, headerCenter);
+      header.style.pointerEvents = 'none';
+      const elementBelow = document.elementFromPoint(window.innerWidth / 2, centerY);
+      header.style.pointerEvents = '';
 
-      header.style.pointerEvents = originalPointerEvents;
-
-      if (elementAtCenter) {
-        const section = elementAtCenter.closest('section, main, body');
+      if (elementBelow) {
+        const section = elementBelow.closest('section, main, body');
         if (section) {
-          const bgColor = window.getComputedStyle(section).backgroundColor;
+          const bg = window.getComputedStyle(section).backgroundColor;
+          const rgb = bg.match(/\d+/g);
 
-          const rgbMatch = bgColor.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
-          if (rgbMatch) {
-            const r = parseInt(rgbMatch[1]);
-            const g = parseInt(rgbMatch[2]);
-            const b = parseInt(rgbMatch[3]);
-
-            const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-
-            setInvertColors(luminance > 0.5);
+          if (rgb) {
+            const luminance = (0.299 * parseInt(rgb[0]) + 0.587 * parseInt(rgb[1]) + 0.114 * parseInt(rgb[2])) / 255;
+            setIsLightBg(luminance > 0.5);
           }
         }
       }
     };
 
-    window.addEventListener('scroll', checkBackgroundColor);
-    window.addEventListener('resize', checkBackgroundColor);
-
-    const timer = setTimeout(checkBackgroundColor, 100);
+    checkBackground();
+    window.addEventListener('scroll', checkBackground);
+    window.addEventListener('resize', checkBackground);
 
     return () => {
-      window.removeEventListener('scroll', checkBackgroundColor);
-      window.removeEventListener('resize', checkBackgroundColor);
-      clearTimeout(timer);
+      window.removeEventListener('scroll', checkBackground);
+      window.removeEventListener('resize', checkBackground);
     };
   }, [pathname]);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const handleNavClick = (sectionId: string, targetPath: string = '/') => (e: React.MouseEvent) => {
+    e.preventDefault();
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
-
-  const scrollToElement = (elementId: string) => {
-    const element = document.getElementById(elementId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
-  const handleSectionClick =
-    (sectionId: string, targetPath: string = '/') =>
-    (e: React.MouseEvent) => {
-      e.preventDefault();
-      closeMenu();
-
-      if (sectionId === 'galeria') {
-        scrollToElement(sectionId);
-        return;
-      }
-
-      if (pathname !== targetPath) {
-        router.push(targetPath);
-        setTimeout(() => scrollToElement(sectionId), 100);
-      } else {
-        scrollToElement(sectionId);
+    const scrollTo = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     };
 
+    if (pathname !== targetPath) {
+      router.push(targetPath);
+      setTimeout(scrollTo, 100);
+    } else {
+      scrollTo();
+    }
+  };
+
+  const navItems = [
+    { id: 'hotel', label: 'Hotel dla zwierząt', path: '/' },
+    { id: 'strzyzenie', label: 'Strzyżenie', path: '/' },
+    { id: 'psychologia', label: 'Psychologia zwierząt', path: '/' },
+    { id: 'galeria', label: 'Galeria', path: '/' },
+    { id: 'o-mnie', label: 'O nas', path: '/about' },
+    { id: 'cennik', label: 'Cennik', path: '/' },
+    { id: 'regulamin', label: 'Regulamin', path: '/' },
+  ];
+
+  const textColor = isLightBg ? 'text-primary' : 'text-secondary';
+
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 w-full z-50 bg-transparent py-4 ${invertColors ? 'text-primary' : 'text-secondary'}`}
-    >
-      <nav className="container flex justify-between items-center relative px-4 lg:px-8">
-        <div className="flex items-center z-[52]">
-          <Link href="/public">
-            <img src={SuselekLogo} alt="SUSELEK" className="h-10 w-auto md:h-8" />
-          </Link>
-        </div>
-
-        {/* Hamburger Menu Button */}
-        <button
-          className="hidden max-lg:flex flex-col gap-1 bg-transparent border-none cursor-pointer p-2 z-[52]"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <span
-            className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? 'rotate-45 translate-x-[7px] translate-y-[7px]' : ''}`}
-          ></span>
-          <span
-            className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? 'opacity-0' : ''}`}
-          ></span>
-          <span
-            className={`w-6 h-0.5 rounded transition-all duration-300 ${invertColors ? 'bg-primary' : 'bg-secondary'} ${isMenuOpen ? '-rotate-45 translate-x-[7px] -translate-y-[7px]' : ''}`}
-          ></span>
-        </button>
-
-        <ul
-          className={`flex list-none m-0 p-0 gap-6 items-center max-lg:fixed max-lg:top-0 max-lg:h-screen max-lg:w-4/5 max-lg:max-w-[400px] max-lg:bg-primary max-lg:flex-col max-lg:justify-center max-lg:gap-8 max-lg:px-8 max-lg:py-8 max-lg:shadow-[-2px_0_10px_rgba(0,0,0,0.1)] max-lg:transition-all max-lg:duration-300 ${isMenuOpen ? 'max-lg:right-0' : 'max-lg:-right-full'}`}
-        >
-          <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a
-              href="#hotel"
-              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
-              onClick={handleSectionClick('hotel')}
-            >
-              Hotel dla zwierząt
-            </a>
-          </li>
-          <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a
-              href="#strzyzenie"
-              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
-              onClick={handleSectionClick('strzyzenie')}
-            >
-              Strzyżenie
-            </a>
-          </li>
-          <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a
-              href="#psychologia"
-              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
-              onClick={handleSectionClick('psychologia')}
-            >
-              Psychologia zwierząt
-            </a>
-          </li>
-          <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a
-              href="#galeria"
-              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
-              onClick={handleSectionClick('galeria')}
-            >
-              Galeria
-            </a>
-          </li>
-          <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a
-              href="#o-mnie"
-              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
-              onClick={handleSectionClick('o-mnie', '/about')}
-            >
-              O nas
-            </a>
-          </li>
-          <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a
-              href="#cennik"
-              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
-              onClick={handleSectionClick('cennik')}
-            >
-              Cennik
-            </a>
-          </li>
-          <li className="m-0 max-lg:w-full max-lg:text-center">
-            <a
-              href="#regulamin"
-              className={`no-underline whitespace-nowrap transition-colors duration-300 max-lg:text-xl max-lg:block max-lg:py-2 max-lg:text-secondary hover:text-white ${invertColors ? 'text-primary max-lg:text-secondary hover:text-primary/80' : 'text-secondary'}`}
-              onClick={handleSectionClick('regulamin')}
-            >
-              Regulamin
-            </a>
-          </li>
-          <li className="hidden max-lg:block w-full text-center mt-4">
-            <PhoneButton
-              phoneNumber="+48601155887"
-              displayNumber="+48 601 155 887"
-              inverted={invertColors}
+    <header className="fixed top-0 left-0 right-0 w-full z-50 py-4">
+      <nav className="max-w-7xl mx-auto px-4">
+        {/* Desktop */}
+        <div className="hidden lg:flex items-center justify-between gap-8">
+          <Link href="/" className="flex items-center">
+            <NextImage
+              src="/SUSELEK_logo_small.svg"
+              alt="SUSELEK"
+              width={56}
+              height={56}
+              className="h-12 w-12"
+              priority
             />
-          </li>
-        </ul>
-        <div className="block max-lg:hidden">
-          <PhoneButton
-            phoneNumber="+48601155887"
-            displayNumber="+48 601 155 887"
-            inverted={invertColors}
-          />
+          </Link>
+
+          <ul className="flex items-center gap-6 m-0 p-0 list-none">
+            {navItems.map(item => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`${textColor} no-underline hover:opacity-70 transition-opacity duration-300`}
+                  onClick={handleNavClick(item.id, item.path)}
+                >
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+
+          <PhoneButton inverted={isLightBg} />
         </div>
       </nav>
     </header>

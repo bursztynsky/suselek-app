@@ -1,6 +1,5 @@
 // src/components/ContactSection.tsx
 import React from 'react';
-import PhoneButton from './PhoneButton';
 
 const ContactSection: React.FC = () => {
   return (
@@ -37,7 +36,12 @@ const ContactSection: React.FC = () => {
             <div>
               <h3 className="text-xl font-bold text-primary mb-2">Telefon</h3>
               <p className="text-text mb-4">Zadzwoń do nas:</p>
-              <PhoneButton phoneNumber="+48123456789" inverted />
+              <a
+                href="tel:+48123456789"
+                className="inline-flex items-center py-3 px-6 rounded-full border border-primary text-primary text-lg no-underline hover:bg-primary hover:text-secondary transition-all duration-300"
+              >
+                <span className="leading-none">+48 123 456 789</span>
+              </a>
             </div>
           </div>
 
