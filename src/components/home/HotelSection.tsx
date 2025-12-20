@@ -47,7 +47,15 @@ const HotelSection: React.FC = () => {
 
           {/* Image */}
           <div className="w-full max-w-[450px]">
-            <img src={krolik1.src} alt="Królik" className="w-full" />
+            <img
+              src={krolik1.src}
+              alt="Królik"
+              className="w-full"
+              style={{
+                imageOrientation: 'from-image',
+                objectFit: 'contain'
+              }}
+            />
           </div>
         </div>
 
