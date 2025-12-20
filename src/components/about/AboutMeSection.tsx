@@ -4,24 +4,24 @@ import Button from '../shared/Button';
 
 const AboutMeSection: React.FC = () => {
   return (
-    <section id="o-mnie" className="bg-bg-secondary py-32 px-4">
+    <section id="o-mnie" className="bg-color-secondary py-32 px-4">
       <div className="container mx-auto max-w-[var(--width-container)] flex flex-col md:flex-row gap-12 items-center">
-        <div className="flex-1 max-w-md">
+        <div className="flex-1 md:flex-[1_1_50%] max-w-[600px]">
           <img
             src={aboutMeImage.src}
             alt="Aleksandra Bursztyńska-Kostrzewa"
-            className="w-full h-auto rounded-[var(--radius-xl)] shadow-xl"
+            className="w-[588px] h-[633px] rounded-[var(--radius-xl)] shadow-xl object-cover"
           />
         </div>
-        <div className="flex-1 max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-8">Poznajmy się</h2>
-          <div className="text-text text-base md:text-lg leading-relaxed space-y-4">
+        <div className="flex-1 md:flex-[1_1_50%] max-w-2xl">
+          <h2 className="text-[64px] font-light italic text-text-primary mb-8">Poznajmy się</h2>
+          <div className="text-text-primary text-[16px] font-normal leading-relaxed space-y-1">
             <p>Witam! Nazywam się Aleksandra Bursztyńska-Kostrzewa.</p>
             <p>
               Jestem technikiem weterynarii z ponad 6-letnim doświadczeniem w warszawskich
               przychodniach:
             </p>
-            <ul className="list-disc pl-6 space-y-2">
+            <ul className="list-disc pl-6 space-y-1">
               <li>Oaza</li>
               <li>Anima</li>
               <li>Medicavet</li>
@@ -36,7 +36,7 @@ const AboutMeSection: React.FC = () => {
           <Button
             href="#sprawdz-dostepnosc"
             variant="primary"
-            className="mt-8 font-semibold text-lg"
+            className="mt-8 font-semibold text-[20px]"
           >
             Sprawdź dostępność miejsc
           </Button>
