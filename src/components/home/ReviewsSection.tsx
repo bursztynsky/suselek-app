@@ -39,7 +39,7 @@ const ReviewsSection: React.FC = () => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [fadeIn, setFadeIn] = useState(true);
 
-  const MAX_TEXT_LENGTH = 280;
+  const MAX_TEXT_LENGTH = 250;
 
   const handlePrevReview = () => {
     if (isAnimating) return;
@@ -97,7 +97,7 @@ const ReviewsSection: React.FC = () => {
             style={{ backgroundImage: `url(${grassBackground.src})` }}
           ></div>
           {/* White rounded card with content */}
-          <div className="relative bg-secondary rounded-3xl px-4 py-6 md:p-12 shadow-xl max-w-[280px] md:max-w-5xl mx-auto">
+          <div className="relative bg-secondary rounded-3xl px-4 py-8 md:p-12 shadow-xl max-w-[240px] md:max-w-5xl mx-auto">
             <div
               key={currentReview.id}
               className={`text-center transition-opacity duration-300 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
@@ -111,7 +111,7 @@ const ReviewsSection: React.FC = () => {
               </h3>
 
               {/* Fixed height container for text to prevent size changes */}
-              <div className="mb-6 md:mb-8 h-[200px] md:h-[140px] flex flex-col items-center justify-start">
+              <div className="mb-6 md:mb-8 h-[220px] md:h-[140px] flex flex-col items-center justify-start">
                 <p className="text-black text-[14px] font-normal leading-relaxed max-w-[600px] mx-auto">
                   {displayText}
                 </p>
@@ -152,7 +152,7 @@ const ReviewsSection: React.FC = () => {
 
           {/* Mobile navigation buttons - positioned on section background */}
           <button
-            className="md:hidden absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center transition-all hover:scale-110 z-20 rotate-180"
+            className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center transition-all hover:scale-110 z-20 rotate-180"
             onClick={handlePrevReview}
             aria-label="Previous review"
           >
@@ -160,7 +160,7 @@ const ReviewsSection: React.FC = () => {
           </button>
 
           <button
-            className="md:hidden absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center transition-all hover:scale-110 z-20"
+            className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center transition-all hover:scale-110 z-20"
             onClick={handleNextReview}
             aria-label="Next review"
           >
