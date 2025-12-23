@@ -37,6 +37,11 @@ jobs:
         run: npm run lint
 
       - name: Build project
+        env:
+          GOOGLE_PLACES_API_KEY: ${{ secrets.GOOGLE_PLACES_API_KEY }}
+          GOOGLE_PLACE_ID: ${{ secrets.GOOGLE_PLACE_ID }}
+          NEXT_PUBLIC_SITE_URL: ${{ secrets.NEXT_PUBLIC_SITE_URL }}
+          GITHUB_PAGES: true
         run: npm run build:gh-pages
 
       - name: Setup Pages
