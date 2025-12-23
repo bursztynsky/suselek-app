@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${baseUrl}/about`,
+      url: `${baseUrl}/o-nas`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,

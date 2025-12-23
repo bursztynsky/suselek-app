@@ -120,7 +120,7 @@ const Header: React.FC = () => {
     { id: 'strzyzenie', label: 'Strzyżenie', path: '/' },
     { id: 'psychologia', label: 'Psychologia zwierząt', path: '/' },
     { id: 'galeria', label: 'Galeria', path: '/' },
-    { id: 'o-mnie', label: 'O nas', path: '/about' },
+    { id: 'o-mnie', label: 'O nas', path: '/o-nas' },
     { id: 'cennik', label: 'Cennik', path: '/cennik' },
     { id: 'regulamin', label: 'Regulamin', path: '/' },
   ];
