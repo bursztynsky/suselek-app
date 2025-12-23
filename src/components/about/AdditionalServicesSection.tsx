@@ -36,9 +36,7 @@ const AdditionalServicesSection: React.FC = () => {
         {/* Row 1 */}
         <div className="flex-1 bg-[#f8f6f2] flex flex-col justify-end p-8 text-[#292929]">
           <h3 className="text-2xl font-bold mb-4">Psychologia zwierząt</h3>
-          <p className="text-base font-normal mb-2">
-            Pomagam przy łączeniu zwierząt w stado:
-          </p>
+          <p className="text-base font-normal mb-2">Pomagam przy łączeniu zwierząt w stado:</p>
           <ul className="list-disc list-inside text-base font-normal">
             <li>online (konsultacje)</li>
             <li>osobiście (prowadzenie procesu łączenia)</li>
@@ -54,24 +52,20 @@ const AdditionalServicesSection: React.FC = () => {
           />
           <div className="absolute top-0 left-0 p-8 text-white">
             <h3 className="text-2xl font-bold mb-2">Grooming</h3>
-            <p className="text-base font-normal">strzyżenie królików i <br/>świnek morskich</p>
+            <p className="text-base font-normal">
+              strzyżenie królików i <br />
+              świnek morskich
+            </p>
           </div>
         </div>
       </div>
 
       {/* Column 3 */}
       <div className="flex-1 h-full relative">
-        <Image
-          src={about3Image}
-          alt="Additional services"
-          fill
-          className="object-cover"
-        />
+        <Image src={about3Image} alt="Additional services" fill className="object-cover" />
       </div>
     </section>
   );
 };
 
 export default AdditionalServicesSection;
-
-

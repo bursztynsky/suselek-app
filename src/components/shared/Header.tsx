@@ -94,6 +94,12 @@ const Header: React.FC = () => {
       e.preventDefault();
       setIsMobileMenuOpen(false);
 
+      // If it's a dedicated page (not home page with sections), just navigate to it
+      if (targetPath !== '/') {
+        router.push(targetPath);
+        return;
+      }
+
       const scrollTo = () => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -115,7 +121,7 @@ const Header: React.FC = () => {
     { id: 'psychologia', label: 'Psychologia zwierząt', path: '/' },
     { id: 'galeria', label: 'Galeria', path: '/' },
     { id: 'o-mnie', label: 'O nas', path: '/about' },
-    { id: 'cennik', label: 'Cennik', path: '/' },
+    { id: 'cennik', label: 'Cennik', path: '/cennik' },
     { id: 'regulamin', label: 'Regulamin', path: '/' },
   ];
 
@@ -128,11 +134,7 @@ const Header: React.FC = () => {
           {/* Desktop */}
           <div className="hidden lg:flex items-center justify-between gap-8">
             <Link href="/" className="flex items-center">
-              <img
-                src={logo.src}
-                alt="SUSELEK"
-                className="h-12 w-12"
-              />
+              <img src={logo.src} alt="SUSELEK" className="h-12 w-12" />
             </Link>
 
             <ul className="flex items-center gap-6 m-0 p-0 list-none">
@@ -155,11 +157,7 @@ const Header: React.FC = () => {
           {/* Mobile */}
           <div className="flex lg:hidden items-center justify-between">
             <Link href="/" className="flex items-center">
-              <img
-                src={logo.src}
-                alt="SUSELEK"
-                className="h-10 w-10"
-              />
+              <img src={logo.src} alt="SUSELEK" className="h-10 w-10" />
             </Link>
 
             {/* Hamburger Menu Button */}
@@ -194,11 +192,7 @@ const Header: React.FC = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="flex items-center"
               >
-                <img
-                  src={logo.src}
-                  alt="SUSELEK"
-                  className="h-10 w-10"
-                />
+                <img src={logo.src} alt="SUSELEK" className="h-10 w-10" />
               </Link>
 
               {/* Close Button (X) */}

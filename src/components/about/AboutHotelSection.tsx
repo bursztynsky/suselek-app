@@ -24,7 +24,8 @@ const AboutHotelSection: React.FC = () => {
           <div className="flex-[1.4]">
             <p className="text-text-primary text-base md:text-lg leading-normal mb-6">
               Stworzyłam jedyny taki hotel w Polsce, polecany przez lekarzy weterynarii z całego
-              kraju. <br/>Hotelik dla gryzoni i królików znajduje się w Nadarzynie pod Warszawą.
+              kraju. <br />
+              Hotelik dla gryzoni i królików znajduje się w Nadarzynie pod Warszawą.
             </p>
             <p className="text-text-primary text-base md:text-lg leading-normal mb-4">
               <strong>Co oferuję?</strong>

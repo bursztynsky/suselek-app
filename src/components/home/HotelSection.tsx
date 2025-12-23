@@ -53,7 +53,7 @@ const HotelSection: React.FC = () => {
               className="w-full"
               style={{
                 imageOrientation: 'from-image',
-                objectFit: 'contain'
+                objectFit: 'contain',
               }}
             />
           </div>
