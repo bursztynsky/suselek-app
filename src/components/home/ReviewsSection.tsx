@@ -25,7 +25,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ reviews }) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const [fadeIn, setFadeIn] = useState(true);
 
-  const MAX_TEXT_LENGTH = 250;
+  const MAX_TEXT_LENGTH = 500;
 
   // If no reviews, show message
   if (!reviews || reviews.length === 0) {
@@ -81,9 +81,6 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ reviews }) => {
 
   const currentReview = reviews[currentReviewIndex];
   const isTextTruncated = currentReview.text.length > MAX_TEXT_LENGTH;
-  const displayText = isTextTruncated
-    ? currentReview.text.slice(0, MAX_TEXT_LENGTH) + '...'
-    : currentReview.text;
 
   return (
     <section
@@ -119,18 +116,22 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ reviews }) => {
               {/* Fixed height container for text to prevent size changes */}
               <div className="mb-6 md:mb-8 h-[220px] md:h-[140px] flex flex-col items-center justify-start">
                 <p className="text-black text-[14px] font-normal leading-relaxed max-w-[600px] mx-auto">
-                  {displayText}
+                  {isTextTruncated ? (
+                    <>
+                      {currentReview.text.slice(0, MAX_TEXT_LENGTH)}...{' '}
+                      <a
+                        href={currentReview.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary text-[14px] font-normal hover:underline"
+                      >
+                        Czytaj więcej
+                      </a>
+                    </>
+                  ) : (
+                    currentReview.text
+                  )}
                 </p>
-                {isTextTruncated && (
-                  <a
-                    href={currentReview.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary text-[14px] font-normal mt-2 hover:underline"
-                  >
-                    Czytaj więcej
-                  </a>
-                )}
               </div>
 
               <p className="text-black text-[12px] md:text-[14px] font-normal h-[20px] flex items-center justify-center">
