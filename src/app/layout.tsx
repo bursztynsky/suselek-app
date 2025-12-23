@@ -1,9 +1,18 @@
 import type { Metadata, Viewport } from 'next';
+import { Lato } from 'next/font/google';
 import '../globals.scss';
 import Header from '../components/shared/Header';
 import Footer from '../components/shared/Footer';
 import ScrollToTopButton from '../components/shared/ScrollToTopButton';
 import StructuredData from '../components/shared/StructuredData';
+
+const lato = Lato({
+  weight: ['100', '300', '400', '700'],
+  style: ['normal', 'italic'],
+  subsets: ['latin', 'latin-ext'],
+  display: 'swap',
+  variable: '--font-lato',
+});
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -45,6 +54,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  icons: {
+    icon: '/favicon.svg',
+  },
   openGraph: {
     title: 'Hotelik "Susełek" - Profesjonalna Opieka nad Zwierzętami',
     description:
@@ -83,17 +95,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <head>
-        <title>Hotelik &quot;Susełek&quot; - Profesjonalna Opieka nad Zwierzętami</title>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,300;1,400;1,500;1,600;1,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>
+      <body className={lato.className}>
         <StructuredData />
         <div className="app-container">
           <Header />
