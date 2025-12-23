@@ -80,31 +80,33 @@ export async function fetchGoogleReviews(): Promise<Review[]> {
     const reviewLink = placeUrl.includes('?') ? `${placeUrl}&reviews` : `${placeUrl}?reviews`;
 
     // Transform and sort reviews
-    return reviews
-      // Filter only 4-5 star reviews
-      .filter(review => review.rating >= 4)
-      .map((review, index) => ({
-        id: `review-${review.time}-${index}`,
-        rating: review.rating,
-        title: getReviewTitle(review.rating),
-        text: review.text || '',
-        author: review.author_name,
-        link: reviewLink,
-        time: review.time,
-        profile_photo_url: review.profile_photo_url,
-      }))
-      // Sort by time (newest first), then by rating (5 stars first)
-      .sort((a, b) => {
-        // First priority: newest reviews
-        const timeDiff = b.time - a.time;
-        if (timeDiff !== 0) {
-          return timeDiff;
-        }
-        // Second priority: higher rating
-        return b.rating - a.rating;
-      })
-      // Get top 10 reviews
-      .slice(0, 10);
+    return (
+      reviews
+        // Filter only 4-5 star reviews
+        .filter(review => review.rating >= 4)
+        .map((review, index) => ({
+          id: `review-${review.time}-${index}`,
+          rating: review.rating,
+          title: getReviewTitle(review.rating),
+          text: review.text || '',
+          author: review.author_name,
+          link: reviewLink,
+          time: review.time,
+          profile_photo_url: review.profile_photo_url,
+        }))
+        // Sort by time (newest first), then by rating (5 stars first)
+        .sort((a, b) => {
+          // First priority: newest reviews
+          const timeDiff = b.time - a.time;
+          if (timeDiff !== 0) {
+            return timeDiff;
+          }
+          // Second priority: higher rating
+          return b.rating - a.rating;
+        })
+        // Get top 10 reviews
+        .slice(0, 10)
+    );
   } catch {
     return [];
   }

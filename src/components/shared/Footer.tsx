@@ -81,19 +81,19 @@ const Footer: React.FC = () => {
             <div className="flex flex-col gap-1 lg:gap-3">
               <h4 className="text-sm font-bold tracking-wider">DOKUMENTY</h4>
               <a
-                href="#cennik"
+                href="/cennik"
                 className="text-sm font-light leading-relaxed hover:underline transition-all"
               >
                 Cennik
               </a>
               <a
-                href="#regulamin"
+                href="/regulami"
                 className="text-sm font-light leading-relaxed hover:underline transition-all"
               >
                 Regulamin
               </a>
               <a
-                href="#privacy"
+                href="/polityka-prywatnosci"
                 className="text-sm font-light leading-relaxed hover:underline transition-all"
               >
                 Polityka prywatności
