@@ -3,6 +3,62 @@ import aboutIcon2 from '../../assets/aboutIcon2.svg';
 import krolik1 from '../../assets/krolik1.png';
 import swinka from '../../assets/swinka.png';
 
+// Reusable pricing item component for mobile-friendly layout
+const PricingItem = ({
+  service,
+  unit,
+  price,
+  note,
+}: {
+  service: string;
+  unit: string;
+  price: string;
+  note?: string;
+}) => (
+  <div>
+    {/* Mobile layout - stacked */}
+    <div className="block md:hidden space-y-2">
+      <div className="text-text-primary font-normal text-[14px] leading-relaxed">{service}</div>
+      <div className="flex justify-end items-baseline gap-2">
+        <span className="text-text-secondary font-normal text-[12px]">{unit}</span>
+        <span className="text-primary font-normal text-[16px]">{price}</span>
+      </div>
+    </div>
+
+    {/* Desktop layout - flex with dotted line */}
+    <div className="hidden md:flex items-end gap-3">
+      <span
+        className="text-text-primary font-normal flex-shrink-0"
+        style={{ fontSize: 'var(--font-size-text-base)' }}
+      >
+        {service}
+      </span>
+      <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
+      <span
+        className="text-text-secondary font-normal flex-shrink-0"
+        style={{
+          fontSize: 'var(--font-size-text-xs)',
+          fontFamily: 'var(--font-family-inter)',
+        }}
+      >
+        {unit}
+      </span>
+      <span
+        className="text-primary font-normal flex-shrink-0"
+        style={{ fontSize: 'var(--font-size-text-base)' }}
+      >
+        {price}
+      </span>
+    </div>
+
+    {note && (
+      <p className="text-[#949494] mt-2" style={{ fontSize: '14px' }}>
+        {note}
+      </p>
+    )}
+  </div>
+);
+
 export const metadata: Metadata = {
   title: 'Cennik - Hotelik "Susełek"',
   description:
@@ -54,161 +110,24 @@ export default function CennikPage() {
             </h2>
 
             <div className="space-y-6">
-              {/* Pricing Item 1 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 1 królika w klatce 120 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  60zł
-                </span>
-              </div>
-
-              {/* Pricing Item 2 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 2 królików w klatce 120 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  80zł
-                </span>
-              </div>
-
-              {/* Pricing Item 3 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 1–2 królików w kojcu 120×120 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  100zł
-                </span>
-              </div>
-
-              {/* Pricing Item 4 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 1–2 królików w kojcu 180×120 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  120zł
-                </span>
-              </div>
-
-              {/* Pricing Item 5 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 1–2 królików w kojcu VIP 160×160 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  150zł
-                </span>
-              </div>
-
-              {/* Pricing Item 6 - Additional rabbit */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  *Każdy kolejny królik
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  + 20zł
-                </span>
-              </div>
+              <PricingItem service="Pobyt 1 królika w klatce 120 cm" unit="za dobę" price="60zł" />
+              <PricingItem service="Pobyt 2 królików w klatce 120 cm" unit="za dobę" price="80zł" />
+              <PricingItem
+                service="Pobyt 1–2 królików w kojcu 120×120 cm"
+                unit="za dobę"
+                price="100zł"
+              />
+              <PricingItem
+                service="Pobyt 1–2 królików w kojcu 180×120 cm"
+                unit="za dobę"
+                price="120zł"
+              />
+              <PricingItem
+                service="Pobyt 1–2 królików w kojcu VIP 160×160 cm"
+                unit="za dobę"
+                price="150zł"
+              />
+              <PricingItem service="*Każdy kolejny królik" unit="za dobę" price="+ 20zł" />
             </div>
 
             {/* Footer Note */}
@@ -253,135 +172,23 @@ export default function CennikPage() {
             </h2>
 
             <div className="space-y-6">
-              {/* Pricing Item 1 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 1 świnki w klatce 80 lub 100 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  60zł
-                </span>
-              </div>
-
-              {/* Pricing Item 2 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 2 świnek w klatce 100 / 120 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  80zł
-                </span>
-              </div>
-
-              {/* Pricing Item 3 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 3 świnek w klatce 120 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  100zł
-                </span>
-              </div>
-
-              {/* Pricing Item 4 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Pobyt 1–3 świnek w kojcu 140×105 cm
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  120zł
-                </span>
-              </div>
-
-              {/* Pricing Item 5 - Additional guinea pig */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  *Każda kolejna świnka
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  + 20zł
-                </span>
-              </div>
+              <PricingItem
+                service="Pobyt 1 świnki w klatce 80 lub 100 cm"
+                unit="za dobę"
+                price="60zł"
+              />
+              <PricingItem
+                service="Pobyt 2 świnek w klatce 100 / 120 cm"
+                unit="za dobę"
+                price="80zł"
+              />
+              <PricingItem service="Pobyt 3 świnek w klatce 120 cm" unit="za dobę" price="100zł" />
+              <PricingItem
+                service="Pobyt 1–3 świnek w kojcu 140×105 cm"
+                unit="za dobę"
+                price="120zł"
+              />
+              <PricingItem service="*Każda kolejna świnka" unit="za dobę" price="+ 20zł" />
             </div>
           </div>
         </div>
@@ -403,83 +210,9 @@ export default function CennikPage() {
             </h2>
 
             <div className="space-y-6">
-              {/* Pricing Item 1 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  1 zwierzę
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  60zł
-                </span>
-              </div>
-
-              {/* Pricing Item 2 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  2 zwierzęta
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  70zł
-                </span>
-              </div>
-
-              {/* Pricing Item 3 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  *Każdy kolejny członek stada
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  + 10zł
-                </span>
-              </div>
+              <PricingItem service="1 zwierzę" unit="za dobę" price="60zł" />
+              <PricingItem service="2 zwierzęta" unit="za dobę" price="70zł" />
+              <PricingItem service="*Każdy kolejny członek stada" unit="za dobę" price="+ 10zł" />
             </div>
           </div>
 
@@ -498,57 +231,8 @@ export default function CennikPage() {
             </h2>
 
             <div className="space-y-6 mb-12">
-              {/* Pricing Item 1 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  1–2 zwierzęta
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  60zł
-                </span>
-              </div>
-
-              {/* Pricing Item 2 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  *Każdy kolejny członek stada
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  + 5zł
-                </span>
-              </div>
+              <PricingItem service="1–2 zwierzęta" unit="za dobę" price="60zł" />
+              <PricingItem service="*Każdy kolejny członek stada" unit="za dobę" price="+ 5zł" />
             </div>
 
             {/* Second Header - Jerboa, Mouse */}
@@ -565,57 +249,8 @@ export default function CennikPage() {
             </h2>
 
             <div className="space-y-6">
-              {/* Pricing Item 1 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  1–2 zwierzęta
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  50zł
-                </span>
-              </div>
-
-              {/* Pricing Item 2 */}
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  *Każdy kolejny członek stada
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  + 5zł
-                </span>
-              </div>
+              <PricingItem service="1–2 zwierzęta" unit="za dobę" price="50zł" />
+              <PricingItem service="*Każdy kolejny członek stada" unit="za dobę" price="+ 5zł" />
             </div>
           </div>
         </div>
@@ -635,230 +270,52 @@ export default function CennikPage() {
           </h2>
 
           <div className="space-y-6">
-            {/* Pricing Item 1 */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                1 zwierzę
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                za dobę
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                30zł
-              </span>
-            </div>
+            <PricingItem service="1 zwierzę" unit="za dobę" price="30zł" />
 
-            {/* Pricing Item 2 - Specialist Care */}
-            <div>
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Opieka specjalistyczna (pooperacyjna, geriatryczna, intensywne dokarmianie)
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  od 100zł
-                </span>
-              </div>
-              <p className="text-[#949494] mt-2" style={{ fontSize: '14px' }}>
-                Do wyceny indywidualnej zależnej od ilości, częstotliwości, drogi podania leków oraz
-                potrzebnych czynności pielęgnacyjnych oraz technicznych.
-              </p>
-            </div>
+            <PricingItem
+              service="Opieka specjalistyczna (pooperacyjna, geriatryczna, intensywne dokarmianie)"
+              unit="za dobę"
+              price="od 100zł"
+              note="Do wyceny indywidualnej zależnej od ilości, częstotliwości, drogi podania leków oraz potrzebnych czynności pielęgnacyjnych oraz technicznych."
+            />
 
-            {/* Pricing Item 3 - Medicine Administration */}
-            <div>
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Podawanie niewielkiej ilości leków/przymusowe dokarmianie
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za dobę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  od + 10zł
-                </span>
-              </div>
-              <p className="text-[#949494] mt-2" style={{ fontSize: '14px' }}>
-                Do wyceny indywidualnej zależnej od ilości, częstotliwości i rodzaju podawanych
-                leków
-              </p>
-            </div>
+            <PricingItem
+              service="Podawanie niewielkiej ilości leków/przymusowe dokarmianie"
+              unit="za dobę"
+              price="od + 10zł"
+              note="Do wyceny indywidualnej zależnej od ilości, częstotliwości i rodzaju podawanych leków"
+            />
 
-            {/* Pricing Item 4 - Transport */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                Przywiezienie zwierzęcia na hotel/do domu
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                za przejazd
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                od 50zł
-              </span>
-            </div>
+            <PricingItem
+              service="Przywiezienie zwierzęcia na hotel/do domu"
+              unit="za przejazd"
+              price="od 50zł"
+            />
 
-            {/* Pricing Item 5 - Vet Visit */}
-            <div>
-              <div className="flex items-end gap-3">
-                <span
-                  className="text-text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  Wizyta u lekarza weterynarii
-                </span>
-                <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-                <span
-                  className="text-text-secondary font-normal flex-shrink-0"
-                  style={{
-                    fontSize: 'var(--font-size-text-xs)',
-                    fontFamily: 'var(--font-family-inter)',
-                  }}
-                >
-                  za usługę
-                </span>
-                <span
-                  className="text-primary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-base)' }}
-                >
-                  od 50zł
-                </span>
-              </div>
-              <p className="text-[#949494] mt-2" style={{ fontSize: '14px' }}>
-                + koszt dojazdu (paliwo 2 zł/km) + opłata u lekarza weterynarii
-              </p>
-            </div>
+            <PricingItem
+              service="Wizyta u lekarza weterynarii"
+              unit="za usługę"
+              price="od 50zł"
+              note="+ koszt dojazdu (paliwo 2 zł/km) + opłata u lekarza weterynarii"
+            />
 
-            {/* Pricing Item 6 - Behavioral Consultation */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                Konsultacja behawioralna
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                trwająca do 1 h
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                200zł
-              </span>
-            </div>
+            <PricingItem
+              service="Konsultacja behawioralna"
+              unit="trwająca do 1 h"
+              price="200zł"
+            />
 
-            {/* Pricing Item 7 - Behavioral Consultation at Client's Home */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                Konsultacja behawioralna w domu klienta
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                trwająca do 1h
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                od 300zł
-              </span>
-            </div>
+            <PricingItem
+              service="Konsultacja behawioralna w domu klienta"
+              unit="trwająca do 1h"
+              price="od 300zł"
+            />
 
-            {/* Pricing Item 8 - Night/Holiday Pickup */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                Odbiór/przyjęcie na hotel w godzinach nocnych (21:00-7:00) oraz w dni wolne (święta)
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                za usługę
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                100zł
-              </span>
-            </div>
+            <PricingItem
+              service="Odbiór/przyjęcie na hotel w godzinach nocnych (21:00-7:00) oraz w dni wolne (święta)"
+              unit="za usługę"
+              price="100zł"
+            />
           </div>
 
           {/* Footer Note */}
@@ -888,109 +345,14 @@ export default function CennikPage() {
           </h2>
 
           <div className="space-y-6">
-            {/* Pricing Item 1 */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                Króliki standard
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                za usługę
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                150zł
-              </span>
-            </div>
-
-            {/* Pricing Item 2 */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                Króliki hodowlane
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                za usługę
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                170zł
-              </span>
-            </div>
-
-            {/* Pricing Item 3 */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                Strzyżenie z usunięciem licznych kołtunów
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                za usługę
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                170-200zł
-              </span>
-            </div>
-
-            {/* Pricing Item 4 */}
-            <div className="flex items-end gap-3">
-              <span
-                className="text-text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                Świnka morska
-              </span>
-              <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-              <span
-                className="text-text-secondary font-normal flex-shrink-0"
-                style={{
-                  fontSize: 'var(--font-size-text-xs)',
-                  fontFamily: 'var(--font-family-inter)',
-                }}
-              >
-                za usługę
-              </span>
-              <span
-                className="text-primary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-base)' }}
-              >
-                100zł
-              </span>
-            </div>
+            <PricingItem service="Króliki standard" unit="za usługę" price="150zł" />
+            <PricingItem service="Króliki hodowlane" unit="za usługę" price="170zł" />
+            <PricingItem
+              service="Strzyżenie z usunięciem licznych kołtunów"
+              unit="za usługę"
+              price="170-200zł"
+            />
+            <PricingItem service="Świnka morska" unit="za usługę" price="100zł" />
           </div>
 
           {/* Footer Note */}
