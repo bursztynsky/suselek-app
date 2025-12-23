@@ -7,48 +7,56 @@ import buttonLeft from '../../assets/button-left.svg';
 import reviewsButton2 from '../../assets/reviewsButton2.svg';
 import grassBackground from '../../assets/grass.png';
 
-const mockReviews = [
-  {
-    id: 1,
-    rating: 5,
-    title: 'Świetna opieka!',
-    text: 'Bardzo dobre warunki, profesjonalne przyjęcie królika i miska smaczków na dzień dobry! Pierwszy raz oddaliśmy Królika do hotelu a nie do znajomych i wszystko poszło bardzo gładko, Królik nie był zestresowany po pobycie, bardzo polecam i najpewniej w razie potrzeby jeszcze tutaj z nią wrócimy!',
-    author: 'Anna Kowalska',
-    link: 'https://www.google.com/maps/reviews',
-  },
-  {
-    id: 2,
-    rating: 5,
-    title: 'Polecam z całego serca',
-    text: 'Profesjonalna obsługa i wspaniała opieka nad naszą świnką morską. Widać, że właścicielka kocha zwierzęta i dba o każdy szczegół. Nasza świnka wróciła szczęśliwa i zadbana!',
-    author: 'Jan Nowak',
-    link: 'https://www.google.com/maps/reviews',
-  },
-  {
-    id: 3,
-    rating: 5,
-    title: 'Najlepszy hotel dla królików',
-    text: 'Pierwszy raz zostawialiśmy naszego królika w hotelu i byliśmy bardzo zestresowani. Jednak wszystkie obawy okazały się niepotrzebne - profesjonalna opieka, czyste warunki i widać że zwierzęta są tam dobrze traktowane.',
-    author: 'Maria Wiśniewska',
-    link: 'https://www.google.com/maps/reviews',
-  },
-];
+interface Review {
+  id: string | number;
+  rating: number;
+  title: string;
+  text: string;
+  author: string;
+  link: string;
+}
 
-const ReviewsSection: React.FC = () => {
+interface ReviewsSectionProps {
+  reviews: Review[];
+}
+
+const ReviewsSection: React.FC<ReviewsSectionProps> = ({ reviews }) => {
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [fadeIn, setFadeIn] = useState(true);
 
   const MAX_TEXT_LENGTH = 250;
 
+  // If no reviews, show message
+  if (!reviews || reviews.length === 0) {
+    return (
+      <section
+        id="reviews"
+        className="bg-white md:bg-white py-8 md:py-20 px-4 bg-no-repeat bg-cover bg-center"
+        style={{
+          backgroundImage: `url(${grassBackground.src})`,
+          backgroundSize: 'cover',
+        }}
+      >
+        <div className="container mx-auto max-w-[var(--width-container)]">
+          <div className="relative rounded-3xl md:p-16">
+            <div className="relative bg-secondary rounded-3xl px-4 py-8 md:p-12 shadow-xl max-w-[240px] md:max-w-5xl mx-auto">
+              <div className="text-center py-12">
+                <p className="text-black text-[16px] md:text-[20px]">Brak dostępnych recenzji</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   const handlePrevReview = () => {
     if (isAnimating) return;
     setIsAnimating(true);
     setFadeIn(false);
     setTimeout(() => {
-      setCurrentReviewIndex(prevIndex =>
-        prevIndex === 0 ? mockReviews.length - 1 : prevIndex - 1
-      );
+      setCurrentReviewIndex(prevIndex => (prevIndex === 0 ? reviews.length - 1 : prevIndex - 1));
       setFadeIn(true);
       setIsAnimating(false);
     }, 300);
@@ -59,25 +67,23 @@ const ReviewsSection: React.FC = () => {
     setIsAnimating(true);
     setFadeIn(false);
     setTimeout(() => {
-      setCurrentReviewIndex(prevIndex =>
-        prevIndex === mockReviews.length - 1 ? 0 : prevIndex + 1
-      );
+      setCurrentReviewIndex(prevIndex => (prevIndex === reviews.length - 1 ? 0 : prevIndex + 1));
       setFadeIn(true);
       setIsAnimating(false);
     }, 300);
   };
-
-  const currentReview = mockReviews[currentReviewIndex];
-  const isTextTruncated = currentReview.text.length > MAX_TEXT_LENGTH;
-  const displayText = isTextTruncated
-    ? currentReview.text.slice(0, MAX_TEXT_LENGTH) + '...'
-    : currentReview.text;
 
   const renderStars = (rating: number) => {
     return Array.from({ length: rating }, (_, index) => (
       <img key={index} src={starIcon.src} alt="star" className="w-[19px] h-[19px] md:w-6 md:h-6" />
     ));
   };
+
+  const currentReview = reviews[currentReviewIndex];
+  const isTextTruncated = currentReview.text.length > MAX_TEXT_LENGTH;
+  const displayText = isTextTruncated
+    ? currentReview.text.slice(0, MAX_TEXT_LENGTH) + '...'
+    : currentReview.text;
 
   return (
     <section

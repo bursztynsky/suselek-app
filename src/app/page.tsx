@@ -8,6 +8,7 @@ import GallerySection from '../components/shared/GallerySection';
 import krolik2 from '../assets/krolik2.png';
 import krolik3 from '../assets/krolik3.png';
 import swinka1 from '../assets/swinka1.png';
+import { fetchGoogleReviews } from '@/lib/fetchReviews';
 
 export const metadata: Metadata = {
   title: 'Hotelik "Susełek" - Hotel dla Zwierząt',
@@ -36,12 +37,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  // Fetch reviews server-side at build time
+  const reviews = await fetchGoogleReviews();
+
   return (
     <>
       <HotelSection />
       <CheckOfferSection />
       <AdvantagesSection />
+      {/* ...existing ServiceSection components... */}
       <ServiceSection
         id="hotel"
         badge="Króliki i gryzonie"
@@ -74,7 +79,7 @@ export default function HomePage() {
         imagePosition="left"
         titleStyle="italic-bold"
       />
-      <ReviewsSection />
+      <ReviewsSection reviews={reviews} />
       <GallerySection />
     </>
   );
