@@ -84,6 +84,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
+        <title>Hotelik &quot;Susełek&quot; - Profesjonalna Opieka nad Zwierzętami</title>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
