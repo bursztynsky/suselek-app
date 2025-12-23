@@ -23,7 +23,10 @@ export default function CennikPage() {
   return (
     <div className="min-h-screen pt-32 pb-16 px-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-center mb-6" style={{ fontSize: 'var(--font-size-heading-lg)', lineHeight: '1.2' }}>
+        <h1
+          className="text-center mb-6"
+          style={{ fontSize: 'var(--font-size-heading-lg)', lineHeight: '1.2' }}
+        >
           <span style={{ fontWeight: 700, fontStyle: 'italic' }}>Cennik</span>{' '}
           <span style={{ fontWeight: 300, fontStyle: 'italic' }}>usług</span>
         </h1>
@@ -40,7 +43,12 @@ export default function CennikPage() {
           <div>
             <h2
               className="mb-8"
-              style={{ fontSize: 'var(--font-size-heading-section)', fontWeight: 700, fontStyle: 'italic', lineHeight: '1.2' }}
+              style={{
+                fontSize: 'var(--font-size-heading-section)',
+                fontWeight: 700,
+                fontStyle: 'italic',
+                lineHeight: '1.2',
+              }}
             >
               Królik
             </h2>
@@ -57,7 +65,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -80,7 +91,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -103,7 +117,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -126,7 +143,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -149,7 +169,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -172,7 +195,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -209,18 +235,19 @@ export default function CennikPage() {
         <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 items-center mb-16">
           {/* Left side - Image */}
           <div className="hidden md:flex items-center justify-center md:justify-start">
-            <img
-              src={swinka.src}
-              alt="Świnka morska"
-              className="object-contain"
-            />
+            <img src={swinka.src} alt="Świnka morska" className="object-contain" />
           </div>
 
           {/* Right side - Pricing */}
           <div>
             <h2
               className="mb-8"
-              style={{ fontSize: 'var(--font-size-heading-section)', fontWeight: 700, fontStyle: 'italic', lineHeight: '1.2' }}
+              style={{
+                fontSize: 'var(--font-size-heading-section)',
+                fontWeight: 700,
+                fontStyle: 'italic',
+                lineHeight: '1.2',
+              }}
             >
               Świnka morska
             </h2>
@@ -237,7 +264,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -260,7 +290,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -283,7 +316,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -306,7 +342,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -329,7 +368,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -350,7 +392,12 @@ export default function CennikPage() {
           <div>
             <h2
               className="mb-8"
-              style={{ fontSize: 'var(--font-size-heading-section)', fontWeight: 700, fontStyle: 'italic', lineHeight: '1.2' }}
+              style={{
+                fontSize: 'var(--font-size-heading-section)',
+                fontWeight: 700,
+                fontStyle: 'italic',
+                lineHeight: '1.2',
+              }}
             >
               Szynszyla, suseł Richardsona, piesek preriowy
             </h2>
@@ -367,7 +414,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -390,7 +440,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -413,7 +466,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -431,7 +487,12 @@ export default function CennikPage() {
           <div>
             <h2
               className="mb-8"
-              style={{ fontSize: 'var(--font-size-heading-section)', fontWeight: 700, fontStyle: 'italic', lineHeight: '1.2' }}
+              style={{
+                fontSize: 'var(--font-size-heading-section)',
+                fontWeight: 700,
+                fontStyle: 'italic',
+                lineHeight: '1.2',
+              }}
             >
               Szczur, koszatniczka, jeż
             </h2>
@@ -448,7 +509,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -471,7 +535,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -487,7 +554,12 @@ export default function CennikPage() {
             {/* Second Header - Jerboa, Mouse */}
             <h2
               className="mb-8"
-              style={{ fontSize: 'var(--font-size-heading-section)', fontWeight: 700, fontStyle: 'italic', lineHeight: '1.2' }}
+              style={{
+                fontSize: 'var(--font-size-heading-section)',
+                fontWeight: 700,
+                fontStyle: 'italic',
+                lineHeight: '1.2',
+              }}
             >
               Myszoskoczek, mysz
             </h2>
@@ -504,7 +576,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -527,7 +602,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -546,7 +624,12 @@ export default function CennikPage() {
         <div className="mb-16">
           <h2
             className="mb-8"
-            style={{ fontSize: 'var(--font-size-heading-section)', fontWeight: 700, fontStyle: 'italic', lineHeight: '1.2' }}
+            style={{
+              fontSize: 'var(--font-size-heading-section)',
+              fontWeight: 700,
+              fontStyle: 'italic',
+              lineHeight: '1.2',
+            }}
           >
             Chomik
           </h2>
@@ -563,7 +646,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 za dobę
               </span>
@@ -587,7 +673,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -616,7 +705,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za dobę
                 </span>
@@ -644,7 +736,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 za przejazd
               </span>
@@ -668,7 +763,10 @@ export default function CennikPage() {
                 <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
                 <span
                   className="text-text-secondary font-normal flex-shrink-0"
-                  style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                  style={{
+                    fontSize: 'var(--font-size-text-xs)',
+                    fontFamily: 'var(--font-family-inter)',
+                  }}
                 >
                   za usługę
                 </span>
@@ -695,7 +793,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 trwająca do 1 h
               </span>
@@ -718,7 +819,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 trwająca do 1h
               </span>
@@ -741,7 +845,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 za usługę
               </span>
@@ -770,7 +877,12 @@ export default function CennikPage() {
         <div className="mb-16">
           <h2
             className="mb-8"
-            style={{ fontSize: 'var(--font-size-heading-section)', fontWeight: 700, fontStyle: 'italic', lineHeight: '1.2' }}
+            style={{
+              fontSize: 'var(--font-size-heading-section)',
+              fontWeight: 700,
+              fontStyle: 'italic',
+              lineHeight: '1.2',
+            }}
           >
             Strzyżenie
           </h2>
@@ -787,7 +899,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 za usługę
               </span>
@@ -810,7 +925,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 za usługę
               </span>
@@ -833,7 +951,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 za usługę
               </span>
@@ -856,7 +977,10 @@ export default function CennikPage() {
               <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
               <span
                 className="text-text-secondary font-normal flex-shrink-0"
-                style={{ fontSize: 'var(--font-size-text-xs)', fontFamily: 'var(--font-family-inter)' }}
+                style={{
+                  fontSize: 'var(--font-size-text-xs)',
+                  fontFamily: 'var(--font-family-inter)',
+                }}
               >
                 za usługę
               </span>

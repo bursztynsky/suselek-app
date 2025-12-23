@@ -122,7 +122,7 @@ const Header: React.FC = () => {
     { id: 'galeria', label: 'Galeria', path: '/' },
     { id: 'o-mnie', label: 'O nas', path: '/o-nas' },
     { id: 'cennik', label: 'Cennik', path: '/cennik' },
-    { id: 'regulamin', label: 'Regulamin', path: '/' },
+    { id: 'regulamin', label: 'Regulamin', path: '/regulamin' },
   ];
 
   const textColor = isLightBg ? 'text-primary' : 'text-secondary';
