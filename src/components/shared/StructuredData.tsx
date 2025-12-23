@@ -1,24 +1,20 @@
 import Script from 'next/script';
 
 export default function StructuredData() {
+  const baseUrl =
+    process.env.NODE_ENV === 'production'
+      ? process.env.NEXT_PUBLIC_BASE_URL || 'https://suselek.pl'
+      : 'http://localhost:3000';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'PetStore',
     name: 'Hotelik "Susełek"',
     description:
       'Profesjonalny hotel dla zwierząt oferujący opiekę nad królikami, świnkami morskimi i gryzoniami. Grooming, strzyżenie i psychologia zwierząt.',
-    url:
-      process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES === 'true'
-        ? 'https://yourusername.github.io/suselek-app'
-        : 'http://localhost:3000',
-    logo:
-      process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES === 'true'
-        ? 'https://yourusername.github.io/suselek-app/SUSELEK_logo_small.svg'
-        : 'http://localhost:3000/SUSELEK_logo_small.svg',
-    image:
-      process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES === 'true'
-        ? 'https://yourusername.github.io/suselek-app/SUSELEK_logo_small.svg'
-        : 'http://localhost:3000/SUSELEK_logo_small.svg',
+    url: baseUrl,
+    logo: `${baseUrl}/SUSELEK_logo_small.svg`,
+    image: `${baseUrl}/SUSELEK_logo_small.svg`,
     priceRange: '$$',
     telephone: '+48 601-155-887',
     email: 'hotelik.suselek@gmail.com',
@@ -47,10 +43,7 @@ export default function StructuredData() {
       '@type': 'SearchAction',
       target: {
         '@type': 'EntryPoint',
-        urlTemplate:
-          process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES === 'true'
-            ? 'https://yourusername.github.io/suselek-app?q={search_term_string}'
-            : 'http://localhost:3000?q={search_term_string}',
+        urlTemplate: `${baseUrl}?q={search_term_string}`,
       },
       'query-input': 'required name=search_term_string',
     },

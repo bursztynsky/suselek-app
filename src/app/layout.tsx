@@ -15,8 +15,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES === 'true'
-      ? 'https://yourusername.github.io/suselek-app'
+    process.env.NODE_ENV === 'production'
+      ? process.env.NEXT_PUBLIC_BASE_URL || 'https://suselek.pl'
       : 'http://localhost:3000'
   ),
   title: {

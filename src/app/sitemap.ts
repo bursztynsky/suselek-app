@@ -4,8 +4,8 @@ export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl =
-    process.env.NODE_ENV === 'production' && process.env.GITHUB_PAGES === 'true'
-      ? 'https://yourusername.github.io/suselek-app'
+    process.env.NODE_ENV === 'production'
+      ? process.env.NEXT_PUBLIC_BASE_URL || 'https://suselek.pl'
       : 'http://localhost:3000';
 
   return [
@@ -31,13 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/regulamin`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
+      priority: 0.5,
     },
   ];
 }
