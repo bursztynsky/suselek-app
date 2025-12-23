@@ -227,8 +227,8 @@ export default function PolitykaPrywatnosciPage() {
             <li>
               wystawienia faktury i spełnienia innych obowiązków wynikających z przepisów prawa
               podatkowego — dane identyfikacyjne, dane kontaktowe, dane dotyczące sprzedaży usług
-              -na podstawie art. 6 ust. 1 lit. c RODO (niezbędność do wypełnienia obowiązku
-              prawnego przez Spółkę);
+              -na podstawie art. 6 ust. 1 lit. c RODO (niezbędność do wypełnienia obowiązku prawnego
+              przez Spółkę);
             </li>
             <li>
               marketing bezpośredni — dane kontaktowe -na podstawie art. 6 ust. 1 lit. a RODO
@@ -324,9 +324,9 @@ export default function PolitykaPrywatnosciPage() {
                 możliwe);
               </li>
               <li>
-                podanie takich danych, jak imię i nazwisko lub firma, adres siedziby, numer NIP
-                jest konieczne do wystawienia faktury za usługi i wynika to z przepisów prawa (bez
-                tych danych wystawienie faktury nie będzie możliwe);
+                podanie takich danych, jak imię i nazwisko lub firma, adres siedziby, numer NIP jest
+                konieczne do wystawienia faktury za usługi i wynika to z przepisów prawa (bez tych
+                danych wystawienie faktury nie będzie możliwe);
               </li>
             </ul>
           </div>
@@ -659,10 +659,10 @@ export default function PolitykaPrywatnosciPage() {
             połączeń i strony internetowej w celu ochrony danych, w szczególności szyfrowanie SSL.
             Wszystkie połączenia związane z wykonywaniem płatności przez naszych klientów będą
             następować za pośrednictwem bezpiecznego szyfrowanego połączenia. Informujemy, że
-            podjęte przez nas działania mogą okazać się jednak niewystarczające, jeżeli nasi
-            klienci sami nie zachowają zasad bezpieczeństwa. W szczególności każdy użytkownik
-            powinien zachować w poufności login i hasło do swojego konta na stronie internetowej i
-            nie udostępniać ich osobom trzecim. Informujemy, że nigdy nie zwracamy się do naszych
+            podjęte przez nas działania mogą okazać się jednak niewystarczające, jeżeli nasi klienci
+            sami nie zachowają zasad bezpieczeństwa. W szczególności każdy użytkownik powinien
+            zachować w poufności login i hasło do swojego konta na stronie internetowej i nie
+            udostępniać ich osobom trzecim. Informujemy, że nigdy nie zwracamy się do naszych
             klientów o podanie danych do logowania.
           </p>
         </div>
@@ -670,4 +670,3 @@ export default function PolitykaPrywatnosciPage() {
     </div>
   );
 }
-

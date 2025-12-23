@@ -1,5 +1,6 @@
 // src/components/Footer.tsx
 import React from 'react';
+import Link from 'next/link';
 import logo from '../../assets/SUSELEK_logo_medium.svg';
 import instagramIcon from '../../assets/instagram-icon.svg';
 import fbIcon from '../../assets/fb-icon.svg';
@@ -80,24 +81,24 @@ const Footer: React.FC = () => {
             {/* DOKUMENTY Column */}
             <div className="flex flex-col gap-1 lg:gap-3">
               <h4 className="text-sm font-bold tracking-wider">DOKUMENTY</h4>
-              <a
+              <Link
                 href="/cennik"
                 className="text-sm font-light leading-relaxed hover:underline transition-all"
               >
                 Cennik
-              </a>
-              <a
-                href="/regulami"
+              </Link>
+              <Link
+                href="/regulamin"
                 className="text-sm font-light leading-relaxed hover:underline transition-all"
               >
                 Regulamin
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/polityka-prywatnosci"
                 className="text-sm font-light leading-relaxed hover:underline transition-all"
               >
                 Polityka prywatności
-              </a>
+              </Link>
             </div>
           </div>
         </div>
