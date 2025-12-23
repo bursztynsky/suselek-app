@@ -114,7 +114,7 @@ const ReviewsSection: React.FC<ReviewsSectionProps> = ({ reviews }) => {
               </h3>
 
               {/* Fixed height container for text to prevent size changes */}
-              <div className="mb-6 md:mb-8 h-[220px] md:h-[140px] flex flex-col items-center justify-start">
+              <div className="mb-6 md:mb-8 h-[380px] md:h-[140px] flex flex-col items-center justify-start">
                 <p className="text-black text-[14px] font-normal leading-relaxed max-w-[600px] mx-auto">
                   {isTextTruncated ? (
                     <>
