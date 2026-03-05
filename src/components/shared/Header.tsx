@@ -125,9 +125,15 @@ const Header: React.FC = () => {
               aria-label="Toggle menu"
               aria-expanded={isMobileMenuOpen}
             >
-              <span className={`h-0.5 w-full transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}></span>
-              <span className={`h-0.5 w-full transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}></span>
-              <span className={`h-0.5 w-1/2 transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}></span>
+              <span
+                className={`h-0.5 w-full transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}
+              ></span>
+              <span
+                className={`h-0.5 w-full transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}
+              ></span>
+              <span
+                className={`h-0.5 w-1/2 transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}
+              ></span>
             </button>
           </div>
         </nav>
