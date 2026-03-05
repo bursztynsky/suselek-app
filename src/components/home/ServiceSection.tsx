@@ -40,7 +40,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 
           {/* Content container - background #F7F7F5 */}
           <div className="bg-[#F7F7F5] p-6">
-            <div className="bg-[#0000001A] inline-block text-[#292929] px-6 py-2 rounded-[var(--radius-pill)] text-sm mb-4">
+            <div className="bg-tertiary inline-block text-[#292929] px-6 py-2 rounded-[var(--radius-pill)] text-sm mb-4">
               {badge}
             </div>
 
@@ -71,7 +71,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
           </div>
 
           <div className="flex-1 max-w-2xl">
-            <div className="bg-secondary inline-block text-text-primary px-6 py-2 rounded-[var(--radius-pill)] text-sm font-semibold mb-6">
+            <div className="bg-tertiary inline-block text-text-primary px-6 py-2 rounded-[var(--radius-pill)] text-sm font-semibold mb-6">
               {badge}
             </div>
 

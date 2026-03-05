@@ -90,8 +90,8 @@ const GallerySection: React.FC = () => {
           </a>
         </h2>
 
-        <div className="relative overflow-hidden">
-          <div className="flex gap-4 animate-scroll-left hover:pause-animation">
+        <div className="relative overflow-x-hidden">
+          <div className="flex gap-4 animate-scroll-left hover:pause-animation py-6 px-2">
             {/* Duplicate posts 3 times for seamless loop */}
             {[...posts, ...posts, ...posts].map((post, index) => (
               <a
@@ -99,12 +99,12 @@ const GallerySection: React.FC = () => {
                 href={post.permalink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-2xl transition-transform hover:scale-105 hover:shadow-xl"
+                className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-2xl transition-all hover:scale-105 hover:shadow-md"
               >
                 <img
                   src={post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url}
                   alt="Instagram post"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover rounded-2xl"
                 />
               </a>
             ))}
