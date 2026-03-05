@@ -94,12 +94,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
-      <body className={lato.className}>
+    <html lang="pl" className="bg-primary">
+      <body className={`${lato.className} bg-secondary`}>
         <StructuredData />
         <div className="app-container">
           <Header />
-          <main>{children}</main>
+          <main className="pt-[72px] lg:pt-[80px]">{children}</main>
           <Footer />
           <ScrollToTopButton />
         </div>
