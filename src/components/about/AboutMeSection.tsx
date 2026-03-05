@@ -34,11 +34,11 @@ const AboutMeSection: React.FC = () => {
             </p>
           </div>
           <Button
-            href="#sprawdz-dostepnosc"
+            href="tel:+48601155887"
             variant="primary"
             className="mt-8 font-semibold text-[20px]"
           >
-            Sprawdź dostępność miejsc
+            Zadzwoń już teraz!
           </Button>
         </div>
       </div>

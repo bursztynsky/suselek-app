@@ -12,8 +12,8 @@ const CheckAvailabilitySection: React.FC = () => {
             <span className="font-bold">jak własne.</span>
           </h2>
           <div className="flex justify-center">
-            <Button href="#kontakt" variant="primary" className="font-semibold text-lg">
-              Sprawdź dostępność
+            <Button href="tel:+48601155887" variant="primary" className="font-semibold text-lg">
+              Zadzwoń lub wyślij wiadomość
             </Button>
           </div>
         </div>
