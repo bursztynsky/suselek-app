@@ -13,7 +13,7 @@ const HotelSection: React.FC = () => {
   return (
     <section
       id="hotel"
-      className="relative bg-primary text-white overflow-hidden pt-12 pb-24 px-4 md:pt-16 md:pb-32 md:min-h-screen"
+      className="relative bg-primary text-white overflow-hidden pt-24 pb-24 px-4 md:pt-28 md:pb-32 md:min-h-screen"
     >
       {/* Background decoration */}
       <img

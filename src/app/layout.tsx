@@ -95,11 +95,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl" className="bg-primary">
-      <body className={`${lato.className} bg-secondary`}>
+      <body className={lato.className}>
         <StructuredData />
         <div className="app-container">
           <Header />
-          <main className="pt-[72px] lg:pt-[80px]">{children}</main>
+          <main>{children}</main>
           <Footer />
           <ScrollToTopButton />
         </div>
