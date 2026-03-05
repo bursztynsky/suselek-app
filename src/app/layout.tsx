@@ -94,7 +94,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
+    <html lang="pl" className="bg-primary">
       <body className={lato.className}>
         <StructuredData />
         <div className="app-container">

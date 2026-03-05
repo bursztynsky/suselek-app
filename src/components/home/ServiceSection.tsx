@@ -29,7 +29,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
   const flexDirection = isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse';
 
   return (
-    <section id={id} className="bg-white py-8 md:py-20 px-4">
+    <section id={id} className="bg-white py-8 md:py-20 px-6 md:px-4">
       <div className="container mx-auto max-w-[var(--width-container)]">
         {/* Mobile: Card layout */}
         <div className="md:hidden overflow-hidden rounded-2xl shadow-sm">
@@ -40,7 +40,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 
           {/* Content container - background #F7F7F5 */}
           <div className="bg-[#F7F7F5] p-6">
-            <div className="bg-[#0000001A] inline-block text-[#292929] px-6 py-2 rounded-[var(--radius-pill)] text-sm mb-4">
+            <div className="bg-tertiary inline-block text-[#292929] px-6 py-2 rounded-[var(--radius-pill)] text-sm mb-4">
               {badge}
             </div>
 
@@ -71,7 +71,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
           </div>
 
           <div className="flex-1 max-w-2xl">
-            <div className="bg-secondary inline-block text-text-primary px-6 py-2 rounded-[var(--radius-pill)] text-sm font-semibold mb-6">
+            <div className="bg-tertiary inline-block text-text-primary px-6 py-2 rounded-[var(--radius-pill)] text-sm font-semibold mb-6">
               {badge}
             </div>
 

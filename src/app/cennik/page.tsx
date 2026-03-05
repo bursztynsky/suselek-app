@@ -3,7 +3,6 @@ import aboutIcon2 from '../../assets/aboutIcon2.svg';
 import krolik1 from '../../assets/krolik1.png';
 import swinka from '../../assets/swinka.png';
 
-// Reusable pricing item component for mobile-friendly layout
 const PricingItem = ({
   service,
   unit,
@@ -14,49 +13,59 @@ const PricingItem = ({
   unit: string;
   price: string;
   note?: string;
-}) => (
-  <div>
-    {/* Mobile layout - stacked */}
-    <div className="block md:hidden space-y-2">
-      <div className="text-text-primary font-normal text-[14px] leading-relaxed">{service}</div>
-      <div className="flex justify-end items-baseline gap-2">
-        <span className="text-text-secondary font-normal text-[12px]">{unit}</span>
-        <span className="text-primary font-normal text-[16px]">{price}</span>
+}) => {
+  const hasStar = service.startsWith('*');
+  const label = hasStar ? service.slice(1) : service;
+
+  return (
+    <div>
+      {/* Mobile */}
+      <div className="md:hidden">
+        <div className="flex items-baseline gap-1 text-text-primary font-normal text-[15px] leading-relaxed mb-1">
+          {hasStar && <span className="flex-shrink-0">*</span>}
+          <span>{label}</span>
+        </div>
+        <div className="flex items-baseline gap-2">
+          <span className="text-text-secondary font-normal text-[13px]">{unit}</span>
+          <span className="text-primary font-semibold text-[17px]">{price}</span>
+        </div>
       </div>
-    </div>
 
-    {/* Desktop layout - flex with dotted line */}
-    <div className="hidden md:flex items-end gap-3">
-      <span
-        className="text-text-primary font-normal flex-shrink-0"
-        style={{ fontSize: 'var(--font-size-text-base)' }}
-      >
-        {service}
-      </span>
-      <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-      <span
-        className="text-text-secondary font-normal flex-shrink-0"
-        style={{
-          fontSize: 'var(--font-size-text-xs)',
-          fontFamily: 'var(--font-family-inter)',
-        }}
-      >
-        {unit}
-      </span>
-      <span
-        className="text-primary font-normal flex-shrink-0"
-        style={{ fontSize: 'var(--font-size-text-base)' }}
-      >
-        {price}
-      </span>
-    </div>
+      {/* Desktop */}
+      <div className="hidden md:flex items-end gap-3">
+        {hasStar && (
+          <span className="text-text-primary font-normal text-[16px] flex-shrink-0">*</span>
+        )}
+        <span className="text-text-primary font-normal text-[16px] flex-shrink-0">{label}</span>
+        <span className="flex-1 border-b-2 border-dotted border-gray-300 mb-1"></span>
+        <span className="text-text-secondary font-normal text-[12px] flex-shrink-0">{unit}</span>
+        <span className="text-primary font-normal text-[16px] flex-shrink-0">{price}</span>
+      </div>
 
-    {note && (
-      <p className="text-[#949494] mt-2" style={{ fontSize: '14px' }}>
-        {note}
-      </p>
-    )}
+      {note && <p className="text-[#949494] mt-2 text-[13px] md:text-[14px]">{note}</p>}
+    </div>
+  );
+};
+
+const FooterNote = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex flex-row items-start gap-2 mt-4 md:mt-8">
+    <img src={aboutIcon2.src} alt="" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0 mt-[2px]" />
+    <p className="text-text-secondary text-xs md:text-sm leading-relaxed">{children}</p>
   </div>
+);
+
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+  <h2
+    className="mb-4 md:mb-8"
+    style={{
+      fontSize: 'var(--font-size-heading-section)',
+      fontWeight: 700,
+      fontStyle: 'italic',
+      lineHeight: '1.2',
+    }}
+  >
+    {children}
+  </h2>
 );
 
 export const metadata: Metadata = {
@@ -77,10 +86,11 @@ export const metadata: Metadata = {
 
 export default function CennikPage() {
   return (
-    <div className="min-h-screen pt-32 pb-16 px-4">
+    <div className="min-h-screen pt-24 md:pt-32 pb-8 md:pb-16 px-6 md:px-16 bg-secondary">
       <div className="max-w-7xl mx-auto">
+        {/* Page Title */}
         <h1
-          className="text-center mb-6"
+          className="text-center mb-4"
           style={{ fontSize: 'var(--font-size-heading-lg)', lineHeight: '1.2' }}
         >
           <span style={{ fontWeight: 700, fontStyle: 'italic' }}>Cennik</span>{' '}
@@ -88,27 +98,15 @@ export default function CennikPage() {
         </h1>
 
         {/* Subtitle with icon */}
-        <div className="flex items-start justify-center gap-2 mb-12">
-          <img src={aboutIcon2.src} alt="" className="w-6 h-6 flex-shrink-0 mt-[2px]" />
+        <div className="flex items-start justify-center gap-2 mb-8 md:mb-12">
+          <img src={aboutIcon2.src} alt="" className="w-5 h-5 flex-shrink-0 mt-[2px]" />
           <p className="text-text-secondary text-sm leading-relaxed">Obowiązujący od 10.06.2025</p>
         </div>
 
         {/* Królik Section */}
-        <div className="grid grid-cols-1 md:grid-cols-[60%_40%] gap-8 items-center mb-16">
-          {/* Left side - Pricing */}
+        <div className="grid grid-cols-1 md:grid-cols-[60%_40%] gap-8 items-center mb-8 md:mb-16">
           <div>
-            <h2
-              className="mb-8"
-              style={{
-                fontSize: 'var(--font-size-heading-section)',
-                fontWeight: 700,
-                fontStyle: 'italic',
-                lineHeight: '1.2',
-              }}
-            >
-              Królik
-            </h2>
-
+            <SectionTitle>Królik</SectionTitle>
             <div className="space-y-6">
               <PricingItem service="Pobyt 1 królika w klatce 120 cm" unit="za dobę" price="60zł" />
               <PricingItem service="Pobyt 2 królików w klatce 120 cm" unit="za dobę" price="80zł" />
@@ -129,48 +127,32 @@ export default function CennikPage() {
               />
               <PricingItem service="*Każdy kolejny królik" unit="za dobę" price="+ 20zł" />
             </div>
-
-            {/* Footer Note */}
-            <div className="flex items-end gap-2 mt-8">
-              <img src={aboutIcon2.src} alt="" className="w-6 h-6 flex-shrink-0" />
-              <p className="text-text-secondary text-sm leading-none">
-                Króliki hodowlane (&gt;3 kg m.c.) mogą być zakwaterowane tylko w kojcach.
-              </p>
-            </div>
+            <FooterNote>
+              Króliki hodowlane (&gt;3 kg m.c.) mogą być zakwaterowane tylko w kojcach.
+            </FooterNote>
           </div>
 
-          {/* Right side - Image */}
-          <div className="hidden md:flex items-center justify-center md:justify-end">
+          <div className="flex items-center justify-center md:justify-end order-first md:order-last">
             <img
               src={krolik1.src}
               alt="Królik"
-              className="object-contain"
-              style={{ width: '400px', height: '280px' }}
+              className="object-contain w-80 h-64 md:w-[400px] md:h-[280px]"
             />
           </div>
         </div>
 
         {/* Świnka morska Section */}
-        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 items-center mb-16">
-          {/* Left side - Image */}
-          <div className="hidden md:flex items-center justify-center md:justify-start">
-            <img src={swinka.src} alt="Świnka morska" className="object-contain" />
+        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-0 md:gap-8 items-center mb-8 md:mb-16">
+          <div className="flex items-center justify-center md:justify-start overflow-hidden">
+            <img
+              src={swinka.src}
+              alt="Świnka morska"
+              className="object-contain w-full max-w-md h-96 md:w-auto md:h-auto -my-8 md:my-0"
+            />
           </div>
 
-          {/* Right side - Pricing */}
           <div>
-            <h2
-              className="mb-8"
-              style={{
-                fontSize: 'var(--font-size-heading-section)',
-                fontWeight: 700,
-                fontStyle: 'italic',
-                lineHeight: '1.2',
-              }}
-            >
-              Świnka morska
-            </h2>
-
+            <SectionTitle>Świnka morska</SectionTitle>
             <div className="space-y-6">
               <PricingItem
                 service="Pobyt 1 świnki w klatce 80 lub 100 cm"
@@ -193,22 +175,10 @@ export default function CennikPage() {
           </div>
         </div>
 
-        {/* Two Column Section - Other Animals */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mb-16">
-          {/* Left Column - Chinchilla, Richardson Ground Squirrel, Prairie Dog */}
+        {/* Two Column Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-8 md:mb-16">
           <div>
-            <h2
-              className="mb-8"
-              style={{
-                fontSize: 'var(--font-size-heading-section)',
-                fontWeight: 700,
-                fontStyle: 'italic',
-                lineHeight: '1.2',
-              }}
-            >
-              Szynszyla, suseł Richardsona, piesek preriowy
-            </h2>
-
+            <SectionTitle>Szynszyla, suseł Richardsona, piesek preriowy</SectionTitle>
             <div className="space-y-6">
               <PricingItem service="1 zwierzę" unit="za dobę" price="60zł" />
               <PricingItem service="2 zwierzęta" unit="za dobę" price="70zł" />
@@ -216,38 +186,14 @@ export default function CennikPage() {
             </div>
           </div>
 
-          {/* Right Column - Rats, Hedgehogs, Jerboas, Mice */}
           <div>
-            <h2
-              className="mb-8"
-              style={{
-                fontSize: 'var(--font-size-heading-section)',
-                fontWeight: 700,
-                fontStyle: 'italic',
-                lineHeight: '1.2',
-              }}
-            >
-              Szczur, koszatniczka, jeż
-            </h2>
-
-            <div className="space-y-6 mb-12">
+            <SectionTitle>Szczur, koszatniczka, jeż</SectionTitle>
+            <div className="space-y-6 mb-6 md:mb-12">
               <PricingItem service="1–2 zwierzęta" unit="za dobę" price="60zł" />
               <PricingItem service="*Każdy kolejny członek stada" unit="za dobę" price="+ 5zł" />
             </div>
 
-            {/* Second Header - Jerboa, Mouse */}
-            <h2
-              className="mb-8"
-              style={{
-                fontSize: 'var(--font-size-heading-section)',
-                fontWeight: 700,
-                fontStyle: 'italic',
-                lineHeight: '1.2',
-              }}
-            >
-              Myszoskoczek, mysz
-            </h2>
-
+            <SectionTitle>Myszoskoczek, mysz</SectionTitle>
             <div className="space-y-6">
               <PricingItem service="1–2 zwierzęta" unit="za dobę" price="50zł" />
               <PricingItem service="*Każdy kolejny członek stada" unit="za dobę" price="+ 5zł" />
@@ -255,91 +201,57 @@ export default function CennikPage() {
           </div>
         </div>
 
-        {/* Chomik Section - Full Width */}
-        <div className="mb-16">
-          <h2
-            className="mb-8"
-            style={{
-              fontSize: 'var(--font-size-heading-section)',
-              fontWeight: 700,
-              fontStyle: 'italic',
-              lineHeight: '1.2',
-            }}
-          >
-            Chomik
-          </h2>
-
+        {/* Chomik Section */}
+        <div className="mb-8 md:mb-16">
+          <SectionTitle>Chomik</SectionTitle>
           <div className="space-y-6">
             <PricingItem service="1 zwierzę" unit="za dobę" price="30zł" />
-
             <PricingItem
               service="Opieka specjalistyczna (pooperacyjna, geriatryczna, intensywne dokarmianie)"
               unit="za dobę"
               price="od 100zł"
               note="Do wyceny indywidualnej zależnej od ilości, częstotliwości, drogi podania leków oraz potrzebnych czynności pielęgnacyjnych oraz technicznych."
             />
-
             <PricingItem
               service="Podawanie niewielkiej ilości leków/przymusowe dokarmianie"
               unit="za dobę"
               price="od + 10zł"
               note="Do wyceny indywidualnej zależnej od ilości, częstotliwości i rodzaju podawanych leków"
             />
-
             <PricingItem
               service="Przywiezienie zwierzęcia na hotel/do domu"
               unit="za przejazd"
               price="od 50zł"
             />
-
             <PricingItem
               service="Wizyta u lekarza weterynarii"
               unit="za usługę"
               price="od 50zł"
               note="+ koszt dojazdu (paliwo 2 zł/km) + opłata u lekarza weterynarii"
             />
-
             <PricingItem service="Konsultacja behawioralna" unit="trwająca do 1 h" price="200zł" />
-
             <PricingItem
               service="Konsultacja behawioralna w domu klienta"
               unit="trwająca do 1h"
               price="od 300zł"
             />
-
             <PricingItem
               service="Odbiór/przyjęcie na hotel w godzinach nocnych (21:00-7:00) oraz w dni wolne (święta)"
               unit="za usługę"
               price="100zł"
             />
           </div>
-
-          {/* Footer Note */}
-          <div className="flex items-start gap-2 mt-8">
-            <img src={aboutIcon2.src} alt="" className="w-6 h-6 flex-shrink-0 mt-[2px]" />
-            <p className="text-text-secondary text-sm leading-relaxed">
-              W przypadku braku odwołania pobytu przez klienta na mniej niż 72 godziny przed jego
-              rozpoczęciem, hotel uprawniony jest do zatrzymania całości przedpłaty uiszczonej przez
-              klienta lub obciążeniem klienta 50% kosztów opieki w zarezerwowanym terminie. Zmiana
-              terminu rezerwacji jest bezpłatna.
-            </p>
-          </div>
+          <FooterNote>
+            W przypadku braku odwołania pobytu przez klienta na mniej niż 72 godziny przed jego
+            rozpoczęciem, hotel uprawniony jest do zatrzymania całości przedpłaty uiszczonej przez
+            klienta lub obciążeniem klienta 50% kosztów opieki w zarezerwowanym terminie. Zmiana
+            terminu rezerwacji jest bezpłatna.
+          </FooterNote>
         </div>
 
-        {/* Strzyżenie Section - Full Width */}
-        <div className="mb-16">
-          <h2
-            className="mb-8"
-            style={{
-              fontSize: 'var(--font-size-heading-section)',
-              fontWeight: 700,
-              fontStyle: 'italic',
-              lineHeight: '1.2',
-            }}
-          >
-            Strzyżenie
-          </h2>
-
+        {/* Strzyżenie Section */}
+        <div className="mb-8 md:mb-16">
+          <SectionTitle>Strzyżenie</SectionTitle>
           <div className="space-y-6">
             <PricingItem service="Króliki standard" unit="za usługę" price="150zł" />
             <PricingItem service="Króliki hodowlane" unit="za usługę" price="170zł" />
@@ -350,17 +262,12 @@ export default function CennikPage() {
             />
             <PricingItem service="Świnka morska" unit="za usługę" price="100zł" />
           </div>
-
-          {/* Footer Note */}
-          <div className="flex items-start gap-2 mt-8">
-            <img src={aboutIcon2.src} alt="" className="w-6 h-6 flex-shrink-0 mt-[2px]" />
-            <p className="text-text-secondary text-sm leading-relaxed">
-              Opłata naliczana jest za każdą rozpoczętą dobę – doba zaczyna się w momencie
-              przywiezienia zwierzęcia i kończy się 24h później. Podane ceny są orientacyjne –
-              opieka podlega indywidualnej wycenie. Zwierzęta jednego właściciela mieszkające
-              oddzielnie podlegają indywidualnej wycenie. Ostatnia aktualizacja: 10.06.2025.
-            </p>
-          </div>
+          <FooterNote>
+            Opłata naliczana jest za każdą rozpoczętą dobę – doba zaczyna się w momencie
+            przywiezienia zwierzęcia i kończy się 24h później. Podane ceny są orientacyjne – opieka
+            podlega indywidualnej wycenie. Zwierzęta jednego właściciela mieszkające oddzielnie
+            podlegają indywidualnej wycenie. Ostatnia aktualizacja: 10.06.2025.
+          </FooterNote>
         </div>
       </div>
     </div>

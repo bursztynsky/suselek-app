@@ -3,7 +3,7 @@ import Button from '../shared/Button';
 
 const CheckAvailabilitySection: React.FC = () => {
   return (
-    <section id="sprawdz-dostepnosc" className="bg-secondary py-20 px-4">
+    <section id="sprawdz-dostepnosc" className="bg-secondary py-20 px-6 md:px-4">
       <div className="container mx-auto max-w-[900px]">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-light italic text-text-primary leading-tight mb-8">
@@ -12,8 +12,8 @@ const CheckAvailabilitySection: React.FC = () => {
             <span className="font-bold">jak własne.</span>
           </h2>
           <div className="flex justify-center">
-            <Button href="#kontakt" variant="primary" className="font-semibold text-lg">
-              Sprawdź dostępność
+            <Button href="tel:+48601155887" variant="primary" className="font-semibold text-lg">
+              Zadzwoń lub wyślij wiadomość
             </Button>
           </div>
         </div>

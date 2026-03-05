@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter, usePathname } from 'next/navigation';
 import logo from '../../assets/SUSELEK_logo_small.svg';
@@ -40,53 +40,11 @@ const PhoneButton: React.FC<{ inverted: boolean }> = ({ inverted }) => {
 };
 
 const Header: React.FC = () => {
-  const [isLightBg, setIsLightBg] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
 
-  // Detect if header is over HotelSection or ReviewsSection (dark backgrounds)
-  useEffect(() => {
-    const checkBackground = () => {
-      const header = document.querySelector('header');
-      if (!header) return;
-
-      const headerRect = header.getBoundingClientRect();
-      const headerCenter = headerRect.top + headerRect.height / 2;
-
-      // Check if header is over hotel or reviews sections
-      const hotelSection = document.getElementById('hotel');
-      const reviewsSection = document.getElementById('reviews');
-
-      let isOverDarkSection = false;
-
-      if (hotelSection) {
-        const rect = hotelSection.getBoundingClientRect();
-        if (rect.top <= headerCenter && rect.bottom >= headerCenter) {
-          isOverDarkSection = true;
-        }
-      }
-
-      if (reviewsSection) {
-        const rect = reviewsSection.getBoundingClientRect();
-        if (rect.top <= headerCenter && rect.bottom >= headerCenter) {
-          isOverDarkSection = true;
-        }
-      }
-
-      // isLightBg should be false when over dark sections (hotel/reviews)
-      setIsLightBg(!isOverDarkSection);
-    };
-
-    checkBackground();
-    window.addEventListener('scroll', checkBackground);
-    window.addEventListener('resize', checkBackground);
-
-    return () => {
-      window.removeEventListener('scroll', checkBackground);
-      window.removeEventListener('resize', checkBackground);
-    };
-  }, [pathname]);
+  const isHomePage = pathname === '/';
 
   const handleNavClick =
     (sectionId: string, targetPath: string = '/') =>
@@ -125,11 +83,11 @@ const Header: React.FC = () => {
     { id: 'regulamin', label: 'Regulamin', path: '/regulamin' },
   ];
 
-  const textColor = isLightBg ? 'text-primary' : 'text-secondary';
-
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 w-full z-50 py-4">
+      <header
+        className={`fixed top-0 left-0 right-0 w-full z-50 py-4 ${isHomePage ? 'bg-primary' : 'bg-secondary'}`}
+      >
         <nav className="max-w-7xl mx-auto px-4">
           {/* Desktop */}
           <div className="hidden lg:flex items-center justify-between gap-8">
@@ -142,7 +100,7 @@ const Header: React.FC = () => {
                 <li key={item.id}>
                   <a
                     href={`#${item.id}`}
-                    className={`${textColor} no-underline hover:opacity-70 transition-opacity duration-300`}
+                    className={`no-underline hover:opacity-70 transition-opacity duration-300 ${isHomePage ? 'text-secondary' : 'text-primary'}`}
                     onClick={handleNavClick(item.id, item.path)}
                   >
                     {item.label}
@@ -151,7 +109,7 @@ const Header: React.FC = () => {
               ))}
             </ul>
 
-            <PhoneButton inverted={isLightBg} />
+            <PhoneButton inverted={!isHomePage} />
           </div>
 
           {/* Mobile */}
@@ -168,13 +126,13 @@ const Header: React.FC = () => {
               aria-expanded={isMobileMenuOpen}
             >
               <span
-                className={`h-0.5 w-full transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}
+                className={`h-0.5 w-full transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}
               ></span>
               <span
-                className={`h-0.5 w-full transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}
+                className={`h-0.5 w-full transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}
               ></span>
               <span
-                className={`h-0.5 w-1/2 transition-all duration-300 ${textColor === 'text-primary' ? 'bg-primary' : 'bg-secondary'}`}
+                className={`h-0.5 w-1/2 transition-all duration-300 ${isHomePage ? 'bg-secondary' : 'bg-primary'}`}
               ></span>
             </button>
           </div>
