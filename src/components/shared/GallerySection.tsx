@@ -58,11 +58,12 @@ const GallerySection: React.FC = () => {
   const [posts, setPosts] = useState<InstagramPost[]>([]);
   const [loading, setLoading] = useState(true);
 
-  // Touch swipe state
   const scrollRef = useRef<HTMLDivElement>(null);
   const isDragging = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
+  const animationRef = useRef<number | null>(null);
+  const isPaused = useRef(false);
 
   useEffect(() => {
     setTimeout(() => {
@@ -71,7 +72,34 @@ const GallerySection: React.FC = () => {
     }, 500);
   }, []);
 
+  // JS auto-scroll for mobile
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || posts.length === 0) return;
+
+    const speed = 30;
+    let lastTime: number | null = null;
+
+    const scroll = (timestamp: number) => {
+      if (lastTime !== null && !isPaused.current && el) {
+        const delta = (timestamp - lastTime) / 1000;
+        el.scrollLeft += speed * delta;
+        if (el.scrollLeft >= el.scrollWidth / 2) {
+          el.scrollLeft = 0;
+        }
+      }
+      lastTime = timestamp;
+      animationRef.current = requestAnimationFrame(scroll);
+    };
+
+    animationRef.current = requestAnimationFrame(scroll);
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    };
+  }, [posts]);
+
   const onTouchStart = (e: React.TouchEvent) => {
+    isPaused.current = true;
     isDragging.current = true;
     startX.current = e.touches[0].pageX - (scrollRef.current?.offsetLeft ?? 0);
     scrollLeft.current = scrollRef.current?.scrollLeft ?? 0;
@@ -86,10 +114,14 @@ const GallerySection: React.FC = () => {
 
   const onTouchEnd = () => {
     isDragging.current = false;
+    // Resume auto-scroll after 2s of inactivity
+    setTimeout(() => {
+      isPaused.current = false;
+    }, 2000);
   };
 
-  // Mouse drag for desktop fallback
   const onMouseDown = (e: React.MouseEvent) => {
+    isPaused.current = true;
     isDragging.current = true;
     startX.current = e.pageX - (scrollRef.current?.offsetLeft ?? 0);
     scrollLeft.current = scrollRef.current?.scrollLeft ?? 0;
@@ -107,6 +139,9 @@ const GallerySection: React.FC = () => {
   const onMouseUp = () => {
     isDragging.current = false;
     if (scrollRef.current) scrollRef.current.style.cursor = 'grab';
+    setTimeout(() => {
+      isPaused.current = false;
+    }, 2000);
   };
 
   if (loading) {
@@ -134,7 +169,7 @@ const GallerySection: React.FC = () => {
           </a>
         </h2>
 
-        {/* Mobile: swipeable scroll */}
+        {/* Mobile: swipeable + auto-scroll */}
         <div
           ref={scrollRef}
           className="flex md:hidden gap-4 overflow-x-auto no-scrollbar py-6 px-4 cursor-grab active:cursor-grabbing"
@@ -146,13 +181,13 @@ const GallerySection: React.FC = () => {
           onMouseUp={onMouseUp}
           onMouseLeave={onMouseUp}
         >
-          {posts.map((post, index) => (
+          {[...posts, ...posts].map((post, index) => (
             <a
               key={`${post.id}-${index}`}
               href={post.permalink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-shrink-0 w-64 h-64 rounded-2xl transition-all hover:scale-105 hover:shadow-md"
+              className="flex-shrink-0 w-64 h-64 rounded-2xl"
               onClick={e => isDragging.current && e.preventDefault()}
             >
               <img
@@ -164,7 +199,7 @@ const GallerySection: React.FC = () => {
           ))}
         </div>
 
-        {/* Desktop: auto-scroll animation */}
+        {/* Desktop: CSS auto-scroll animation */}
         <div className="relative overflow-x-hidden hidden md:block">
           <div className="flex gap-4 animate-scroll-left hover:pause-animation py-6 px-2">
             {[...posts, ...posts, ...posts].map((post, index) => (
