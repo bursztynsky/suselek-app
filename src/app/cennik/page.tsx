@@ -48,7 +48,7 @@ const PricingItem = ({
 };
 
 const FooterNote = ({ children }: { children: React.ReactNode }) => (
-  <div className="flex flex-row items-start gap-2 mt-8">
+  <div className="flex flex-row items-start gap-2 mt-4 md:mt-8">
     <img src={aboutIcon2.src} alt="" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0 mt-[2px]" />
     <p className="text-text-secondary text-xs md:text-sm leading-relaxed">{children}</p>
   </div>
@@ -56,7 +56,7 @@ const FooterNote = ({ children }: { children: React.ReactNode }) => (
 
 const SectionTitle = ({ children }: { children: React.ReactNode }) => (
   <h2
-    className="mb-8"
+    className="mb-4 md:mb-8"
     style={{
       fontSize: 'var(--font-size-heading-section)',
       fontWeight: 700,
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
 
 export default function CennikPage() {
   return (
-    <div className="min-h-screen pt-32 pb-16 px-6 md:px-16 bg-secondary">
+    <div className="min-h-screen pt-24 md:pt-32 pb-8 md:pb-16 px-6 md:px-16 bg-secondary">
       <div className="max-w-7xl mx-auto">
         {/* Page Title */}
         <h1
@@ -98,13 +98,13 @@ export default function CennikPage() {
         </h1>
 
         {/* Subtitle with icon */}
-        <div className="flex items-start justify-center gap-2 mb-12">
+        <div className="flex items-start justify-center gap-2 mb-8 md:mb-12">
           <img src={aboutIcon2.src} alt="" className="w-5 h-5 flex-shrink-0 mt-[2px]" />
           <p className="text-text-secondary text-sm leading-relaxed">Obowiązujący od 10.06.2025</p>
         </div>
 
         {/* Królik Section */}
-        <div className="grid grid-cols-1 md:grid-cols-[60%_40%] gap-8 items-center mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-[60%_40%] gap-8 items-center mb-8 md:mb-16">
           <div>
             <SectionTitle>Królik</SectionTitle>
             <div className="space-y-6">
@@ -142,7 +142,7 @@ export default function CennikPage() {
         </div>
 
         {/* Świnka morska Section */}
-        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 items-center mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 items-center mb-8 md:mb-16">
           <div className="flex items-center justify-center md:justify-start">
             <img
               src={swinka.src}
@@ -176,7 +176,7 @@ export default function CennikPage() {
         </div>
 
         {/* Two Column Section */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 mb-8 md:mb-16">
           <div>
             <SectionTitle>Szynszyla, suseł Richardsona, piesek preriowy</SectionTitle>
             <div className="space-y-6">
@@ -188,7 +188,7 @@ export default function CennikPage() {
 
           <div>
             <SectionTitle>Szczur, koszatniczka, jeż</SectionTitle>
-            <div className="space-y-6 mb-12">
+            <div className="space-y-6 mb-6 md:mb-12">
               <PricingItem service="1–2 zwierzęta" unit="za dobę" price="60zł" />
               <PricingItem service="*Każdy kolejny członek stada" unit="za dobę" price="+ 5zł" />
             </div>
@@ -202,7 +202,7 @@ export default function CennikPage() {
         </div>
 
         {/* Chomik Section */}
-        <div className="mb-16">
+        <div className="mb-8 md:mb-16">
           <SectionTitle>Chomik</SectionTitle>
           <div className="space-y-6">
             <PricingItem service="1 zwierzę" unit="za dobę" price="30zł" />
@@ -250,7 +250,7 @@ export default function CennikPage() {
         </div>
 
         {/* Strzyżenie Section */}
-        <div className="mb-16">
+        <div className="mb-8 md:mb-16">
           <SectionTitle>Strzyżenie</SectionTitle>
           <div className="space-y-6">
             <PricingItem service="Króliki standard" unit="za usługę" price="150zł" />
