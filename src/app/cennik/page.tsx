@@ -299,11 +299,7 @@ export default function CennikPage() {
               note="+ koszt dojazdu (paliwo 2 zł/km) + opłata u lekarza weterynarii"
             />
 
-            <PricingItem
-              service="Konsultacja behawioralna"
-              unit="trwająca do 1 h"
-              price="200zł"
-            />
+            <PricingItem service="Konsultacja behawioralna" unit="trwająca do 1 h" price="200zł" />
 
             <PricingItem
               service="Konsultacja behawioralna w domu klienta"

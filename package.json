@@ -8,7 +8,8 @@
     "start": "npx serve@latest out -s",
     "preview": "npx serve@latest out -s",
     "lint": "eslint . --ext .ts,.tsx --fix && npx tsc --noEmit",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss,md}\"",
+    "prepush": "npx tsc && npm run lint && npm run format"
   },
   "dependencies": {
     "next": "^16.1.0",
