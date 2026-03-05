@@ -77,7 +77,7 @@ export const metadata: Metadata = {
 
 export default function CennikPage() {
   return (
-    <div className="min-h-screen pt-32 pb-16 px-4">
+    <div className="min-h-screen pt-32 pb-16 px-4 bg-secondary">
       <div className="max-w-7xl mx-auto">
         <h1
           className="text-center mb-6"
