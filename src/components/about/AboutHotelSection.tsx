@@ -13,7 +13,7 @@ const AboutHotelSection: React.FC = () => {
         />
       </div>
 
-      <div className="container mx-auto max-w-[var(--width-container)] px-4 py-20">
+      <div className="container mx-auto max-w-[var(--width-container)] px-6 md:px-4 py-20">
         <div className="flex flex-col md:flex-row gap-12 items-start">
           <div className="flex-1">
             <h2 className="text-[64px] font-light italic text-text-primary leading-none">

@@ -9,7 +9,7 @@ import mailIcon from '../../assets/mail-icon.svg';
 const Footer: React.FC = () => {
   return (
     <footer className="bg-primary text-secondary py-12">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6 md:px-4">
         <div className="flex flex-col lg:flex-row gap-8 mb-8">
           {/* Left Side - Logo and Social Icons */}
           <div className="flex flex-col items-start gap-6 lg:w-[40%] lg:flex-shrink-0">

@@ -29,7 +29,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
   const flexDirection = isImageLeft ? 'md:flex-row' : 'md:flex-row-reverse';
 
   return (
-    <section id={id} className="bg-white py-8 md:py-20 px-4">
+    <section id={id} className="bg-white py-8 md:py-20 px-6 md:px-4">
       <div className="container mx-auto max-w-[var(--width-container)]">
         {/* Mobile: Card layout */}
         <div className="md:hidden overflow-hidden rounded-2xl shadow-sm">

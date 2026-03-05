@@ -3,7 +3,6 @@ import aboutIcon2 from '../../assets/aboutIcon2.svg';
 import krolik1 from '../../assets/krolik1.png';
 import swinka from '../../assets/swinka.png';
 
-// Reusable pricing item component for mobile-friendly layout
 const PricingItem = ({
   service,
   unit,
@@ -16,39 +15,23 @@ const PricingItem = ({
   note?: string;
 }) => (
   <div>
-    {/* Mobile layout - stacked */}
-    <div className="block md:hidden space-y-2">
-      <div className="text-text-primary font-normal text-[14px] leading-relaxed">{service}</div>
-      <div className="flex justify-end items-baseline gap-2">
-        <span className="text-text-secondary font-normal text-[12px]">{unit}</span>
+    {/* Mobile: service name, then price + unit below left-aligned */}
+    <div className="md:hidden">
+      <div className="text-text-primary font-normal text-[14px] leading-relaxed mb-1">
+        {service}
+      </div>
+      <div className="flex items-baseline gap-2">
         <span className="text-primary font-normal text-[16px]">{price}</span>
+        <span className="text-text-secondary font-normal text-[12px]">{unit}</span>
       </div>
     </div>
 
-    {/* Desktop layout - flex with dotted line */}
+    {/* Desktop: service name on left, dotted line, unit + price on right */}
     <div className="hidden md:flex items-end gap-3">
-      <span
-        className="text-text-primary font-normal flex-shrink-0"
-        style={{ fontSize: 'var(--font-size-text-base)' }}
-      >
-        {service}
-      </span>
-      <span className="flex-1 border-b-2 border-dotted border-gray-400 mb-1"></span>
-      <span
-        className="text-text-secondary font-normal flex-shrink-0"
-        style={{
-          fontSize: 'var(--font-size-text-xs)',
-          fontFamily: 'var(--font-family-inter)',
-        }}
-      >
-        {unit}
-      </span>
-      <span
-        className="text-primary font-normal flex-shrink-0"
-        style={{ fontSize: 'var(--font-size-text-base)' }}
-      >
-        {price}
-      </span>
+      <span className="text-text-primary font-normal text-[16px] flex-shrink-0">{service}</span>
+      <span className="flex-1 border-b-2 border-dotted border-gray-300 mb-1"></span>
+      <span className="text-text-secondary font-normal text-[12px] flex-shrink-0">{unit}</span>
+      <span className="text-primary font-normal text-[16px] flex-shrink-0">{price}</span>
     </div>
 
     {note && (
@@ -56,6 +39,15 @@ const PricingItem = ({
         {note}
       </p>
     )}
+  </div>
+);
+
+const FooterNote = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex flex-row items-start gap-2 mt-8">
+    <img src={aboutIcon2.src} alt="" className="w-5 h-5 md:w-6 md:h-6 flex-shrink-0 mt-[2px]" />
+    <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
+      {children}
+    </p>
   </div>
 );
 
@@ -77,7 +69,7 @@ export const metadata: Metadata = {
 
 export default function CennikPage() {
   return (
-    <div className="min-h-screen pt-32 pb-16 px-4 bg-secondary">
+    <div className="min-h-screen pt-32 pb-16 px-6 md:px-16 bg-secondary">
       <div className="max-w-7xl mx-auto">
         <h1
           className="text-center mb-6"
@@ -130,13 +122,9 @@ export default function CennikPage() {
               <PricingItem service="*Każdy kolejny królik" unit="za dobę" price="+ 20zł" />
             </div>
 
-            {/* Footer Note */}
-            <div className="flex items-end gap-2 mt-8">
-              <img src={aboutIcon2.src} alt="" className="w-6 h-6 flex-shrink-0" />
-              <p className="text-text-secondary text-sm leading-none">
-                Króliki hodowlane (&gt;3 kg m.c.) mogą być zakwaterowane tylko w kojcach.
-              </p>
-            </div>
+            <FooterNote>
+              Króliki hodowlane (&gt;3 kg m.c.) mogą być zakwaterowane tylko w kojcach.
+            </FooterNote>
           </div>
 
           {/* Right side - Image */}
@@ -314,16 +302,12 @@ export default function CennikPage() {
             />
           </div>
 
-          {/* Footer Note */}
-          <div className="flex items-start gap-2 mt-8">
-            <img src={aboutIcon2.src} alt="" className="w-6 h-6 flex-shrink-0 mt-[2px]" />
-            <p className="text-text-secondary text-sm leading-relaxed">
+          <FooterNote>
               W przypadku braku odwołania pobytu przez klienta na mniej niż 72 godziny przed jego
               rozpoczęciem, hotel uprawniony jest do zatrzymania całości przedpłaty uiszczonej przez
               klienta lub obciążeniem klienta 50% kosztów opieki w zarezerwowanym terminie. Zmiana
               terminu rezerwacji jest bezpłatna.
-            </p>
-          </div>
+            </FooterNote>
         </div>
 
         {/* Strzyżenie Section - Full Width */}
@@ -351,16 +335,12 @@ export default function CennikPage() {
             <PricingItem service="Świnka morska" unit="za usługę" price="100zł" />
           </div>
 
-          {/* Footer Note */}
-          <div className="flex items-start gap-2 mt-8">
-            <img src={aboutIcon2.src} alt="" className="w-6 h-6 flex-shrink-0 mt-[2px]" />
-            <p className="text-text-secondary text-sm leading-relaxed">
+          <FooterNote>
               Opłata naliczana jest za każdą rozpoczętą dobę – doba zaczyna się w momencie
               przywiezienia zwierzęcia i kończy się 24h później. Podane ceny są orientacyjne –
               opieka podlega indywidualnej wycenie. Zwierzęta jednego właściciela mieszkające
               oddzielnie podlegają indywidualnej wycenie. Ostatnia aktualizacja: 10.06.2025.
-            </p>
-          </div>
+            </FooterNote>
         </div>
       </div>
     </div>

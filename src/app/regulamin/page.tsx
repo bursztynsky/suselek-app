@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function RegulaminPage() {
   return (
-    <div className="min-h-screen pt-32 pb-16 px-4 bg-secondary">
+    <div className="min-h-screen pt-32 pb-16 px-6 md:px-16 bg-secondary">
       <div className="max-w-7xl mx-auto">
         {/* Main header */}
         <h1 className="text-center mb-12" style={{ fontSize: '74px', lineHeight: '1.2' }}>

@@ -4,7 +4,7 @@ import Button from '../shared/Button';
 
 const CheckOfferSection: React.FC = () => {
   return (
-    <section id="check-offer" className="bg-secondary py-12 md:py-12 px-4">
+    <section id="check-offer" className="bg-secondary py-12 md:py-12 px-6 md:px-4">
       <div className="max-w-[var(--width-container)] mx-auto text-center flex flex-col">
         <h1 className="text-text-primary text-2xl md:text-5xl leading-tight my-6 md:my-8 font-light italic">
           <span className="md:not-italic md:font-light">Dbamy o&nbsp;to,</span>{' '}

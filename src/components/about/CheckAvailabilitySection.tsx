@@ -3,7 +3,7 @@ import Button from '../shared/Button';
 
 const CheckAvailabilitySection: React.FC = () => {
   return (
-    <section id="sprawdz-dostepnosc" className="bg-secondary py-20 px-4">
+    <section id="sprawdz-dostepnosc" className="bg-secondary py-20 px-6 md:px-4">
       <div className="container mx-auto max-w-[900px]">
         <div className="text-center">
           <h2 className="text-3xl md:text-5xl font-light italic text-text-primary leading-tight mb-8">

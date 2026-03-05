@@ -4,7 +4,7 @@ import Button from '../shared/Button';
 
 const AboutMeSection: React.FC = () => {
   return (
-    <section id="o-mnie" className="bg-secondary py-32 px-4">
+    <section id="o-mnie" className="bg-secondary py-32 px-6 md:px-4">
       <div className="container mx-auto max-w-[var(--width-container)] flex flex-col md:flex-row gap-12 items-center">
         <div className="flex-1 md:flex-[1_1_50%] max-w-[600px]">
           <img

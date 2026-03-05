@@ -11,7 +11,7 @@ const LetsMeetBeforeSection: React.FC = () => {
       </div>
 
       {/* Content Section */}
-      <div className="container mx-auto max-w-[var(--width-container)] px-4 py-20">
+      <div className="container mx-auto max-w-[var(--width-container)] px-6 md:px-4 py-20">
         <h2 className="text-[48px] md:text-[64px] font-light italic text-center text-text-primary mb-6 leading-tight">
           <span className="font-bold">Poznajmy się</span> przed pobytem
         </h2>
