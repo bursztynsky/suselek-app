@@ -142,12 +142,12 @@ export default function CennikPage() {
         </div>
 
         {/* Świnka morska Section */}
-        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-8 items-center mb-8 md:mb-16">
-          <div className="flex items-center justify-center md:justify-start">
+        <div className="grid grid-cols-1 md:grid-cols-[40%_60%] gap-0 md:gap-8 items-center mb-8 md:mb-16">
+          <div className="flex items-center justify-center md:justify-start overflow-hidden">
             <img
               src={swinka.src}
               alt="Świnka morska"
-              className="object-contain w-full max-w-xs h-72 md:w-auto md:h-auto"
+              className="object-contain w-full max-w-md h-96 md:w-auto md:h-auto -my-8 md:my-0"
             />
           </div>
 
